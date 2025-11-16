@@ -1,10 +1,18 @@
+import type { Route } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Image } from '@/components/ui/image';
 import { FadeIn } from '@/components/motion/FadeIn';
 
-const FEATURED_PROJECTS = [
+type FeaturedProject = {
+  title: string;
+  href: Route;
+  description: string;
+  image: string;
+};
+
+const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     title: 'NASA Student Launch Initiative',
     href: '/projects/nasa-sli',

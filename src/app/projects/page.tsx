@@ -1,9 +1,18 @@
+import type { Route } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Image } from '@/components/ui/image';
 
-const PROJECTS = [
+type Project = {
+  title: string;
+  href: Route;
+  summary: string;
+  timeline: string;
+  image: string;
+};
+
+const PROJECTS: Project[] = [
   {
     title: 'NASA Student Launch Initiative — Project RANCH',
     href: '/projects/nasa-sli',
