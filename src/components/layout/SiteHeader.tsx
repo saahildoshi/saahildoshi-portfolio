@@ -1,10 +1,16 @@
 'use client';
 
+import type { Route } from 'next';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
-const NAV_LINKS = [
+type NavLink = {
+  href: Route;
+  label: string;
+};
+
+const NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About' },
