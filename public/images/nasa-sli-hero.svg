@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050509" />
+      <stop offset="100%" stop-color="#0f1b2f" />
+    </linearGradient>
+    <linearGradient id="grid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7CFF90" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#7CFF90" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#grad)" />
+  <g stroke="url(#grid)" stroke-width="0.5">
+    <path d="M0 750 L1600 650" opacity="0.4" />
+    <path d="M0 650 L1600 550" opacity="0.3" />
+    <path d="M0 550 L1600 450" opacity="0.2" />
+  </g>
+  <text x="120" y="180" font-family="'Space Grotesk', sans-serif" font-size="72" fill="#ffffff" opacity="0.7">
+    PROJECT RANCH
+  </text>
+  <text x="120" y="260" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#7CFF90" opacity="0.8">
+    NASA STUDENT LAUNCH INITIATIVE
+  </text>
+</svg>
