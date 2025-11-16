@@ -122,6 +122,12 @@ function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
             size="lg"
             className="hidden rounded-full border border-accentneongreen/30 bg-accentneongreen/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen hover:text-primary lg:inline-flex"
           >
+            <Link href="/contact">
+              Mission Inquiry
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
         <div className="flex gap-4 overflow-x-auto border-t border-white/5 px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-primary-foreground/60 lg:hidden">
           {NAV_ITEMS.map((item) => (
             <a key={item.id} href={`#${item.id}`} className="shrink-0 transition hover:text-accentneongreen">
