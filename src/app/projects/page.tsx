@@ -79,7 +79,11 @@ export default function ProjectsPage() {
                 <h2 className="text-2xl font-semibold text-white">{project.title}</h2>
                 <p className="text-primary-foreground/80">{project.summary}</p>
               </div>
-              <Button variant="ghost" size="sm" className="self-start text-accentneongreen">
+              <Button
+                variant="outline"
+                size="sm"
+                className="self-start border-none text-accentneongreen hover:bg-accentneongreen/10"
+              >
                 Read Case Study
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </Button>
