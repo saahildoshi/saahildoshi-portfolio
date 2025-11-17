@@ -27,7 +27,7 @@ export function useScrollSpy(sectionIds: string[], options?: IntersectionObserve
 
     const elements = sectionIds
       .map((id) => document.getElementById(id))
-      .filter((el): el is Element => Boolean(el));
+      .filter((el): el is HTMLElement => el instanceof HTMLElement);
 
     elements.forEach((el) => observer.observe(el));
 
