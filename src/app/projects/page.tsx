@@ -37,6 +37,14 @@ const PROJECTS: Project[] = [
     image: '/images/project-ghp.svg',
   },
   {
+    title: 'Civil Air Patrol — Cadet Captain & Squadron Commander',
+    href: '/projects/civil-air-patrol',
+    summary:
+      'Cadet Captain leading ~30 cadets and 15 senior members through weekly aerospace education, leadership training, and special events at Ben Epps Airport.',
+    timeline: 'Ongoing',
+    image: '/images/projects/arc.svg',
+  },
+  {
     title: 'Georgia Hybrid Propulsion (GHP)',
     href: '/projects/ghp',
     summary: 'Propulsion test-stand integration, data pipelines, and safety documentation for hybrid motors.',
