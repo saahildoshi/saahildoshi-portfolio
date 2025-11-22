@@ -29,6 +29,14 @@ const PROJECTS: Project[] = [
     image: '/images/project-arc.svg',
   },
   {
+    title: 'Governor’s Honors Program — Mechanical & Aerospace Engineering',
+    href: '/projects/ghp-mechanical-aero',
+    summary:
+      'Four-week residential program in Mechanical & Aerospace Engineering with calculus-based physics, thermodynamics with Cantera, FFT in Python, multivariable calculus, and a multi-week applied engineering project.',
+    timeline: 'Summer 2024',
+    image: '/images/project-ghp.svg',
+  },
+  {
     title: 'Georgia Hybrid Propulsion (GHP)',
     href: '/projects/ghp',
     summary: 'Propulsion test-stand integration, data pipelines, and safety documentation for hybrid motors.',
