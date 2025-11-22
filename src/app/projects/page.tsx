@@ -45,13 +45,6 @@ const PROJECTS: Project[] = [
     image: '/images/projects/arc.svg',
   },
   {
-    title: 'Georgia Hybrid Propulsion (GHP)',
-    href: '/projects/ghp',
-    summary: 'Propulsion test-stand integration, data pipelines, and safety documentation for hybrid motors.',
-    timeline: '2023',
-    image: '/images/project-ghp.svg',
-  },
-  {
     title: 'Bio-Inspired & AI Airfoil Research',
     href: '/projects/uga-airfoil-research',
     summary:
