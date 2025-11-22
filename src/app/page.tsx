@@ -41,14 +41,16 @@ const PROJECTS: ProjectCard[] = [
   {
     href: '/projects/arc',
     title: 'American Rocketry Challenge — Co-Captain',
-    subtitle: 'Ranked 24/1000 with precision recovery and mass optimization for dual-egg payload missions.',
+    subtitle:
+      'Mid-power competition rocket tuned for 820 ft and a 43–46 second window with a fragile egg payload, finishing 24th of roughly 1,000 teams.',
     image: '/images/projects/arc.svg',
   },
   {
-    href: '/projects/uga-airfoil',
-    title: 'UGA Bio-Inspired Airfoil Research',
-    subtitle: 'Undergraduate research into leading-edge morphing geometries for low Reynolds number efficiency.',
-    image: '/images/projects/uga.svg',
+    href: '/projects/uga-airfoil-research',
+    title: 'UGA Bio-Inspired & AI Airfoil Research',
+    subtitle:
+      'Eight-week UGA research project comparing bio-inspired, AI-generated, and control airfoils with XFOIL, Fusion 360, 3D printing, and wind tunnel testing.',
+    image: '/images/projects/airfoil.svg',
   },
   {
     href: '/projects/level1',

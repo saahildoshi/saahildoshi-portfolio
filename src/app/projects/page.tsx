@@ -21,10 +21,11 @@ const PROJECTS: Project[] = [
     image: '/images/nasa-sli-hero.svg',
   },
   {
-    title: 'Aerial Robotics Challenge (ARC)',
+    title: 'American Rocketry Challenge — National Finalist',
     href: '/projects/arc',
-    summary: 'Autonomous UAS mission design, custom GNC stack, and perception-driven navigation.',
-    timeline: '2023–2024',
+    summary:
+      'Mid-power competition rocket engineered to reach 820 ft with a fragile egg payload, 43–46 second flight window, and 605 g mass limit, resulting in a top-24 national finish.',
+    timeline: '2023',
     image: '/images/project-arc.svg',
   },
   {
@@ -35,11 +36,12 @@ const PROJECTS: Project[] = [
     image: '/images/project-ghp.svg',
   },
   {
-    title: 'UGA Airfoil Research Internship',
-    href: '/projects/uga-airfoil',
-    summary: 'Wind-tunnel instrumentation, airfoil prototyping, and aerodynamic data analysis.',
+    title: 'Bio-Inspired & AI Airfoil Research',
+    href: '/projects/uga-airfoil-research',
+    summary:
+      'Eight-week UGA research project comparing bio-inspired, AI-generated, and control airfoils using XFOIL, Fusion 360, 3D printing, and wind tunnel testing.',
     timeline: 'Summer 2023',
-    image: '/images/project-uga.svg',
+    image: '/images/projects/airfoil.svg',
   },
   {
     title: 'Level 1 Certification Fleet',
