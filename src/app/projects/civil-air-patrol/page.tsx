@@ -77,7 +77,7 @@ export default function CivilAirPatrolPage() {
               My Civil Air Patrol experience is centered on serving in leadership roles within a local squadron at Ben Epps Airport in Athens, Georgia. Our unit combines cadet members and senior (adult) members to deliver a full cadet program that includes aerospace education, leadership training, character development, and physical fitness.
             </p>
             <p>
-              As cadets progress, they move from simply attending meetings to helping plan, teach, and command activities for others. In my role as Cadet Captain and Cadet Commander, I operate at the highest cadet leadership level in the squadron chain of command, translating senior member guidance into concrete weekly plans, training schedules, and standards for cadets to follow. (Wikipedia)
+              As cadets progress, they move from simply attending meetings to helping plan, teach, and command activities for others. In my role as Cadet Captain and Cadet Commander, I operate at the highest cadet leadership level in the squadron chain of command, translating senior member guidance into concrete weekly plans, training schedules, and standards for cadets to follow.
             </p>
             <p>
               The squadron meets for approximately three hours every Tuesday night, where we run a mix of classroom instruction, drill and ceremonies, hands-on activities, and fitness or team-building exercises. Outside of weekly meetings, I coordinate special events, represent the cadet corps to senior leadership, and ensure that training aligns with Civil Air Patrol regulations and the national cadet program structure.
@@ -90,7 +90,7 @@ export default function CivilAirPatrolPage() {
             <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr]">
               <div className="space-y-6">
                 <p>
-                  As Cadet Commander, I am responsible for the overall performance and development of the cadet corps. On a weekly basis, I translate squadron goals into specific plans for meetings, assign duties to flight staff and element leaders, and monitor how effectively training is delivered. I work closely with the senior Deputy Commander for Cadets to align our plans with Civil Air Patrol’s cadet program objectives while also responding to the specific needs of our unit. (Wikipedia)
+                  As Cadet Commander, I am responsible for the overall performance and development of the cadet corps. On a weekly basis, I translate squadron goals into specific plans for meetings, assign duties to flight staff and element leaders, and monitor how effectively training is delivered. I work closely with the senior Deputy Commander for Cadets to align our plans with Civil Air Patrol’s cadet program objectives while also responding to the specific needs of our unit. 
                 </p>
                 <p>
                   Previously, I served as Cadet Deputy Commander for Operations and Cadet Deputy Commander for Support, as well as Alpha Flight Sergeant. These roles taught me how to manage both the operational and support sides of a cadet squadron—balancing scheduling, logistics, and training with mentoring, discipline, and morale. Each step up the leadership ladder expanded my responsibility from managing a single flight to coordinating across the entire cadet corps.
@@ -169,7 +169,7 @@ export default function CivilAirPatrolPage() {
               One of my most demanding leadership experiences in Civil Air Patrol was serving as a Flight Sergeant on line staff at a week-long encampment, where I led a flight of approximately 20 cadets for six days in a high-tempo, military-style training environment.
             </p>
             <p>
-              Cadet encampments are core activities in the CAP program: typically 7–10 day events that place cadets in an intense, structured environment emphasizing aerospace classes, leadership development, drill and ceremonies, physical training, and character education. (Wikipedia) As a Flight Sergeant, I was responsible for translating that curriculum into day-to-day execution for my flight.
+              Cadet encampments are core activities in the CAP program: typically 7–10 day events that place cadets in an intense, structured environment emphasizing aerospace classes, leadership development, drill and ceremonies, physical training, and character education. As a Flight Sergeant, I was responsible for translating that curriculum into day-to-day execution for my flight.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5 space-y-2">
@@ -210,7 +210,7 @@ export default function CivilAirPatrolPage() {
               </li>
             </ul>
             <p>
-              Each of these events required planning logistics, coordinating with external partners, ensuring safety and transportation plans, and preparing cadets with expectations and objectives in advance. These experiences reinforced that aerospace education is not limited to PowerPoint slides; it is most powerful when cadets can see and feel it in real-world settings.
+              Each of these events required planning logistics, coordinating with external partners, ensuring safety and transportation plans, and preparing cadets with expectations and objectives in advance. These experiences reinforced that aerospace education is not limited to just lessons; it is most powerful when cadets can see and feel it in real-world settings.
             </p>
           </AnimatedSection>
         </Section>
@@ -228,7 +228,7 @@ export default function CivilAirPatrolPage() {
                 I have maintained the Cadet Physical Fitness standards, training regularly to meet the program’s expectations for health and resilience.
               </li>
               <li>
-                I will be attending a Regional Cadet Leadership School (RCLS) at Maxwell Air Force Base in Alabama (December 27–January 3), which focuses on advanced leadership and management skills for cadets who are serving in, or preparing for, key leadership roles in their home squadrons. (Wikipedia)
+                I will be attending a Regional Cadet Leadership School (RCLS) at Maxwell Air Force Base in Alabama (December 27–January 3), which focuses on advanced leadership and management skills for cadets who are serving in, or preparing for, key leadership roles in their home squadrons. 
               </li>
             </ul>
             <p>
