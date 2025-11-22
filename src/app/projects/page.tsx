@@ -37,6 +37,14 @@ const PROJECTS: Project[] = [
     image: '/images/project-ghp.svg',
   },
   {
+    title: 'ERAS2 — Ionic Wind Aircraft (GHP)',
+    href: '/projects/eras2',
+    summary:
+      'GHP Mechanical & Aerospace capstone integrating an ionic-wind propulsion system with WASP airfoils, modular engine brackets, and stacked electrohydrodynamic units.',
+    timeline: '2025',
+    image: '/images/projects/eras2.svg',
+  },
+  {
     title: 'Civil Air Patrol — Cadet Captain & Squadron Commander',
     href: '/projects/civil-air-patrol',
     summary:

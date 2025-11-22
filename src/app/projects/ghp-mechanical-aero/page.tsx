@@ -92,6 +92,14 @@ export default function GhpmAeroPage() {
         <p>
           The extended project time mirrored the feel of an accelerated university lab course. Long, focused work sessions in the lab forced me to manage my time carefully, prioritize tasks, and move constantly between coding, calculations, and discussion with teammates and instructors.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild size="sm" className="rounded-full">
+            <Link href="/projects/eras2">View ERAS2 Capstone Project</Link>
+          </Button>
+          <Button asChild size="sm" variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
+            <Link href="/projects">Back to Projects</Link>
+          </Button>
+        </div>
       </Section>
 
       <Section id="schedule" title="Daily Schedule and Workload" kicker="Workload">
