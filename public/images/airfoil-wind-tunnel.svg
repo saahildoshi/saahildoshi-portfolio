@@ -1,0 +1,18 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wt-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1020" />
+      <stop offset="100%" stop-color="#050509" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" rx="30" fill="url(#wt-bg)" />
+  <rect x="140" y="180" width="680" height="260" rx="28" fill="#0F172A" stroke="#7CFF90" stroke-opacity="0.35" />
+  <rect x="180" y="230" width="360" height="160" rx="12" fill="#0A1323" stroke="#7CFF90" stroke-opacity="0.45" />
+  <path d="M200 310 C300 270 420 260 520 300" stroke="#7CFF90" stroke-width="3" stroke-opacity="0.6" fill="none" />
+  <path d="M200 330 C300 300 420 300 520 330" stroke="#7CFF90" stroke-width="3" stroke-opacity="0.35" fill="none" />
+  <line x1="580" y1="220" x2="580" y2="400" stroke="#7CFF90" stroke-opacity="0.4" stroke-width="6" stroke-linecap="round" />
+  <rect x="620" y="250" width="140" height="120" rx="12" fill="#0A1323" stroke="#7CFF90" stroke-opacity="0.45" />
+  <text x="190" y="210" fill="#7CFF90" font-size="16" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="5">TEST RIG</text>
+  <text x="620" y="240" fill="#7CFF90" font-size="16" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="5">SENSORS</text>
+  <text x="380" y="470" fill="#FFFFFF" fill-opacity="0.6" font-size="20" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="4">WIND TUNNEL DATA</text>
+</svg>
