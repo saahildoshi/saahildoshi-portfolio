@@ -61,13 +61,6 @@ const PROJECTS: Project[] = [
     image: '/images/projects/arc.svg',
   },
   {
-    title: 'Georgia Hybrid Propulsion (GHP)',
-    href: '/projects/ghp',
-    summary: 'Propulsion test-stand integration, data pipelines, and safety documentation for hybrid motors.',
-    timeline: '2023',
-    image: '/images/project-ghp.svg',
-  },
-  {
     title: 'Level 1 Certification Fleet',
     href: '/projects/level1',
     summary: 'Tripoli/NAR Level 1 rockets built for reliability, telemetry integration, and mentorship.',
