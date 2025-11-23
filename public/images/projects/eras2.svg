@@ -1,0 +1,17 @@
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ERAS2 Project Card Placeholder</title>
+  <desc id="desc">Card artwork for ERAS2 ionic wind aircraft.</desc>
+  <defs>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1021" />
+      <stop offset="100%" stop-color="#0E172F" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#card)" />
+  <path d="M80 230 Q180 150 320 170 Q460 190 560 240" stroke="#7CFF90" stroke-width="3" fill="none" opacity="0.55" />
+  <rect x="150" y="140" width="340" height="70" rx="12" fill="#111C2F" stroke="#7CFF90" stroke-width="2" opacity="0.5" />
+  <rect x="170" y="155" width="300" height="40" rx="8" fill="#7CFF90" opacity="0.18" />
+  <circle cx="140" cy="110" r="24" fill="#7CFF90" opacity="0.18" />
+  <circle cx="520" cy="280" r="32" fill="#7CFF90" opacity="0.15" />
+  <text x="42" y="315" fill="#7CFF90" font-family="'Inter', 'Segoe UI', Arial" font-size="18" opacity="0.8">ERAS2 · Ionic wind engine + airframe integration</text>
+</svg>
