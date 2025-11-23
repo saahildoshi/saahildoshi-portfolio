@@ -35,7 +35,7 @@ const PROJECTS: ProjectCard[] = [
   {
     href: '/projects/nasa-sli',
     title: 'NASA Student Launch Initiative — Project RANCH',
-    subtitle: 'Carbon-fiber launch vehicle reaching a targeted 4,300 ft apogee with modular avionics and payload bay.',
+    subtitle: 'Fiberglass launch vehicle reaching a targeted 4,300 ft apogee with modular avionics and payload bay.',
     image: '/images/projects/sli.svg',
   },
   {
