@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#050509"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7CFF90" stop-opacity="0.3"/>
+      <stop offset="80%" stop-color="#7CFF90" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <rect width="900" height="900" fill="url(#glow)"/>
+  <path d="M180 630 C260 520 380 480 470 500 C560 520 660 590 740 620" stroke="#7CFF90" stroke-width="6" stroke-opacity="0.45" fill="none" stroke-linecap="round"/>
+  <circle cx="310" cy="560" r="5" fill="#7CFF90"/>
+  <circle cx="520" cy="520" r="5" fill="#7CFF90"/>
+  <circle cx="700" cy="600" r="5" fill="#7CFF90"/>
+  <text x="50" y="820" fill="#7CFF90" font-size="22" letter-spacing="6" font-family="'Inter', 'SF Pro Display', 'Segoe UI', sans-serif" font-weight="700">AMERICAN ROCKETRY CHALLENGE</text>
+  <text x="50" y="860" fill="#C7D4DF" font-size="28" font-family="'Inter', 'SF Pro Display', 'Segoe UI', sans-serif" font-weight="700">Co-Captain · Rank 24/1000</text>
+</svg>
