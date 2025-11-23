@@ -61,9 +61,9 @@ const PROJECTS: Project[] = [
     image: '/images/projects/arc.svg',
   },
   {
-    title: 'Level 1 Certification Fleet',
+    title: 'Level 1 Certification',
     href: '/projects/level1',
-    summary: 'Tripoli/NAR Level 1 rockets built for reliability, telemetry integration, and mentorship.',
+    summary: 'BEAMS Project',
     timeline: '2019–2022',
     image: '/images/project-level1.svg',
   },
