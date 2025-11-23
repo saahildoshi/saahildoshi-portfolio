@@ -96,15 +96,21 @@ const STRENGTHS: Strength[] = [
 const TIMELINE: TimelineItem[] = [
   {
     year: '2025',
-    title: 'NASA Student Launch Initiative — Project RANCH',
+    title: 'Level 1 Certification',
     detail:
-      'Payload Team Lead & Outreach Coordinator; 4300-ft high-power vehicle with redundant avionics, carbon-fiber airframes, and a flight-validated payload experiment.',
+      'Designing and constructing a high-power launch vehicle to carry a germinated-bean payload for G-force analysis, culminating in completion of the NAR Level 1 certification.',
   },
   {
     year: '2025',
     title: 'GHP Engineering — ERAS2 Ionic-Wind Aircraft',
     detail:
       'Designed and analyzed an electrohydrodynamic propulsion system; performed CFD analysis, power modeling, and team-based engineering challenge work.',
+  },
+  {
+    year: '2024',
+    title: 'NASA Student Launch Initiative — Project RANCH',
+    detail:
+      'Payload Team Lead & Outreach Coordinator; 4300-ft high-power vehicle with redundant avionics, carbon-fiber airframes, and a flight-validated payload experiment.',
   },
   {
     year: '2024',
@@ -135,12 +141,6 @@ const TIMELINE: TimelineItem[] = [
     title: 'Science Olympiad — Wright Stuff',
     detail:
       'Designed and built electric aircraft prototypes optimizing lift and endurance for state-level competition.',
-  },
-  {
-    year: '2022',
-    title: 'Early UAV & Rocketry Projects',
-    detail:
-      'Independent experimentation with drone airframes, wind-tunnel prototypes, and mid-power rocketry fundamentals.',
   },
 ];
 
