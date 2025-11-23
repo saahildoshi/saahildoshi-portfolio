@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import NextImage from 'next/image';
 
 import AnimatedHero from '@/components/animated/AnimatedHero';
 import AnimatedSection from '@/components/animated/AnimatedSection';
@@ -11,385 +11,304 @@ import { StatCard } from '@/components/layout/StatCard';
 import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
 
-type SpecRow = {
-  parameter: string;
-  initial: string;
-  final: string;
-};
-
-const SPECIFICATION_ROWS: SpecRow[] = [
-  {
-    parameter: 'Mission Altitude',
-    initial: '4,200–4,300 ft target band',
-    final: 'Nominal target apogee near 4,300 ft',
-  },
-  {
-    parameter: 'Vehicle Dimensions',
-    initial: 'Approximately 92 in × 4 in',
-    final: '92 in length × 4 in outer diameter',
-  },
-  {
-    parameter: 'Airframe',
-    initial: 'Generic composite tubing',
-    final: 'G12 fiberglass primary airframes with composite couplers',
-  },
-  {
-    parameter: 'Nose Cone',
-    initial: 'Ogive 3D-printed PETG',
-    final: 'Elliptical 3D-printed nose cone with adjustable infill for CG tuning',
-  },
-  {
-    parameter: 'Fins',
-    initial: 'Trapezoidal fin concept',
-    final: 'Laser-cut Delrin fins mounted to a removable fin can and thrust structure',
-  },
-  {
-    parameter: 'Motor',
-    initial: 'Candidate K-class motors (e.g., K550W, K695R)',
-    final: 'K-class AeroTech motor selected to satisfy altitude and thrust-to-weight constraints',
-  },
-  {
-    parameter: 'Recovery',
-    initial: 'Dual-deployment concept',
-    final: '18 in drogue at apogee; 48 in main near 650 ft AGL; redundant altimeters and dual charges',
-  },
-  {
-    parameter: 'Payload',
-    initial: 'Single data-logging experiment',
-    final: 'Acorn payload with STEMnaut, Featherweight GPS telemetry, and optional 360° camera integration',
-  },
+const stats = [
+  { label: 'Length', value: '92 in (4" diameter)' },
+  { label: 'Target Apogee', value: '4,200–4,300 ft' },
+  { label: 'Liftoff Mass', value: '16.6 lb with motor' },
 ];
 
-const TIMELINE_ENTRIES = [
-  { phase: 'Concept + PDR', detail: 'Systems trades, initial simulations, and documentation for NASA review.' },
-  { phase: 'CDR + Manufacturing', detail: 'Detailed design release, tooling, composite layups, and avionics prototyping.' },
-  { phase: 'Subscale + FDR', detail: 'Static tests, ejection testing, and readiness documentation.' },
-  { phase: 'Launch Readiness Review', detail: 'Final integration, checklists, and risk closure before flight campaign.' },
-  { phase: 'Flight Campaign', detail: 'Range operations at NASA SLI launch week with onsite data processing.' },
+const specificationRows = [
+  { parameter: 'Propulsion', value: 'AeroTech K1100T reload, K-class final selection' },
+  { parameter: 'Airframe', value: 'Roll-wrapped carbon-fiber body tubes; fiberglass couplers (final change)' },
+  { parameter: 'Fins', value: 'Delrin fins on a bolted, removable fin can with aluminum thrust structure' },
+  { parameter: 'Recovery', value: '18" drogue at apogee; 48" main at ~650 ft AGL; shear pins and dual deployment' },
+  { parameter: 'Avionics', value: 'Dual RRC3+ altimeters, independent power and charges, Featherweight GPS telemetry' },
+  { parameter: 'Payload', value: 'ACORN: STEMnaut, Featherweight GPS data return, max-V/apogee/landing time logging, 360° camera mount' },
+  { parameter: 'Stability', value: 'OpenRocket verified; stability maintained 1.6–2.0 calibers through burn (see stability table)' },
+  { parameter: 'Testing', value: 'Two full-scale test flights plus LRR launch in Huntsville, Alabama' },
 ];
 
-const TEAM_ROLES = [
-  { title: 'Systems Lead', description: 'Architecture definition, mass properties, interface management, and schedule control.' },
-  { title: 'Structures + Recovery', description: 'Composite layups, removable fin can, fiberglass couplers, and redundant ejection system.' },
-  { title: 'Avionics + GNC', description: 'Dual RRC3+ stack, Featherweight GPS, and electrical harnessing with EMI shielding.' },
-  { title: 'Payload Integration', description: 'Acorn module with STEMnaut, sensor interfaces, and quick-release mounting.' },
+const architectureFigures = [
+  { src: '/images/nasa-sli/Booster-CAD.jpg', caption: 'Booster CAD showing removable fin can and thrust structure.' },
+  { src: '/images/nasa-sli/Fin-Schematics.jpg', caption: 'Delrin fin geometry and mounting schematics.' },
+  { src: '/images/nasa-sli/NoseCone-and-Camera-Assembly.jpg', caption: 'Elliptical nose cone with integrated 360° camera mount and ballast.' },
+  { src: '/images/nasa-sli/Full-Rocket-Exploded-CAD.jpg', caption: 'Full-stack exploded CAD illustrating booster, avionics bay, and payload interfaces.' },
 ];
 
-const MEDIA_GALLERY = [
-  { src: '/images/gallery-flight-01.svg', caption: 'Full stack fit check before weigh-in.' },
-  { src: '/images/gallery-flight-02.svg', caption: 'Ejection testing with redundant altimeters firing.' },
-  { src: '/images/gallery-flight-03.svg', caption: 'Night-before launch operations planning session.' },
+const payloadFigures = [
+  { src: '/images/nasa-sli/Payload-Bay-Assembly.jpg', caption: 'ACORN payload bay assembly with STEMnaut and sensor mounting.' },
+  { src: '/images/nasa-sli/Camera-Holder.jpg', caption: '360° camera holder integrated ahead of the payload bay.' },
+  { src: '/images/nasa-sli/NoseCone-Dimensioned.jpg', caption: 'Dimensioned nose cone drawing used for mass properties and ballast tuning.' },
 ];
 
-function getMediaPlaceholder(index: number) {
-  return MEDIA_GALLERY[index % MEDIA_GALLERY.length]?.src ?? '/images/gallery-flight-01.svg';
-}
+const avionicsFigures = [
+  { src: '/images/nasa-sli/Av-Bay-Assembled.jpg', caption: 'Assembled avionics bay with dual altimeters and harnessing.' },
+  { src: '/images/nasa-sli/Av-Bay-Exploded.jpg', caption: 'Exploded avionics bay layout highlighting independent charge canisters.' },
+  { src: '/images/nasa-sli/Av-Bay-Sled.jpg', caption: 'Avionics sled with RRC3+ altimeters and GPS wiring routed for EMI mitigation.' },
+  { src: '/images/nasa-sli/Switchband-Dimensioned.jpg', caption: 'Switchband dimensions for safe external arming.' },
+  { src: '/images/nasa-sli/Seperation-Points.jpg', caption: 'Separation points and charge locations for dual deployment.' },
+  { src: '/images/nasa-sli/Wiring-Schematic.jpg', caption: 'Final wiring schematic with redundant power paths and independent charges.' },
+];
 
-type ProjectRanchPageProps = {
-  heroImage: string;
-  downloadUrl?: string;
-};
+const simulationFigures = [
+  { src: '/images/nasa-sli/Final-Open-Rocket.jpg', caption: 'Final OpenRocket simulation showing ascent and recovery events.' },
+  { src: '/images/nasa-sli/Stability-Table.jpg', caption: 'Stability margins table across flight phases.' },
+  { src: '/images/nasa-sli/Temperature-Graph.jpg', caption: 'Temperature profile during launch operations.' },
+  { src: '/images/nasa-sli/WindSpeed-Graph.jpg', caption: 'Wind speed profile across the flight window.' },
+  { src: '/images/nasa-sli/WindGust-Graph.jpg', caption: 'Wind gust measurements correlated to ascent timeline.' },
+];
 
-function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
-  const downloadsHref = downloadUrl ?? '#downloads';
+const flightFigures = [
+  { src: '/images/nasa-sli/Rocket-On-Pad-Picture.jpg', caption: 'Rocket on the pad before a full-scale test flight.' },
+  { src: '/images/nasa-sli/Rocket-Being-Carried-To-Pad-Picture.jpg', caption: 'Team transporting the vehicle to the rail at Huntsville.' },
+  { src: '/images/nasa-sli/Onsite-Setup-Photo.jpg', caption: 'Onsite setup with avionics arming and final checks.' },
+  { src: '/images/nasa-sli/LandingConfig-1.jpg', caption: 'Landing configuration from early testing.' },
+  { src: '/images/nasa-sli/LandingConfig-2.jpg', caption: 'Post-flight inspection of recovery connections.' },
+  { src: '/images/nasa-sli/LandingConfig-3.jpg', caption: 'Recovered vehicle showing intact airframe and payload interfaces.' },
+  { src: '/images/nasa-sli/Launch2-LandingConfig.jpg', caption: 'Second launch landing configuration with main deployment verified.' },
+  { src: '/images/nasa-sli/Launch2-LandingConfig-2.jpg', caption: 'Alternate view of landing configuration from test flight two.' },
+  { src: '/images/nasa-sli/Flight-Altimeter-Graph.jpg', caption: 'Flight altimeter data from full-scale test.' },
+  { src: '/images/nasa-sli/Simulated-Vs-Real-Altimeter-Graph.jpg', caption: 'Comparison of simulated vs. real altimeter data.' },
+];
 
+const galleryImages = [
+  'Final-Team-Photo-At-Hunstville-With-FinalPaintedRocket.jpg',
+  'Onsite-Setup-Photo.jpg',
+  'TeamPhoto.jpg',
+  'Launch2-LandingConfig-2.jpg',
+  'Launch2-LandingConfig.jpg',
+  'Rocket-On-Pad-Picture.jpg',
+  'Rocket-Being-Carried-To-Pad-Picture.jpg',
+  'AvBay-Assembled-RealLife-Picture.jpg',
+  'LandingConfig-3.jpg',
+  'LandingConfig-2.jpg',
+  'LandingConfig-1.jpg',
+  'OnSite-Setup-Picture.jpg',
+  'Temperature-Graph.jpg',
+  'WindGust-Graph.jpg',
+  'WindSpeed-Graph.jpg',
+  'Simulated-Vs-Real-Altimeter-Graph.jpg',
+  'Flight-Altimeter-Graph.jpg',
+  'NoseCone-RealLife-Image.jpg',
+  'Stability-Table.jpg',
+  'Wiring-Schematic.jpg',
+  'Seperation-Points.jpg',
+  'NoseCone-Dimensioned.jpg',
+  'Camera-Holder.jpg',
+  'Switchband-Dimensioned.jpg',
+  'Av-Bay-Sled.jpg',
+  'Av-Bay-Exploded.jpg',
+  'Av-Bay-Assembled.jpg',
+  'Full-Rocket-Exploded-CAD.jpg',
+  'Payload-Bay-Assembly.jpg',
+  'NoseCone-and-Camera-Assembly.jpg',
+  'Fin-Schematics.jpg',
+  'Booster-CAD.jpg',
+  'Final-Open-Rocket.jpg',
+  'Final-Dimensioned-Rocket.jpg',
+];
+
+export default function NasaSliPage() {
   return (
-    <div className="min-h-screen bg-primary text-primary-foreground">
-      <main className="pb-24">
-        <AnimatedHero
-          image={heroImage}
-          badge="NASA Student Launch Initiative · 2024–2025"
-          title="NASA Student Launch Initiative — Project RANCH"
-          subtitle="Project RANCH is a modular, high-power fiberglass launch vehicle developed by the Oconee County Rocketry Association for the NASA Student Launch Initiative. The rocket is designed to deliver a data-return payload to an apogee near 4,300 feet and to recover all vehicle sections safely using a redundant dual-deployment recovery system."
-          actions={
-            <>
-              <Button
-                asChild
-                size="lg"
-                className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
-              >
-                <a href="#media">View Gallery</a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full border-accentneongreen/50 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen/10"
-              >
-                <a
-                  href={downloadsHref}
-                  target={downloadUrl ? '_blank' : undefined}
-                  rel={downloadUrl ? 'noopener noreferrer' : undefined}
-                >
-                  Download Report
-                </a>
-              </Button>
-            </>
-          }
-        />
-
-        <AnimatedSection>
-          <Section id="overview" title="Executive Summary" kicker="Overview">
-            <div className="grid gap-6 md:grid-cols-3">
-              {[
-                { label: 'Dimensions', value: '92 in length × 4 in diameter' },
-                { label: 'Target Apogee', value: 'Nominal target near 4,300 ft' },
-                { label: 'Liftoff Mass', value: '~16.6 lb with motor' },
-              ].map((stat) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut' }}
-                >
-                  <StatCard label={stat.label} value={stat.value} />
-                </motion.div>
-              ))}
-            </div>
-            <p>
-              Project RANCH is a student-designed high-power rocket that satisfies the mission criteria of the NASA Student Launch Initiative. The vehicle is a 92-inch-long, 4-inch-diameter fiberglass launch system with an approximate liftoff mass of 16.6 pounds including motor. The design is organized into three primary sections: a booster, a central avionics bay, and a forward payload section capped by a 3D-printed elliptical nose cone with adjustable infill used for center-of-gravity control. The launch vehicle is optimized to reach an apogee near 4,300 feet while maintaining robust stability margins throughout powered and coasting flight.
-            </p>
-            <p>
-              Structurally, the rocket employs fiberglass airframes, laser-cut Delrin fins, and aluminum and fiberglass internal hardware to satisfy both performance and safety requirements. A dual-deployment recovery system uses an 18-inch Rocketman drogue at apogee and a 48-inch Rocketman main parachute at approximately 650 feet above ground level, with deployment events controlled by redundant RRC3+ altimeters and independent black-powder charges. The payload, titled “Acorn,” houses a STEMnaut figure, flight sensors, and a Featherweight GPS-based data transmission system that records and returns maximum velocity, apogee, and landing time to a ground receiver.
-            </p>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="specs" title="Key Specifications and Design Evolution" kicker="Technical">
-            <p>
-              The final configuration of Project RANCH reflects multiple design iterations informed by simulation, subscale testing, and integration constraints. The table below summarizes key parameters and how they evolved from the initial concept to the as-built flight vehicle.
-            </p>
-            <div className="overflow-hidden rounded-2xl border border-white/5">
-              <table className="min-w-full divide-y divide-white/10 text-left text-sm text-primary-foreground/80">
-                <thead className="bg-white/5 text-xs uppercase tracking-[0.3em] text-primary-foreground/70">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold">Parameter</th>
-                    <th className="px-4 py-3 font-semibold">Initial</th>
-                    <th className="px-4 py-3 font-semibold">Final</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5">
-                  {SPECIFICATION_ROWS.map((row, index) => (
-                    <tr key={row.parameter} className={index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}>
-                      <td className="px-4 py-4 text-white">{row.parameter}</td>
-                      <td className="px-4 py-4">{row.initial}</td>
-                      <td className="px-4 py-4">{row.final}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="vehicle" title="Vehicle Architecture" kicker="Structures">
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div className="space-y-4">
-                <p>
-                  The rocket consists of a modular booster, avionics bay, and payload stack joined through fiberglass couplers with shear pins. The removable fin can integrates Delrin fins, a 54 mm motor mount, and aluminum thrust structure that can be serviced without disturbing avionics wiring. Each bay is sealed with O-rings to protect avionics and to contain the pressure wave generated during ejection events.
-                </p>
-                <p>
-                  Mass properties were driven by a requirement to maintain a caliber of stability between 1.6 and 2.0 through burnout, even with propellant slosh and payload tolerances. Adjustable ballast within the elliptical nose cone tunes center of gravity while keeping the external geometry smooth for drag management.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <p>
-                  Recovery uses dual Rocketman parachutes sized from OpenRocket simulations to manage descent rates between 65 ft/s at drogue and 17 ft/s under main. Independent ejection charges with separate black-powder canisters and ematches allow any single fault to be isolated without loss of vehicle.
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {[{ label: 'Fin Root Thickness', value: '0.25 in Delrin' }, { label: 'Motor', value: 'AeroTech K-class' }].map(
-                    (stat) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.45, ease: 'easeOut' }}
-                      >
-                        <StatCard label={stat.label} value={stat.value} />
-                      </motion.div>
-                    ),
-                  )}
-                </div>
-              </div>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {[
-                { src: '/images/gallery-flight-01.svg', caption: 'Fiberglass tubes joined with keyed couplers.' },
-                { src: '/images/gallery-flight-02.svg', caption: 'Removable fin can showing Delrin fins and thrust plate.' },
-                { src: '/images/gallery-flight-03.svg', caption: 'Forward payload bay with threaded rods.' },
-              ].map((figure, index) => (
-                <motion.div
-                  key={figure.caption}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.04 }}
-                >
-                  <FigureCard src={figure.src} caption={figure.caption} />
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="payload" title="Acorn Payload" kicker="Payload">
-            <p>
-              Acorn hosts the STEMnaut outreach element, Featherweight GPS module, environmental sensing, and optional 360° camera integration. The payload slides into a custom aluminum chassis that mates with the avionics bay bulkhead through blind fasteners and a quick-disconnect wiring harness for rapid swap-outs during integration tests.
-            </p>
-            <p>
-              Data returned by Featherweight telemetry populates a real-time dashboard that ground crew use to verify mission success, including apogee, maximum acceleration, descent rate, and touchdown confirmation. Sensor data is simultaneously recorded on a Teensy-based logger for high-rate post-flight analysis.
-            </p>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="avionics" title="Avionics and Electrical" kicker="Avionics">
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div className="space-y-4">
-                <p>
-                  Redundant Missile Works RRC3+ altimeters manage drogue and main deployments with fully independent power systems and arming switches. Featherweight GPS provides continuous position updates while also acting as a tertiary flight computer in the event of an altimeter fault.
-                </p>
-                <p>
-                  Wiring harnesses are braided, labeled, and strain relieved at every bulkhead penetration. EMI shielding and isolated grounds keep the GPS data clean even when igniters fire. A dedicated service panel allows for battery swaps without opening the entire avionics bay.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {[{ label: 'Avionics Redundancy', value: 'Dual RRC3+ altimeters' }, { label: 'Telemetry', value: 'Featherweight GPS streaming' }, { label: 'Power', value: 'Isolated LiPo packs with keyed arming' }].map(
-                  (stat) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.45, ease: 'easeOut' }}
-                    >
-                      <StatCard label={stat.label} value={stat.value} />
-                    </motion.div>
-                  ),
-                )}
-              </div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="testing" title="Verification & Testing" kicker="Test Campaign">
-            <ul className="list-disc space-y-3 pl-6 text-primary-foreground/80">
-              <li>Subscale flights to validate stability margins and refine recovery sequencing.</li>
-              <li>Ground ejection tests to tune black-powder masses, shear pins, and parachute packing strategy.</li>
-              <li>Motor retention pull tests and fin flutter analysis to confirm structural margins through Mach transition.</li>
-              <li>Avionics-in-the-loop rehearsals where the full electrical stack fired ematches under simulated pressure loads.</li>
-            </ul>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="flight" title="Mission Operations" kicker="Flight">
-            <p>
-              Launch operations follow a rehearsed checklist that covers transport, pad setup, RF link verification, ignition, and recovery. Responsibilities are divided between pad crew, avionics, safety, and data. Each role reports through mission control prior to arming charges, ensuring compliance with NASA range requirements.
-            </p>
-            <p>
-              During flight, telemetry packets are logged to redundant laptops and mirrored to a cloud dashboard for remote mentors. Recovery teams track the vehicle using GPS breadcrumbs and maintain radio contact for situational awareness. Post-flight, the airframe is inspected, data is downloaded, and the mission report is updated within two hours of landing.
-            </p>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="safety" title="Safety and Risk Management" kicker="Safety">
-            <p>
-              Project RANCH implements a qualitative and quantitative hazard analysis updated at each design review. Failure modes are categorized by probability and severity with mitigation plans spanning design redundancy, procedural controls, and personal protective equipment. Range safety coordination includes NFPA 1127 compliance, Tripoli mentorship, and NASA safety reviews.
-            </p>
-            <p>
-              Every energetic component — black powder, igniters, LiPo batteries — is tracked in a serialized inventory with checkout and return logs. Training covers electrical safety, composite fabrication handling, and high-temperature motor operations.
-            </p>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="timeline" title="Program Timeline" kicker="Schedule">
-            <div className="grid gap-6 md:grid-cols-2">
-              {TIMELINE_ENTRIES.map((item, index) => (
-                <motion.div
-                  key={item.phase}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.03 }}
-                  className="rounded-2xl border border-white/5 bg-white/5 p-6"
-                >
-                  <p className="text-xs uppercase tracking-[0.35em] text-accentneongreen/70">{item.phase}</p>
-                  <p className="mt-3 text-primary-foreground/80">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="team" title="Team Composition" kicker="Team">
-            <div className="grid gap-6 md:grid-cols-2">
-              {TEAM_ROLES.map((role, index) => (
-                <motion.div
-                  key={role.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.03 }}
-                  className="rounded-2xl border border-white/5 bg-surface/70 p-6"
-                >
-                  <h3 className="text-xl font-semibold text-white">{role.title}</h3>
-                  <p className="mt-3 text-primary-foreground/80">{role.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="media" title="Mission Gallery" kicker="Media">
-            <div className="grid gap-6 md:grid-cols-3">
-              {MEDIA_GALLERY.map((item, index) => (
-                <motion.div
-                  key={item.caption}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
-                >
-                  <FigureCard src={item.src ?? getMediaPlaceholder(index)} caption={item.caption} />
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        <AnimatedSection>
-          <Section id="downloads" title="Downloads & Links" kicker="Resources">
-            <p>
-              Access to design reports, CAD exports, and checklists can be shared on request. Use the link below to request the latest technical package, compliance documents, or mentorship materials.
-            </p>
+    <div className="bg-primary text-primary-foreground">
+      <AnimatedHero
+        image="/images/nasa-sli/Final-Dimensioned-Rocket.jpg"
+        badge="NASA Student Launch Initiative · 2024–2025"
+        title="NASA Student Launch Initiative — Project RANCH"
+        subtitle="92-inch carbon-fiber launch vehicle targeting a 4,200–4,300 ft apogee with redundant dual-deployment recovery, K-class propulsion, and ACORN data-return payload."
+        actions={
+          <div className="flex flex-wrap items-center gap-4">
             <Button
               asChild
               size="lg"
               className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
             >
-              <Link href="/contact">
-                Request Documents
-                <ArrowUpRight className="ml-2 h-4 w-4" />
-              </Link>
+              <a href="#gallery">View Gallery</a>
             </Button>
-          </Section>
-        </AnimatedSection>
-      </main>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-accentneongreen/50 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen/10"
+            >
+              <a href="#downloads">Download Report</a>
+            </Button>
+          </div>
+        }
+      />
+
+      <AnimatedSection>
+        <Section id="overview" title="Executive Summary" kicker="Overview">
+          <div className="grid gap-6 md:grid-cols-3">
+            {stats.map((stat) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.45, ease: 'easeOut' }}
+              >
+                <StatCard label={stat.label} value={stat.value} />
+              </motion.div>
+            ))}
+          </div>
+          <p>
+            Project RANCH is the Oconee County Rocketry Association’s NASA SLI vehicle: a 92-inch, 4-inch-diameter carbon-fiber launch system with fiberglass couplers, Delrin fins on a removable fin can, and a K-class AeroTech motor. The vehicle maintains stability between 1.6 and 2.0 calibers throughout burn, employs dual RRC3+ altimeters with independent power and charges, and uses an 18-inch drogue with a 48-inch main deployed near 650 feet AGL.
+          </p>
+          <p>
+            After two full-scale test flights validated ascent stability, charge sizing, and recovery sequencing, the final launch in Huntsville reached approximately 4,300 feet—within the 4,200–4,300 foot target band—returning flight data via Featherweight GPS and the ACORN payload. Outreach objectives were fulfilled through STEM lessons and community events aligned with the NASA SLI outreach rubric.
+          </p>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="specifications" title="Specifications" kicker="CDR / FRR Data">
+          <p>
+            Final vehicle specifications reflect CDR, FRR, and LRR flysheet values, emphasizing a carbon-fiber primary structure, fiberglass couplers, and Delrin fin can architecture sized for the selected K1100T motor.
+          </p>
+          <div className="overflow-hidden rounded-2xl border border-white/5">
+            <table className="min-w-full divide-y divide-white/10 text-left text-sm text-primary-foreground/80">
+              <thead className="bg-white/5 text-xs uppercase tracking-[0.3em] text-primary-foreground/70">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Parameter</th>
+                  <th className="px-4 py-3 font-semibold">Final Value</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
+                {specificationRows.map((row, index) => (
+                  <tr key={row.parameter} className={index % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}>
+                    <td className="px-4 py-4 text-white">{row.parameter}</td>
+                    <td className="px-4 py-4">{row.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            <FigureCard src="/images/nasa-sli/Final-Dimensioned-Rocket.jpg" caption="Dimensioned flight vehicle with coupler interfaces and avionics bay layout." />
+            <FigureCard src="/images/nasa-sli/Stability-Table.jpg" caption="Stability margins and mass properties across ascent and recovery phases." />
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="architecture" title="Launch Vehicle Architecture" kicker="Structures">
+          <p>
+            The primary airframe uses roll-wrapped carbon fiber for strength-to-weight efficiency, paired with fiberglass couplers to simplify bonding and absorb landing loads. Delrin fins bolt into a removable fin can with an aluminum thrust structure around a 54 mm motor mount, allowing maintenance without disturbing avionics. The elliptical nose cone houses ballast and a camera mount while keeping a smooth profile for drag management.
+          </p>
+          <p>
+            Mechanical interfaces emphasize serviceability: shear pins secure each section, vent holes and O-rings manage internal pressure, and threaded inserts at the couplers allow repeated assembly. The final layout supports rapid field integration and protects avionics during high-energy deployment events.
+          </p>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {architectureFigures.map((figure) => (
+              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="payload" title="Payload – ACORN" kicker="Data Return">
+          <p>
+            ACORN provides real-time data return via Featherweight GPS, capturing maximum velocity, apogee, and landing time while carrying a STEMnaut outreach element and Insta360 integration. The payload bay interfaces with the forward coupler and nose cone, using dedicated mounting to isolate sensors from deployment loads.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {payloadFigures.map((figure) => (
+              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="avionics" title="Avionics & Recovery" kicker="Redundancy">
+          <p>
+            The avionics stack employs dual RRC3+ altimeters with independent batteries and charges, routed through an avionics sled designed for EMI control and clean harnessing. External arming via the switchband ensures safe ground ops, while charge wells and separation points isolate ejection events. Recovery uses an 18-inch drogue at apogee and a 48-inch main near 650 feet AGL, secured with shear pins and redundant igniters.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {avionicsFigures.map((figure) => (
+              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="simulation" title="Simulation & Ground Testing" kicker="Analysis">
+          <p>
+            OpenRocket simulations guided motor selection, stability management, and parachute sizing. Environmental data—temperature, wind speed, and gusts—were logged alongside ejection testing to correlate conditions with ascent performance. Stability margins were tracked throughout the burn and coast phases to validate the final center-of-gravity placement and fin planform.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {simulationFigures.map((figure) => (
+              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="flight" title="Flight Campaign" kicker="Test Flights & Huntsville">
+          <p>
+            Two full-scale test flights validated recovery sequencing, charge sizing, and avionics redundancy before launch week. The final flight in Huntsville, Alabama, achieved ~4,300 feet, matching simulation predictions and returning Featherweight GPS data and RRC3+ altimeter logs. Field operations emphasized pad prep discipline, independent arming checks, and rapid post-flight inspection of separation hardware and harnessing.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {flightFigures.map((figure) => (
+              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="outreach" title="Outreach & Community Impact" kicker="STEM Engagement">
+          <p>
+            Outreach commitments from the FRR were fulfilled through classroom lessons, CTAE Day participation, and community events that introduced elementary and middle school students to rocketry and aerospace engineering. Demonstrations covered aerodynamic forces, recovery principles, and the role of payload data in mission success, reinforcing NASA SLI’s emphasis on education alongside flight performance.
+          </p>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="gallery" title="Final Gallery" kicker="Media">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {galleryImages.map((filename) => (
+              <div key={filename} className="overflow-hidden rounded-2xl border border-white/5 bg-surface">
+                <div className="relative aspect-video w-full">
+                  <NextImage
+                    src={`/images/nasa-sli/${filename}`}
+                    alt={filename.replace(/-/g, ' ')}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                </div>
+                <div className="px-4 py-3 text-sm text-primary-foreground/70">{filename.replace(/-/g, ' ').replace(/\.jpg$/i, '')}</div>
+              </div>
+            ))}
+          </div>
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Section id="downloads" title="Downloads" kicker="Documentation">
+          <div className="flex flex-wrap gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
+            >
+              <Link href="#">Full Technical Report (PDF)</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-accentneongreen/50 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen/10"
+            >
+              <Link href="#">Drawings and Files (ZIP)</Link>
+            </Button>
+          </div>
+        </Section>
+      </AnimatedSection>
     </div>
   );
-}
-
-export default function Page() {
-  return <ProjectRanchPage heroImage="/images/nasa-sli-hero.svg" downloadUrl={undefined} />;
 }
