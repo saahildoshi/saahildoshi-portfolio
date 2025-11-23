@@ -31,7 +31,7 @@ const SPECIFICATION_ROWS: SpecRow[] = [
   {
     parameter: 'Airframe',
     initial: 'Generic composite tubing',
-    final: 'Roll-wrapped carbon-fiber primary airframes with composite couplers',
+    final: 'G12 fiberglass primary airframes with composite couplers',
   },
   {
     parameter: 'Nose Cone',
@@ -70,7 +70,7 @@ const TIMELINE_ENTRIES = [
 
 const TEAM_ROLES = [
   { title: 'Systems Lead', description: 'Architecture definition, mass properties, interface management, and schedule control.' },
-  { title: 'Structures + Recovery', description: 'Composite layups, removable fin can, carbon couplers, and redundant ejection system.' },
+  { title: 'Structures + Recovery', description: 'Composite layups, removable fin can, fiberglass couplers, and redundant ejection system.' },
   { title: 'Avionics + GNC', description: 'Dual RRC3+ stack, Featherweight GPS, and electrical harnessing with EMI shielding.' },
   { title: 'Payload Integration', description: 'Acorn module with STEMnaut, sensor interfaces, and quick-release mounting.' },
 ];
@@ -100,7 +100,7 @@ function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
           image={heroImage}
           badge="NASA Student Launch Initiative · 2024–2025"
           title="NASA Student Launch Initiative — Project RANCH"
-          subtitle="Project RANCH is a modular, high-power carbon-fiber launch vehicle developed by the Oconee County Rocketry Association for the NASA Student Launch Initiative. The rocket is designed to deliver a data-return payload to an apogee near 4,300 feet and to recover all vehicle sections safely using a redundant dual-deployment recovery system."
+          subtitle="Project RANCH is a modular, high-power fiberglass launch vehicle developed by the Oconee County Rocketry Association for the NASA Student Launch Initiative. The rocket is designed to deliver a data-return payload to an apogee near 4,300 feet and to recover all vehicle sections safely using a redundant dual-deployment recovery system."
           actions={
             <>
               <Button
@@ -148,10 +148,10 @@ function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
               ))}
             </div>
             <p>
-              Project RANCH is a student-designed high-power rocket that satisfies the mission criteria of the NASA Student Launch Initiative. The vehicle is a 92-inch-long, 4-inch-diameter carbon-fiber launch system with an approximate liftoff mass of 16.6 pounds including motor. The design is organized into three primary sections: a booster, a central avionics bay, and a forward payload section capped by a 3D-printed elliptical nose cone with adjustable infill used for center-of-gravity control. The launch vehicle is optimized to reach an apogee near 4,300 feet while maintaining robust stability margins throughout powered and coasting flight.
+              Project RANCH is a student-designed high-power rocket that satisfies the mission criteria of the NASA Student Launch Initiative. The vehicle is a 92-inch-long, 4-inch-diameter fiberglass launch system with an approximate liftoff mass of 16.6 pounds including motor. The design is organized into three primary sections: a booster, a central avionics bay, and a forward payload section capped by a 3D-printed elliptical nose cone with adjustable infill used for center-of-gravity control. The launch vehicle is optimized to reach an apogee near 4,300 feet while maintaining robust stability margins throughout powered and coasting flight.
             </p>
             <p>
-              Structurally, the rocket employs roll-wrapped carbon-fiber airframes, laser-cut Delrin fins, and aluminum and fiberglass internal hardware to satisfy both performance and safety requirements. A dual-deployment recovery system uses an 18-inch Rocketman drogue at apogee and a 48-inch Rocketman main parachute at approximately 650 feet above ground level, with deployment events controlled by redundant RRC3+ altimeters and independent black-powder charges. The payload, titled “Acorn,” houses a STEMnaut figure, flight sensors, and a Featherweight GPS-based data transmission system that records and returns maximum velocity, apogee, and landing time to a ground receiver.
+              Structurally, the rocket employs fiberglass airframes, laser-cut Delrin fins, and aluminum and fiberglass internal hardware to satisfy both performance and safety requirements. A dual-deployment recovery system uses an 18-inch Rocketman drogue at apogee and a 48-inch Rocketman main parachute at approximately 650 feet above ground level, with deployment events controlled by redundant RRC3+ altimeters and independent black-powder charges. The payload, titled “Acorn,” houses a STEMnaut figure, flight sensors, and a Featherweight GPS-based data transmission system that records and returns maximum velocity, apogee, and landing time to a ground receiver.
             </p>
           </Section>
         </AnimatedSection>
@@ -189,7 +189,7 @@ function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
             <div className="grid gap-8 lg:grid-cols-2">
               <div className="space-y-4">
                 <p>
-                  The rocket consists of a modular booster, avionics bay, and payload stack joined through carbon-fiber couplers with shear pins. The removable fin can integrates Delrin fins, a 54 mm motor mount, and aluminum thrust structure that can be serviced without disturbing avionics wiring. Each bay is sealed with O-rings to protect avionics and to contain the pressure wave generated during ejection events.
+                  The rocket consists of a modular booster, avionics bay, and payload stack joined through fiberglass couplers with shear pins. The removable fin can integrates Delrin fins, a 54 mm motor mount, and aluminum thrust structure that can be serviced without disturbing avionics wiring. Each bay is sealed with O-rings to protect avionics and to contain the pressure wave generated during ejection events.
                 </p>
                 <p>
                   Mass properties were driven by a requirement to maintain a caliber of stability between 1.6 and 2.0 through burnout, even with propellant slosh and payload tolerances. Adjustable ballast within the elliptical nose cone tunes center of gravity while keeping the external geometry smooth for drag management.
@@ -218,9 +218,9 @@ function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {[
-                { src: '/images/gallery-flight-01.svg', caption: 'Roll-wrapped carbon tubes joined with keyed couplers.' },
+                { src: '/images/gallery-flight-01.svg', caption: 'Fiberglass tubes joined with keyed couplers.' },
                 { src: '/images/gallery-flight-02.svg', caption: 'Removable fin can showing Delrin fins and thrust plate.' },
-                { src: '/images/gallery-flight-03.svg', caption: 'Forward payload bay with carbon stiffeners and harness.' },
+                { src: '/images/gallery-flight-03.svg', caption: 'Forward payload bay with threaded rods.' },
               ].map((figure, index) => (
                 <motion.div
                   key={figure.caption}
