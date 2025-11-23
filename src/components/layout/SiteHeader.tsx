@@ -20,10 +20,6 @@ const NAV_LINKS: NavLink[] = [
 export function SiteHeader() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith('/projects/nasa-sli')) {
-    return null;
-  }
-
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-primary/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
