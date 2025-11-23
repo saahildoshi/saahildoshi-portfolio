@@ -1,0 +1,16 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ERAS2 Airframe Placeholder</title>
+  <desc id="desc">Stylized wing and airfoil layout for ERAS2.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A1020" />
+      <stop offset="100%" stop-color="#0E1A32" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg2)" />
+  <path d="M140 320 Q320 200 480 220 Q640 240 820 340 L820 360 Q640 280 480 260 Q320 240 140 360 Z" fill="#101b2c" stroke="#7CFF90" stroke-width="2" opacity="0.55" />
+  <line x1="180" y1="310" x2="780" y2="330" stroke="#7CFF90" stroke-width="2" stroke-dasharray="8 8" opacity="0.6" />
+  <rect x="440" y="250" width="80" height="120" rx="10" fill="#142238" stroke="#7CFF90" stroke-width="2" opacity="0.5" />
+  <circle cx="480" cy="180" r="24" fill="#7CFF90" opacity="0.2" />
+  <text x="80" y="480" fill="#7CFF90" font-family="'Inter', 'Segoe UI', Arial" font-size="18" opacity="0.8">WASP-derived airfoil with rectangular V3 wing and engine hardpoints</text>
+</svg>
