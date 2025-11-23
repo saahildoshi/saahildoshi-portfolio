@@ -21,20 +21,20 @@ const PROJECTS: Project[] = [
     image: '/images/nasa-sli-hero.svg',
   },
   {
+    title: 'Bio-Inspired & AI Airfoil Research',
+    href: '/projects/uga-airfoil-research',
+    summary:
+      'Eight-week UGA research project comparing bio-inspired, AI-generated, and control airfoils using XFOIL, Fusion 360, 3D printing, and wind tunnel testing.',
+    timeline: 'Summer 2023',
+    image: '/images/projects/airfoil.svg',
+  },
+  {
     title: 'American Rocketry Challenge — National Finalist',
     href: '/projects/arc',
     summary:
       'Mid-power competition rocket engineered to reach 820 ft with a fragile egg payload, 43–46 second flight window, and 605 g mass limit, resulting in a top-24 national finish.',
     timeline: '2023',
     image: '/images/project-arc.svg',
-  },
-  {
-    title: 'Governor’s Honors Program — Mechanical & Aerospace Engineering',
-    href: '/projects/ghp-mechanical-aero',
-    summary:
-      'Four-week residential program in Mechanical & Aerospace Engineering with calculus-based physics, thermodynamics with Cantera, FFT in Python, multivariable calculus, and a multi-week applied engineering project.',
-    timeline: 'Summer 2024',
-    image: '/images/project-ghp.svg',
   },
   {
     title: 'ERAS2 — Ionic Wind Aircraft (GHP)',
@@ -45,20 +45,20 @@ const PROJECTS: Project[] = [
     image: '/images/projects/eras2.svg',
   },
   {
+    title: 'Governor’s Honors Program — Mechanical & Aerospace Engineering',
+    href: '/projects/ghp-mechanical-aero',
+    summary:
+      'Four-week residential program in Mechanical & Aerospace Engineering with calculus-based physics, thermodynamics with Cantera, FFT in Python, multivariable calculus, and a multi-week applied engineering project.',
+    timeline: 'Summer 2024',
+    image: '/images/project-ghp.svg',
+  },
+  {
     title: 'Civil Air Patrol — Cadet Captain & Squadron Commander',
     href: '/projects/civil-air-patrol',
     summary:
       'Cadet Captain leading ~30 cadets and 15 senior members through weekly aerospace education, leadership training, and special events at Ben Epps Airport.',
     timeline: 'Ongoing',
     image: '/images/projects/arc.svg',
-  },
-  {
-    title: 'Bio-Inspired & AI Airfoil Research',
-    href: '/projects/uga-airfoil-research',
-    summary:
-      'Eight-week UGA research project comparing bio-inspired, AI-generated, and control airfoils using XFOIL, Fusion 360, 3D printing, and wind tunnel testing.',
-    timeline: 'Summer 2023',
-    image: '/images/projects/airfoil.svg',
   },
   {
     title: 'Level 1 Certification Fleet',

@@ -10,17 +10,6 @@ import { StatCard } from '@/components/layout/StatCard';
 import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
 
-const NAV_ITEMS = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'constraints', label: 'Mission & Constraints' },
-  { id: 'engine', label: 'Engine System' },
-  { id: 'airframe', label: 'Airframe & Airfoils' },
-  { id: 'testing', label: 'Testing & Data' },
-  { id: 'integration', label: 'Integration & Readiness' },
-  { id: 'reflection', label: 'Lessons' },
-  { id: 'references', label: 'Research' },
-];
-
 const HERO_STATS = [
   { label: 'Program Length', value: '4 weeks · GHP Mechanical & Aerospace Engineering' },
   { label: 'Propulsion', value: 'Electrohydrodynamic (ionic wind) engine' },
@@ -70,17 +59,6 @@ export default function Eras2ProjectPage() {
           </div>
         )}
       />
-
-      <div className="sticky top-16 z-20 border-b border-white/5 bg-primary/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl gap-4 overflow-x-auto px-6 py-3 text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-primary-foreground/70">
-          {NAV_ITEMS.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="shrink-0 transition hover:text-accentneongreen">
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </div>
-
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
         <AnimatedSection>
           <div className="grid gap-6 md:grid-cols-3">

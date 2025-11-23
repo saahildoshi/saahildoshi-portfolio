@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
 
 import AnimatedHero from '@/components/animated/AnimatedHero';
 import AnimatedSection from '@/components/animated/AnimatedSection';
@@ -11,22 +10,6 @@ import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
 import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
-import { useScrollSpy } from '@/hooks/useScrollSpy';
-
-const NAV_ITEMS = [
-  { label: 'Overview', id: 'overview' },
-  { label: 'Specs', id: 'specs' },
-  { label: 'Vehicle', id: 'vehicle' },
-  { label: 'Payload', id: 'payload' },
-  { label: 'Avionics', id: 'avionics' },
-  { label: 'Testing', id: 'testing' },
-  { label: 'Flight', id: 'flight' },
-  { label: 'Safety', id: 'safety' },
-  { label: 'Timeline', id: 'timeline' },
-  { label: 'Team', id: 'team' },
-  { label: 'Media', id: 'media' },
-  { label: 'Downloads', id: 'downloads' },
-];
 
 type SpecRow = {
   parameter: string;
@@ -109,58 +92,9 @@ type ProjectRanchPageProps = {
 
 function ProjectRanchPage({ heroImage, downloadUrl }: ProjectRanchPageProps) {
   const downloadsHref = downloadUrl ?? '#downloads';
-  const sectionIds = useMemo(() => NAV_ITEMS.map((item) => item.id), []);
-  const activeId = useScrollSpy(sectionIds);
 
   return (
     <div className="min-h-screen bg-primary text-primary-foreground">
-      <header className="sticky top-0 z-50 border-b border-white/5 bg-primary/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.32em] text-accentneongreen">
-            Saahil Doshi
-          </Link>
-          <nav className="hidden items-center gap-6 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-primary-foreground/70 lg:flex">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className={
-                  activeId === item.id ? 'text-accentneongreen' : 'transition hover:text-accentneongreen text-primary-foreground/60'
-                }
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <Button
-            asChild
-            size="lg"
-            className="hidden rounded-full border border-accentneongreen/30 bg-accentneongreen/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen hover:text-primary lg:inline-flex"
-          >
-            <Link href="/contact">
-              Mission Inquiry
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-        <motion.div
-          initial={{ y: -12, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="flex gap-4 overflow-x-auto border-t border-white/5 px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-primary-foreground/60 lg:hidden"
-        >
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={activeId === item.id ? 'shrink-0 text-accentneongreen' : 'shrink-0 transition hover:text-accentneongreen'}
-            >
-              {item.label}
-            </a>
-          ))}
-        </motion.div>
-      </header>
-
       <main className="pb-24">
         <AnimatedHero
           image={heroImage}
