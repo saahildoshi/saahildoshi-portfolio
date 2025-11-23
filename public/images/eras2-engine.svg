@@ -1,0 +1,26 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ERAS2 Ionic Engine Placeholder</title>
+  <desc id="desc">Stylized diagram of ionic engine modules and brackets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A0F1E" />
+      <stop offset="100%" stop-color="#0D152A" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)" />
+  <rect x="140" y="140" width="680" height="80" rx="10" fill="#111C2F" stroke="#7CFF90" stroke-width="2" opacity="0.5" />
+  <rect x="140" y="240" width="680" height="80" rx="10" fill="#111C2F" stroke="#7CFF90" stroke-width="2" opacity="0.5" />
+  <rect x="140" y="340" width="680" height="80" rx="10" fill="#111C2F" stroke="#7CFF90" stroke-width="2" opacity="0.5" />
+  <g stroke="#7CFF90" stroke-width="3" opacity="0.7">
+    <line x1="200" y1="140" x2="200" y2="420" />
+    <line x1="480" y1="140" x2="480" y2="420" />
+    <line x1="760" y1="140" x2="760" y2="420" />
+  </g>
+  <g stroke="#7CFF90" stroke-width="2" opacity="0.6">
+    <line x1="200" y1="180" x2="760" y2="180" stroke-dasharray="6 8" />
+    <line x1="200" y1="280" x2="760" y2="280" stroke-dasharray="6 8" />
+    <line x1="200" y1="380" x2="760" y2="380" stroke-dasharray="6 8" />
+  </g>
+  <circle cx="480" cy="90" r="26" fill="#7CFF90" opacity="0.2" />
+  <text x="60" y="500" fill="#7CFF90" font-family="'Inter', 'Segoe UI', Arial" font-size="18" opacity="0.8">Modular ionic engine units with acrylic brackets and sheet-metal electrodes</text>
+</svg>

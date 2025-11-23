@@ -1,0 +1,14 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="proj-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#050509" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="26" fill="url(#proj-bg)" />
+  <rect x="90" y="150" width="460" height="120" rx="18" stroke="#7CFF90" stroke-opacity="0.45" fill="#0F172A" />
+  <path d="M120 220 C240 170 420 160 520 200" stroke="#7CFF90" stroke-width="4" stroke-opacity="0.55" fill="none" />
+  <path d="M130 245 C260 210 420 210 510 235" stroke="#7CFF90" stroke-width="3" stroke-opacity="0.35" fill="none" />
+  <text x="120" y="130" fill="#7CFF90" font-size="16" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="6">AIRFOIL RESEARCH</text>
+  <text x="120" y="310" fill="#FFFFFF" fill-opacity="0.7" font-size="14" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="3">BIO-INSPIRED • GENERATIVE AI • WIND TUNNEL</text>
+</svg>
