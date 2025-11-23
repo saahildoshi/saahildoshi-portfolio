@@ -94,12 +94,56 @@ const STRENGTHS: Strength[] = [
 ];
 
 const TIMELINE: TimelineItem[] = [
-  { year: '2025', title: 'NASA SLI — Project RANCH', detail: 'Full-stack vehicle design, avionics integration, and payload operations.' },
-  { year: '2024', title: 'GHP Internship — Bio-Inspired Airfoils', detail: 'Morphing airfoil research with wind tunnel validation and data reduction.' },
-  { year: '2024', title: 'ARC Nationals — Rank 24/1000', detail: 'Team co-captain leading aerodynamic refinement and reliability testing.' },
-  { year: '2023', title: 'L1 High-Power Certification', detail: 'Certification flight with redundant recovery and composite construction.' },
-  { year: '2022', title: 'UAV & Drone Design Projects', detail: 'Early experimentation with lightweight airframes and propulsion integration.' },
+  {
+    year: '2025',
+    title: 'NASA Student Launch Initiative — Project RANCH',
+    detail:
+      'Payload Team Lead & Outreach Coordinator; 4300-ft high-power vehicle with redundant avionics, carbon-fiber airframes, and a flight-validated payload experiment.',
+  },
+  {
+    year: '2025',
+    title: 'GHP Engineering — ERAS2 Ionic-Wind Aircraft',
+    detail:
+      'Designed and analyzed an electrohydrodynamic propulsion system; performed CFD analysis, power modeling, and team-based engineering challenge work.',
+  },
+  {
+    year: '2024',
+    title: 'UGA Aerospace Research Internship',
+    detail:
+      'Bio-inspired & AI-generated airfoil research using XFOIL CFD, Fusion CAD, 3D printing, and wind-tunnel validation; produced region-winning science fair project.',
+  },
+  {
+    year: '2024',
+    title: 'American Rocketry Challenge — Nationals (Top 24/1000)',
+    detail:
+      'Co-Captain leading aerodynamic optimization, OpenRocket simulations, altitude control through adjustable ballast, and iterative test flights.',
+  },
+  {
+    year: '2024',
+    title: 'Civil Air Patrol — Cadet Commander',
+    detail:
+      'Commander of a 45-member squadron; oversight of weekly aerospace training, operations, leadership development, and major STEM/aviation events.',
+  },
+  {
+    year: '2023',
+    title: 'Level 1 High-Power Rocketry Certification',
+    detail:
+      'Completed certification flight with composite airframe, safe deployment sequencing, and documented verification procedures.',
+  },
+  {
+    year: '2023',
+    title: 'Science Olympiad — Wright Stuff',
+    detail:
+      'Designed and built electric aircraft prototypes optimizing lift and endurance for state-level competition.',
+  },
+  {
+    year: '2022',
+    title: 'Early UAV & Rocketry Projects',
+    detail:
+      'Independent experimentation with drone airframes, wind-tunnel prototypes, and mid-power rocketry fundamentals.',
+  },
 ];
+
 
 export default function HomePage() {
   return (
