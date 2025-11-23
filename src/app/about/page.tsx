@@ -135,14 +135,19 @@ export default function AboutPage() {
       <Section id="beyond" title="Beyond engineering" kicker="Balance">
         <div className="space-y-4 text-primary-foreground/80">
           <p>
-            Outside of my engineering work, I am active in marching band and varsity tennis. As Front Ensemble Leader in the
-            Oconee County High School Warrior Marching Band, I help new members adapt to the pace and expectations of
-            competition, focusing on both musical precision and section culture.
+            Outside of engineering, I stay grounded through activities that challenge me to lead, collaborate, and support my community. These roles have shaped how I work under pressure and how I contribute to the groups I’m part of.
           </p>
           <p>
-            I also play on the varsity tennis team, where I have served in key positions such as 3 singles and 2 doubles. In
-            both activities, I mentor younger students, lead by example, and learn how to stay composed under pressure — skills
-            that translate directly into engineering projects and leadership roles.
+            For two years, I was a member of the Oconee County High School Warrior Marching Band. Although I’m no longer in band, the countless hours of rehearsal and competition taught me discipline, attention to detail, and the importance of maintaining composure during high-pressure performances. Those lessons remain foundational to how I approach engineering problems and team leadership today.
+          </p>
+          <p>
+            I currently serve as the Secretary of the Oconee County High School Student Council, where I manage attendance, keep records, coordinate communication, and support decision-making during meetings. I also help plan and execute major events — including our Homecoming activities, dance logistics, and the Homecoming Parade, which our council launched for the first time last year. These responsibilities have strengthened my organizational skills, my ability to work across teams, and my willingness to step into high-visibility leadership roles.
+          </p>
+          <p>
+          Athletics is another important part of my life. As a Varsity tennis player, I’ve contributed both on and off the court. Beyond competing at a high level, I helped organize and run a UTR tennis tournament at our school’s courts — an event that raised over $500 for our tennis program and brought together dozens of players from around the community. Coordinating the tournament taught me how to manage logistics, work with adults and sponsors, and create a positive environment for healthy competition.
+          </p>
+          <p>
+          These activities may seem separate from engineering, but they sharpen the same skills I depend on in aerospace: consistent discipline, clear communication, teamwork, and the ability to lead under pressure. Together, they form the foundation of how I balance my academic, engineering, and personal commitments.
           </p>
         </div>
       </Section>
