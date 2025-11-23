@@ -1,0 +1,26 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ERAS2 Ionic Wind Aircraft Placeholder</title>
+  <desc id="desc">Abstract neon illustration of an ionic wind aircraft concept.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1021" />
+      <stop offset="100%" stop-color="#0E172F" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CFF90" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#7CFF90" stop-opacity="0.45" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#grad)"/>
+  <circle cx="180" cy="140" r="90" fill="#7CFF90" opacity="0.12"/>
+  <circle cx="1100" cy="540" r="120" fill="#7CFF90" opacity="0.08"/>
+  <path d="M200 380 Q640 250 1080 370" stroke="url(#accent)" stroke-width="4" fill="none" stroke-linecap="round" />
+  <path d="M240 410 Q640 300 1040 430" stroke="#7CFF90" stroke-width="2" fill="none" opacity="0.45" />
+  <rect x="360" y="330" width="560" height="90" rx="12" fill="#101929" stroke="#7CFF90" stroke-width="2" opacity="0.5"/>
+  <rect x="380" y="348" width="520" height="54" rx="8" fill="url(#accent)" opacity="0.4"/>
+  <line x1="420" y1="402" x2="420" y2="460" stroke="#7CFF90" stroke-width="3" opacity="0.6" />
+  <line x1="860" y1="402" x2="860" y2="465" stroke="#7CFF90" stroke-width="3" opacity="0.6" />
+  <path d="M360 420 Q640 520 920 420" stroke="#7CFF90" stroke-width="2" fill="none" opacity="0.5" />
+  <text x="80" y="650" fill="#7CFF90" font-family="'Inter', 'Segoe UI', Arial" font-size="22" opacity="0.8">Electrohydrodynamic Remote Aircraft System</text>
+  <text x="80" y="680" fill="#7CFF90" font-family="'Inter', 'Segoe UI', Arial" font-size="16" opacity="0.6">Placeholder illustration for the ERAS2 ionic wind engine and wing integration</text>
+</svg>
