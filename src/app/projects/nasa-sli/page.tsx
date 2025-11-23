@@ -4,12 +4,16 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import NextImage from 'next/image';
 
-import AnimatedHero from '@/components/animated/AnimatedHero';
 import AnimatedSection from '@/components/animated/AnimatedSection';
 import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
-import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
+
+type MediaItem = {
+  src: string;
+  caption: string;
+  orientation?: 'portrait' | 'landscape';
+};
 
 const stats = [
   { label: 'Length', value: '92 in (4" diameter)' },
@@ -28,114 +32,181 @@ const specificationRows = [
   { parameter: 'Testing', value: 'Two full-scale test flights plus LRR launch in Huntsville, Alabama' },
 ];
 
-const architectureFigures = [
-  { src: '/images/nasa-sli/Booster-CAD.png', caption: 'Booster CAD showing removable fin can and thrust structure.' },
-  { src: '/images/nasa-sli/Fin-Schematics.png', caption: 'Delrin fin geometry and mounting schematics.' },
-  { src: '/images/nasa-sli/NoseCone-and-Camera-Assembly.png', caption: 'Elliptical nose cone with integrated 360° camera mount and ballast.' },
-  { src: '/images/nasa-sli/Full-Rocket-Exploded-CAD.png', caption: 'Full-stack exploded CAD illustrating booster, avionics bay, and payload interfaces.' },
+const architectureFigures: MediaItem[] = [
+  { src: '/images/nasa-sli/Booster-CAD.jpg', caption: 'Booster CAD showing removable fin can and thrust structure.' },
+  { src: '/images/nasa-sli/Fin-Schematics.jpg', caption: 'Delrin fin geometry and mounting schematics.' },
+  { src: '/images/nasa-sli/NoseCone-and-Camera-Assembly.jpg', caption: 'Elliptical nose cone with integrated 360° camera mount and ballast.' },
+  { src: '/images/nasa-sli/Full-Rocket-Exploded-CAD.jpg', caption: 'Full-stack exploded CAD illustrating booster, avionics bay, and payload interfaces.' },
 ];
 
-const payloadFigures = [
-  { src: '/images/nasa-sli/Payload-Bay-Assembly.png', caption: 'ACORN payload bay assembly with STEMnaut and sensor mounting.' },
-  { src: '/images/nasa-sli/Camera-Holder.png', caption: '360° camera holder integrated ahead of the payload bay.' },
-  { src: '/images/nasa-sli/NoseCone-Dimensioned.png', caption: 'Dimensioned nose cone drawing used for mass properties and ballast tuning.' },
+const payloadFigures: MediaItem[] = [
+  { src: '/images/nasa-sli/Payload-Bay-Assembly.jpg', caption: 'ACORN payload bay assembly with STEMnaut and sensor mounting.' },
+  { src: '/images/nasa-sli/Camera-Holder.jpg', caption: '360° camera holder integrated ahead of the payload bay.', orientation: 'portrait' },
+  { src: '/images/nasa-sli/NoseCone-Dimensioned.jpg', caption: 'Dimensioned nose cone drawing used for mass properties and ballast tuning.', orientation: 'portrait' },
 ];
 
-const avionicsFigures = [
-  { src: '/images/nasa-sli/Av-Bay-Assembled.png', caption: 'Assembled avionics bay with dual altimeters and harnessing.' },
-  { src: '/images/nasa-sli/Av-Bay-Exploded.png', caption: 'Exploded avionics bay layout highlighting independent charge canisters.' },
-  { src: '/images/nasa-sli/Av-Bay-Sled.png', caption: 'Avionics sled with RRC3+ altimeters and GPS wiring routed for EMI mitigation.' },
-  { src: '/images/nasa-sli/Switchband-Dimensioned.png', caption: 'Switchband dimensions for safe external arming.' },
-  { src: '/images/nasa-sli/Seperation-Points.png', caption: 'Separation points and charge locations for dual deployment.' },
-  { src: '/images/nasa-sli/Wiring-Schematic.png', caption: 'Final wiring schematic with redundant power paths and independent charges.' },
+const avionicsFigures: MediaItem[] = [
+  { src: '/images/nasa-sli/Av-Bay-Assembled.jpg', caption: 'Assembled avionics bay with dual altimeters and harnessing.', orientation: 'portrait' },
+  { src: '/images/nasa-sli/Av-Bay-Exploded.jpg', caption: 'Exploded avionics bay layout highlighting independent charge canisters.' },
+  { src: '/images/nasa-sli/Av-Bay-Sled.jpg', caption: 'Avionics sled with RRC3+ altimeters and GPS wiring routed for EMI mitigation.', orientation: 'portrait' },
+  { src: '/images/nasa-sli/Switchband-Dimensioned.jpg', caption: 'Switchband dimensions for safe external arming.', orientation: 'portrait' },
+  { src: '/images/nasa-sli/Seperation-Points.jpg', caption: 'Separation points and charge locations for dual deployment.' },
+  { src: '/images/nasa-sli/Wiring-Schematic.jpg', caption: 'Final wiring schematic with redundant power paths and independent charges.', orientation: 'portrait' },
 ];
 
-const simulationFigures = [
-  { src: '/images/nasa-sli/Final-Open-Rocket.png', caption: 'Final OpenRocket simulation showing ascent and recovery events.' },
-  { src: '/images/nasa-sli/Stability-Table.png', caption: 'Stability margins table across flight phases.' },
-  { src: '/images/nasa-sli/Temperature-Graph.png', caption: 'Temperature profile during launch operations.' },
-  { src: '/images/nasa-sli/WindSpeed-Graph.png', caption: 'Wind speed profile across the flight window.' },
-  { src: '/images/nasa-sli/WindGust-Graph.png', caption: 'Wind gust measurements correlated to ascent timeline.' },
+const simulationFigures: MediaItem[] = [
+  { src: '/images/nasa-sli/Final-Open-Rocket.jpg', caption: 'Final OpenRocket simulation showing ascent and recovery events.' },
+  { src: '/images/nasa-sli/Stability-Table.jpg', caption: 'Stability margins table across flight phases.' },
+  { src: '/images/nasa-sli/Temperature-Graph.jpg', caption: 'Temperature profile during launch operations.' },
+  { src: '/images/nasa-sli/WindSpeed-Graph.jpg', caption: 'Wind speed profile across the flight window.' },
+  { src: '/images/nasa-sli/WindGust-Graph.jpg', caption: 'Wind gust measurements correlated to ascent timeline.' },
 ];
 
-const flightFigures = [
-  { src: '/images/nasa-sli/Rocket-On-Pad-Picture.png', caption: 'Rocket on the pad before a full-scale test flight.' },
-  { src: '/images/nasa-sli/Rocket-Being-Carried-To-Pad-Picture.png', caption: 'Team transporting the vehicle to the rail at Huntsville.' },
-  { src: '/images/nasa-sli/Onsite-Setup-Photo.png', caption: 'Onsite setup with avionics arming and final checks.' },
-  { src: '/images/nasa-sli/LandingConfig-1.png', caption: 'Landing configuration from early testing.' },
-  { src: '/images/nasa-sli/LandingConfig-2.png', caption: 'Post-flight inspection of recovery connections.' },
-  { src: '/images/nasa-sli/LandingConfig-3.png', caption: 'Recovered vehicle showing intact airframe and payload interfaces.' },
-  { src: '/images/nasa-sli/Launch2-LandingConfig.png', caption: 'Second launch landing configuration with main deployment verified.' },
-  { src: '/images/nasa-sli/Launch2-LandingConfig-2.png', caption: 'Alternate view of landing configuration from test flight two.' },
-  { src: '/images/nasa-sli/Flight-Altimeter-Graph.png', caption: 'Flight altimeter data from full-scale test.' },
-  { src: '/images/nasa-sli/Simulated-Vs-Real-Altimeter-Graph.png', caption: 'Comparison of simulated vs. real altimeter data.' },
+const flightFigures: MediaItem[] = [
+  { src: '/images/nasa-sli/Rocket-On-Pad-Picture.jpg', caption: 'Rocket on the pad before a full-scale test flight.' },
+  { src: '/images/nasa-sli/Rocket-Being-Carried-To-Pad-Picture.jpg', caption: 'Team transporting the vehicle to the rail at Huntsville.' },
+  { src: '/images/nasa-sli/Onsite-Setup-Photo.jpg', caption: 'Onsite setup with avionics arming and final checks.' },
+  { src: '/images/nasa-sli/LandingConfig-1.jpg', caption: 'Landing configuration from early testing.' },
+  { src: '/images/nasa-sli/LandingConfig-2.jpg', caption: 'Post-flight inspection of recovery connections.' },
+  { src: '/images/nasa-sli/LandingConfig-3.jpg', caption: 'Recovered vehicle showing intact airframe and payload interfaces.' },
+  { src: '/images/nasa-sli/Launch2-LandingConfig.jpg', caption: 'Second launch landing configuration with main deployment verified.' },
+  { src: '/images/nasa-sli/Launch2-LandingConfig-2.jpg', caption: 'Alternate view of landing configuration from test flight two.' },
+  { src: '/images/nasa-sli/Flight-Altimeter-Graph.jpg', caption: 'Flight altimeter data from full-scale test.' },
+  { src: '/images/nasa-sli/Simulated-Vs-Real-Altimeter-Graph.jpg', caption: 'Comparison of simulated vs. real altimeter data.' },
 ];
 
 const galleryImages = [
-  'Final-Team-Photo-At-Hunstville-With-FinalPaintedRocket.png',
-  'Onsite-Setup-Photo.png',
-  'TeamPhoto.png',
-  'Launch2-LandingConfig-2.png',
-  'Launch2-LandingConfig.png',
-  'Rocket-On-Pad-Picture.png',
-  'Rocket-Being-Carried-To-Pad-Picture.png',
-  'AvBay-Assembled-RealLife-Picture.png',
-  'LandingConfig-3.png',
-  'LandingConfig-2.png',
-  'LandingConfig-1.png',
-  'OnSite-Setup-Picture.png',
-  'Temperature-Graph.png',
-  'WindGust-Graph.png',
-  'WindSpeed-Graph.png',
-  'Simulated-Vs-Real-Altimeter-Graph.png',
-  'Flight-Altimeter-Graph.png',
-  'NoseCone-RealLife-Image.png',
-  'Stability-Table.png',
-  'Wiring-Schematic.png',
-  'Seperation-Points.png',
-  'NoseCone-Dimensioned.png',
-  'Camera-Holder.png',
-  'Switchband-Dimensioned.png',
-  'Av-Bay-Sled.png',
-  'Av-Bay-Exploded.png',
-  'Av-Bay-Assembled.png',
-  'Full-Rocket-Exploded-CAD.png',
-  'Payload-Bay-Assembly.png',
-  'NoseCone-and-Camera-Assembly.png',
-  'Fin-Schematics.png',
-  'Booster-CAD.png',
-  'Final-Open-Rocket.png',
-  'Final-Dimensioned-Rocket.png',
+  'Final-Team-Photo-At-Hunstville-With-FinalPaintedRocket.jpg',
+  'Onsite-Setup-Photo.jpg',
+  'TeamPhoto.jpg',
+  'Launch2-LandingConfig-2.jpg',
+  'Launch2-LandingConfig.jpg',
+  'Rocket-On-Pad-Picture.jpg',
+  'Rocket-Being-Carried-To-Pad-Picture.jpg',
+  'AvBay-Assembled-RealLife-Picture.jpg',
+  'LandingConfig-3.jpg',
+  'LandingConfig-2.jpg',
+  'LandingConfig-1.jpg',
+  'OnSite-Setup-Picture.jpg',
+  'Temperature-Graph.jpg',
+  'WindGust-Graph.jpg',
+  'WindSpeed-Graph.jpg',
+  'Simulated-Vs-Real-Altimeter-Graph.jpg',
+  'Flight-Altimeter-Graph.jpg',
+  'NoseCone-RealLife-Image.jpg',
+  'Stability-Table.jpg',
+  'Wiring-Schematic.jpg',
+  'Seperation-Points.jpg',
+  'NoseCone-Dimensioned.jpg',
+  'Camera-Holder.jpg',
+  'Switchband-Dimensioned.jpg',
+  'Av-Bay-Sled.jpg',
+  'Av-Bay-Exploded.jpg',
+  'Av-Bay-Assembled.jpg',
+  'Full-Rocket-Exploded-CAD.jpg',
+  'Payload-Bay-Assembly.jpg',
+  'NoseCone-and-Camera-Assembly.jpg',
+  'Fin-Schematics.jpg',
+  'Booster-CAD.jpg',
+  'Final-Open-Rocket.jpg',
+  'Final-Dimensioned-Rocket.jpg',
 ];
+
+const portraitGalleryImages = new Set([
+  'NoseCone-RealLife-Image.jpg',
+  'NoseCone-Dimensioned.jpg',
+  'Switchband-Dimensioned.jpg',
+  'Av-Bay-Sled.jpg',
+  'Wiring-Schematic.jpg',
+  'Camera-Holder.jpg',
+  'Av-Bay-Assembled.jpg',
+  'Av-Bay-Exploded.jpg',
+  'AvBay-Assembled-RealLife-Picture.jpg',
+]);
+
+function MediaCard({ src, caption, orientation = 'landscape' }: MediaItem) {
+  const aspect = orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video';
+
+  return (
+    <div className="space-y-3">
+      <div className={`relative w-full ${aspect} overflow-hidden rounded-xl border border-white/10`}>
+        <NextImage
+          src={src}
+          alt={caption}
+          fill
+          className="object-contain p-4"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+      <div className="text-sm text-primary-foreground/70">{caption}</div>
+    </div>
+  );
+}
+
+function GalleryCard({ filename, orientation }: { filename: string; orientation: 'landscape' | 'portrait' }) {
+  const aspect = orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video';
+  const caption = filename.replace(/-/g, ' ').replace(/\.jpg$/i, '');
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className={`relative w-full ${aspect} overflow-hidden rounded-xl border border-white/10`}>
+        <NextImage
+          src={`/images/nasa-sli/${filename}`}
+          alt={caption}
+          fill
+          className="object-contain p-4"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+      <div className="text-sm text-primary-foreground/70">{caption}</div>
+    </div>
+  );
+}
 
 export default function NasaSliPage() {
   return (
     <div className="bg-primary text-primary-foreground">
-      <AnimatedHero
-        image="/images/nasa-sli/Final-Dimensioned-Rocket.png"
-        badge="NASA Student Launch Initiative · 2024–2025"
-        title="NASA Student Launch Initiative — Project RANCH"
-        subtitle="92-inch carbon-fiber launch vehicle targeting a 4,200–4,300 ft apogee with redundant dual-deployment recovery, K-class propulsion, and ACORN data-return payload."
-        actions={
-          <div className="flex flex-wrap items-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
-            >
-              <a href="#gallery">View Gallery</a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full border-accentneongreen/50 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen/10"
-            >
-              <a href="#downloads">Download Report</a>
-            </Button>
+      <section className="relative overflow-hidden">
+        <div className="relative w-full aspect-video overflow-hidden rounded-none border-b border-white/10">
+          <NextImage
+            src="/images/nasa-sli/Final-Dimensioned-Rocket.jpg"
+            alt="Final dimensioned NASA SLI vehicle"
+            fill
+            className="object-contain p-4"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-primary/85 to-primary" />
+          <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-end gap-6 px-6 pb-16 sm:pb-20">
+            <div className="max-w-3xl space-y-4">
+              <span className="inline-flex items-center rounded-full border border-accentneongreen/30 bg-accentneongreen/10 px-4 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-accentneongreen">
+                NASA Student Launch Initiative · 2024–2025
+              </span>
+              <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">NASA Student Launch Initiative — Project RANCH</h1>
+              <p className="text-lg leading-relaxed text-primary-foreground/80">
+                92-inch carbon-fiber launch vehicle targeting a 4,200–4,300 ft apogee with redundant dual-deployment recovery, K-class propulsion, and ACORN data-return payload.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
+              >
+                <a href="#gallery">View Gallery</a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-accentneongreen/50 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accentneongreen hover:bg-accentneongreen/10"
+              >
+                <a href="#downloads">Download Report</a>
+              </Button>
+            </div>
           </div>
-        }
-      />
+        </div>
+      </section>
 
       <AnimatedSection>
         <Section id="overview" title="Executive Summary" kicker="Overview">
@@ -185,8 +256,8 @@ export default function NasaSliPage() {
             </table>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            <FigureCard src="/images/nasa-sli/Final-Dimensioned-Rocket.png" caption="Dimensioned flight vehicle with coupler interfaces and avionics bay layout." />
-            <FigureCard src="/images/nasa-sli/Stability-Table.png" caption="Stability margins and mass properties across ascent and recovery phases." />
+            <MediaCard src="/images/nasa-sli/Final-Dimensioned-Rocket.jpg" caption="Dimensioned flight vehicle with coupler interfaces and avionics bay layout." />
+            <MediaCard src="/images/nasa-sli/Stability-Table.jpg" caption="Stability margins and mass properties across ascent and recovery phases." />
           </div>
         </Section>
       </AnimatedSection>
@@ -201,7 +272,7 @@ export default function NasaSliPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {architectureFigures.map((figure) => (
-              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+              <MediaCard key={figure.src} {...figure} />
             ))}
           </div>
         </Section>
@@ -214,7 +285,7 @@ export default function NasaSliPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {payloadFigures.map((figure) => (
-              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+              <MediaCard key={figure.src} {...figure} />
             ))}
           </div>
         </Section>
@@ -227,7 +298,7 @@ export default function NasaSliPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {avionicsFigures.map((figure) => (
-              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+              <MediaCard key={figure.src} {...figure} />
             ))}
           </div>
         </Section>
@@ -240,7 +311,7 @@ export default function NasaSliPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {simulationFigures.map((figure) => (
-              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+              <MediaCard key={figure.src} {...figure} />
             ))}
           </div>
         </Section>
@@ -253,7 +324,7 @@ export default function NasaSliPage() {
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {flightFigures.map((figure) => (
-              <FigureCard key={figure.src} src={figure.src} caption={figure.caption} />
+              <MediaCard key={figure.src} {...figure} />
             ))}
           </div>
         </Section>
@@ -271,18 +342,11 @@ export default function NasaSliPage() {
         <Section id="gallery" title="Final Gallery" kicker="Media">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((filename) => (
-              <div key={filename} className="overflow-hidden rounded-2xl border border-white/5 bg-surface">
-                <div className="relative aspect-video w-full">
-                  <NextImage
-                    src={`/images/nasa-sli/${filename}`}
-                    alt={filename.replace(/-/g, ' ')}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
-                <div className="px-4 py-3 text-sm text-primary-foreground/70">{filename.replace(/-/g, ' ').replace(/\.png$/i, '')}</div>
-              </div>
+              <GalleryCard
+                key={filename}
+                filename={filename}
+                orientation={portraitGalleryImages.has(filename) ? 'portrait' : 'landscape'}
+              />
             ))}
           </div>
         </Section>
