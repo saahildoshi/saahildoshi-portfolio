@@ -1,0 +1,24 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgTail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1226" />
+      <stop offset="1" stop-color="#050509" />
+    </linearGradient>
+    <linearGradient id="tailAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7CFF90" stop-opacity="0.45" />
+      <stop offset="1" stop-color="#7CFF90" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="24" fill="url(#bgTail)" />
+  <path d="M160 460C200 340 320 260 480 260C640 260 760 340 800 460" stroke="#7CFF90" stroke-opacity="0.45" stroke-width="4" />
+  <rect x="360" y="240" width="240" height="80" rx="20" fill="#0E1424" stroke="#7CFF90" stroke-width="3" />
+  <rect x="380" y="190" width="200" height="40" rx="16" fill="url(#tailAccent)" stroke="#7CFF90" stroke-opacity="0.6" stroke-width="2" />
+  <rect x="360" y="320" width="240" height="40" rx="12" fill="#11182C" stroke="#7CFF90" stroke-opacity="0.4" />
+  <path d="M360 360L320 430" stroke="#7CFF90" stroke-opacity="0.5" stroke-width="3" />
+  <path d="M600 360L640 430" stroke="#7CFF90" stroke-opacity="0.5" stroke-width="3" />
+  <rect x="320" y="430" width="60" height="80" rx="16" fill="#0E1424" stroke="#7CFF90" stroke-opacity="0.6" />
+  <rect x="580" y="430" width="60" height="80" rx="16" fill="#0E1424" stroke="#7CFF90" stroke-opacity="0.6" />
+  <rect x="460" y="420" width="40" height="120" rx="14" fill="#7CFF90" fill-opacity="0.28" />
+  <circle cx="480" cy="300" r="10" fill="#7CFF90" />
+  <circle cx="480" cy="340" r="8" fill="#7CFF90" fill-opacity="0.8" />
+</svg>
