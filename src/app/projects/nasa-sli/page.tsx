@@ -330,13 +330,14 @@ export default function NasaSliPage() {
         </Section>
       </AnimatedSection>
 
-      <AnimatedSection>
-        <Section id="outreach" title="Outreach & Community Impact" kicker="STEM Engagement">
-          <p>
-            Outreach commitments from the FRR were fulfilled through classroom lessons, CTAE Day participation, and community events that introduced elementary and middle school students to rocketry and aerospace engineering. Demonstrations covered aerodynamic forces, recovery principles, and the role of payload data in mission success, reinforcing NASA SLI’s emphasis on education alongside flight performance.
-          </p>
-        </Section>
-      </AnimatedSection>
+      <Section id="outreach" title="Outreach & Community Impact" kicker="STEM Engagement">
+        <p>
+          Outreach commitments from the FRR were fulfilled through classroom lessons, CTAE Day participation,
+          and community events that introduced elementary and middle school students to rocketry and aerospace
+          engineering. Demonstrations covered aerodynamic forces, recovery principles, and the role of payload
+          data in mission success, reinforcing NASA SLI’s emphasis on education alongside flight performance.
+        </p>
+      </Section>
 
       <AnimatedSection>
         <Section id="gallery" title="Final Gallery" kicker="Media">
