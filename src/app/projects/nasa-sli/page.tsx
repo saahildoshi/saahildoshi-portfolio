@@ -330,7 +330,12 @@ export default function NasaSliPage() {
         </Section>
       </AnimatedSection>
 
-      <Section id="outreach" title="Outreach & Community Impact" kicker="STEM Engagement">
+      <Section
+        id="outreach"
+        title="Outreach & Community Impact"
+        kicker="STEM Engagement"
+        compact
+      >
         <p>
           Outreach commitments from the FRR were fulfilled through classroom lessons, CTAE Day participation,
           and community events that introduced elementary and middle school students to rocketry and aerospace
