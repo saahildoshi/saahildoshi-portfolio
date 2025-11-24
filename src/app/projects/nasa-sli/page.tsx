@@ -344,20 +344,6 @@ export default function NasaSliPage() {
       </AnimatedSection>
 
       <AnimatedSection>
-        <Section id="gallery" title="Final Gallery" kicker="Media" className="pt-8 sm:pt-12">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((filename) => (
-              <GalleryCard
-                key={filename}
-                filename={filename}
-                orientation={portraitGalleryImages.has(filename) ? 'portrait' : 'landscape'}
-              />
-            ))}
-          </div>
-        </Section>
-      </AnimatedSection>
-
-      <AnimatedSection>
         <Section id="downloads" title="Downloads" kicker="Documentation">
           <div className="flex flex-wrap gap-4">
             <Button
