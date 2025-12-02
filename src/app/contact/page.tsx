@@ -50,7 +50,7 @@ export default function ContactPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">Contact</p>
           <h1 className="text-4xl font-semibold text-white sm:text-5xl">Let&apos;s Connect</h1>
           <p className="max-w-3xl text-lg text-primary-foreground/80">
-            Whether it&apos;s research, engineering, collaboration, or opportunities—I'm always happy to talk.
+            Whether it&apos;s research, engineering, collaboration, or opportunities—I&apos;m always happy to talk.
           </p>
         </motion.div>
 
@@ -130,7 +130,9 @@ export default function ContactPage() {
                 <p className="mt-1 text-white">Explore my repositories</p>
               </div>
             </div>
-            <p className="mt-4 text-primary-foreground/70">See how I build interfaces, data tools, and aerospace utilities.</p>
+            <p className="mt-4 text-primary-foreground/70">
+              See how I build interfaces, data tools, and aerospace utilities.
+            </p>
             <Button
               asChild
               variant="outline"
@@ -155,7 +157,7 @@ export default function ContactPage() {
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accentneongreen/80">Collaboration</p>
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-              Interested in research, engineering projects, or collaboration? I’d love to hear from you.
+              Interested in research, engineering projects, or collaboration? I&apos;d love to hear from you.
             </h2>
           </div>
           <Button

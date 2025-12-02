@@ -14,7 +14,7 @@ const NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  // Contact removed from here
 ];
 
 export function SiteHeader() {
@@ -26,18 +26,29 @@ export function SiteHeader() {
         <Link href="/" className="text-sm font-semibold uppercase tracking-[0.32em] text-accentneongreen">
           Saahil Doshi
         </Link>
+
         <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground/70 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={cn('transition hover:text-accentneongreen', pathname === link.href && 'text-accentneongreen')}
+              className={cn(
+                'transition hover:text-accentneongreen',
+                pathname === link.href && 'text-accentneongreen'
+              )}
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block" />
+
+        {/* New Contact button replacing Mission Inquiry */}
+        <Link
+          href="/contact"
+          className="hidden rounded-full border border-accentneongreen/30 px-5 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-accentneongreen shadow-glow hover:bg-accentneongreen hover:text-primary md:inline-flex"
+        >
+          Contact
+        </Link>
       </div>
     </header>
   );
