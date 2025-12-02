@@ -132,12 +132,6 @@ const TIMELINE: TimelineItem[] = [
   },
   {
     year: '2023',
-    title: 'Level 1 High-Power Rocketry Certification',
-    detail:
-      'Completed certification flight with composite airframe, safe deployment sequencing, and documented verification procedures.',
-  },
-  {
-    year: '2023',
     title: 'Science Olympiad — Wright Stuff',
     detail:
       'Designed and built electric aircraft prototypes optimizing lift and endurance for state-level competition.',
