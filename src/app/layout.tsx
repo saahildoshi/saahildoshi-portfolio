@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { SiteHeader } from '@/components/layout/SiteHeader';
+import { Analytics } from '@vercel/analytics/next';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           <main className="pb-20">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
