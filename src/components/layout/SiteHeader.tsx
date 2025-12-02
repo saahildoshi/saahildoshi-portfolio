@@ -37,6 +37,8 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+          Contact
+        </Link>
       </div>
     </header>
   );
