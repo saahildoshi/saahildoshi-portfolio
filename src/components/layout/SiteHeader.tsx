@@ -37,12 +37,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/contact"
-          className="hidden rounded-full border border-accentneongreen/30 px-5 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-accentneongreen shadow-glow hover:bg-accentneongreen hover:text-primary md:inline-flex"
-        >
-          Mission Inquiry
-        </Link>
+        <div className="hidden md:block" />
       </div>
     </header>
   );
