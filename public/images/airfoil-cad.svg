@@ -1,0 +1,18 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cad-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#050509" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" rx="28" fill="url(#cad-bg)" />
+  <rect x="80" y="110" width="800" height="120" rx="16" fill="#0F172A" stroke="#7CFF90" stroke-opacity="0.35" />
+  <path d="M120 230 C260 180 520 150 820 200" stroke="#7CFF90" stroke-opacity="0.5" stroke-width="4" fill="none" />
+  <path d="M140 260 C340 230 560 220 800 250" stroke="#7CFF90" stroke-opacity="0.3" stroke-width="3" fill="none" />
+  <rect x="140" y="320" width="680" height="200" rx="20" fill="#0F172A" stroke="#7CFF90" stroke-opacity="0.35" />
+  <path d="M180 420 C340 360 620 360 780 420" stroke="#7CFF90" stroke-opacity="0.45" stroke-width="3" fill="none" />
+  <circle cx="200" cy="420" r="10" fill="#7CFF90" />
+  <circle cx="760" cy="420" r="10" fill="#7CFF90" />
+  <text x="130" y="150" fill="#7CFF90" font-size="18" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="6">CAD MODEL</text>
+  <text x="130" y="360" fill="#7CFF90" font-size="18" font-family="'Inter', 'Segoe UI', sans-serif" letter-spacing="6">AIRFOIL SECTION</text>
+</svg>
