@@ -37,7 +37,6 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block" />
       </div>
     </header>
   );
