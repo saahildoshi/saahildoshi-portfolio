@@ -79,7 +79,7 @@ export default function Eras2ProjectPage() {
         <Section id="overview" title="Project Overview" kicker="Overview">
           <AnimatedSection className="space-y-6">
             <p>
-              ERAS2 (Electrohydrodynamic Remote Aircraft System 2) was the capstone project for the Mechanical & Aerospace Engineering major at the Georgia Governor’s Honors Program. Over four weeks, our cohort designed and built a flight vehicle powered by an ionic wind engine—an electrohydrodynamic propulsion system that accelerates air using high-voltage electric fields instead of moving parts.
+              ERAS2 (Electrohydrodynamic Remote Aircraft System 2) was the capstone project for the Mechanical & Aerospace Engineering major at the Georgia Governor’s Honors Program. Over four weeks, our cohort designed and built a flight vehicle powered by an ionic wind engine—an electrohydrodynamic propulsion system that accelerates air using high-voltage electric fields instead of moving parts. We used the JIRA ticket system to manage our design iterations, test plans, and nonconformance reports.
             </p>
             <p>
               I served on the <strong>Engine subteam</strong>, focusing on the iterative design, testing, and integration of the ionic thruster, while also supporting the <strong>airfoil selection and analysis</strong> for the wing. Working alongside the Flight and Electronics teams, we had to balance thrust, mass, structural strength, and stability to get a realistic, flyable configuration under tight time constraints.
