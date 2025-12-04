@@ -600,53 +600,30 @@ export default function UgaAirfoilResearchPage() {
           </AnimatedSection>
         </Section>
 
-        {/* Media & downloads */}
         <Section id="media" title="Media and Downloads" kicker="Media">
-          <AnimatedSection className="space-y-8">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {MEDIA.map((item, index) => (
-                <motion.div
-                  key={item.caption}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
-                >
-                  <div className="space-y-3">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/5 bg-surface">
-                      <Image
-                        src={item.src}
-                        alt={item.caption}
-                        fill
-                        className="object-contain p-4"
-                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
-                    </div>
-                    <p className="text-sm text-primary-foreground/70">{item.caption}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Button asChild className="rounded-full">
-                <a href="#" className="inline-flex items-center gap-2">
-                  Download Research Summary (PDF)
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full border-accentneongreen/50 text-accentneongreen"
-              >
-                <a href="#" className="inline-flex items-center gap-2">
-                  Download Science Fair Poster (PDF)
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </Section>
+  <AnimatedSection className="space-y-8">
+
+    <div className="flex flex-wrap items-center gap-3">
+      <Button asChild className="rounded-full">
+        <a href="#" className="inline-flex items-center gap-2">
+          Download Research Summary (PDF)
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        className="rounded-full border-accentneongreen/50 text-accentneongreen"
+      >
+        <a href="#" className="inline-flex items-center gap-2">
+          Download Science Fair Poster (PDF)
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </Button>
+    </div>
+
+  </AnimatedSection>
+</Section>
       </div>
     </div>
   );
