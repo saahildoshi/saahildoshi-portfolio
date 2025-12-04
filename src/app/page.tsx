@@ -53,9 +53,9 @@ const PROJECTS: ProjectCard[] = [
     image: '/images/projects/airfoil.svg',
   },
   {
-    href: '/projects/level1',
-    title: 'Level 1 High-Power Certification Rockets',
-    subtitle: 'Composite airframes, fin can integration, and redundant recovery for high-power flight profiles.',
+    href: '/projects/eras2',
+    title: 'ERAS2 — Governor\'s Honors Program',
+    subtitle: 'GHP Mechanical & Aerospace capstone plane integrating an ionic-wind propulsion system through stacked electrohydrodynamic units.',
     image: '/images/projects/l1.svg',
   },
 ];
