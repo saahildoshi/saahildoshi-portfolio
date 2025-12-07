@@ -18,7 +18,7 @@ const PROJECTS: Project[] = [
     href: '/projects/nasa-sli',
     summary: 'Fiberglass launch vehicle with redundant avionics, dual-deployment recovery, and ACORN payload.',
     timeline: '2024–2025',
-    image: '/images/nasa-sli-hero.svg',
+    image: '/images/projects/sli.svg',
   },
   {
     title: 'Bio-Inspired & AI Airfoil Research',
@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
     summary:
       'Mid-power competition rocket engineered to reach 820 ft with a fragile egg payload, 43–46 second flight window, and 605 g mass limit, resulting in a top-24 national finish.',
     timeline: '2023',
-    image: '/images/project-arc.svg',
+    image: '/images/projects/arc.svg',
   },
   {
     title: 'ERAS2 — Ionic Wind Aircraft (GHP)',
