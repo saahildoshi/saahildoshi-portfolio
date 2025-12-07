@@ -16,7 +16,7 @@ const PROJECTS: Project[] = [
   {
     title: 'NASA Student Launch Initiative — Project RANCH',
     href: '/projects/nasa-sli',
-    summary: 'Carbon-fiber launch vehicle with redundant avionics, dual-deploy recovery, and Acorn payload.',
+    summary: 'Fiberglass launch vehicle with redundant avionics, dual-deployment recovery, and ACORN payload.',
     timeline: '2024–2025',
     image: '/images/nasa-sli-hero.svg',
   },
