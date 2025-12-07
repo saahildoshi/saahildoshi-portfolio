@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
     title: 'American Rocketry Challenge — National Finalist',
     href: '/projects/arc',
     summary:
-      'Mid-power competition rocket engineered to reach 820 ft with a fragile egg payload, 43–46 second flight window, and 605 g mass limit, resulting in a top-24 national finish.',
+      'Mid-power competition rocket engineered to reach 820 ft with a fragile egg payload, 43–46 second flight window, and 650 g mass limit, resulting in a top-24 national finish.',
     timeline: '2023',
     image: '/images/projects/arc.svg',
   },
