@@ -30,10 +30,20 @@ const MISSION_SPECS = [
   { label: 'Overall Length', value: '60 in' },
 ];
 
+// Used in the Appendix / Media section
 const MEDIA = [
-  { src: '/images/arc-vehicle.svg', caption: 'Overall vehicle configuration and egg payload bay.' },
-  { src: '/images/arc-tailcone.svg', caption: 'Tail cone and Delrin fin assembly with integrated motor mount.' },
-  { src: '/images/arc-field.svg', caption: 'Field operations during qualification flights.' },
+  {
+    src: '/images/arc/Flight-Logs-650x180.png',
+    caption: 'ARC flight logs summarizing altitude, time, and flight-time performance.',
+  },
+  {
+    src: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png',
+    caption: 'Our ARC national finalist team during Capitol Hill recognition.',
+  },
+  {
+    src: '/images/arc/Assembled-Rocket-470x80.png',
+    caption: 'Final competition-ready BT-80 rocket before qualification flight.',
+  },
 ];
 
 export default function ArcProjectPage() {
@@ -44,7 +54,7 @@ export default function ArcProjectPage() {
         badge="American Rocketry Challenge · National Finalist"
         title="American Rocketry Challenge — National Finalist Co-Captain"
         subtitle="Mid-power competition rocket engineered for an 820 ft target apogee, 43–46 second flight time, and a 605 g mass limit, flown with a fragile egg payload."
-        actions={(
+        actions={
           <div className="flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="rounded-full">
               <Link href="/projects" className="inline-flex items-center gap-2">
@@ -53,10 +63,11 @@ export default function ArcProjectPage() {
               </Link>
             </Button>
           </div>
-        )}
+        }
       />
 
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
+        {/* Hero stats */}
         <AnimatedSection>
           <div className="grid gap-6 md:grid-cols-3">
             {HERO_STATS.map((stat) => (
@@ -73,6 +84,7 @@ export default function ArcProjectPage() {
           </div>
         </AnimatedSection>
 
+        {/* Overview */}
         <Section id="overview" title="Executive Summary" kicker="American Rocketry Challenge">
           <AnimatedSection className="space-y-6">
             <p>
@@ -93,26 +105,44 @@ export default function ArcProjectPage() {
           </AnimatedSection>
         </Section>
 
+        {/* Mission specs + spreadsheets */}
         <Section id="specs" title="Mission Specifications & Constraints" kicker="ARC 2023 Ruleset">
           <AnimatedSection>
-            <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr]">
-              <p>
-                The American Rocketry Challenge imposes tightly defined mission constraints that shape every aspect of the vehicle’s
-                design. Each parameter—altitude, time, mass limit, and payload integrity—drives trade-offs in structure, aerodynamics, and
-                recovery.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {MISSION_SPECS.map((spec) => (
-                  <div key={spec.label} className="rounded-2xl border border-white/5 bg-white/5 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accentneongreen/80">{spec.label}</p>
-                    <p className="mt-2 text-white">{spec.value}</p>
-                  </div>
-                ))}
+            <div className="space-y-8">
+              <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr]">
+                <p>
+                  The American Rocketry Challenge imposes tightly defined mission constraints that shape every aspect of the vehicle’s
+                  design. Each parameter—altitude, time, mass limit, and payload integrity—drives trade-offs in structure, aerodynamics, and
+                  recovery.
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {MISSION_SPECS.map((spec) => (
+                    <div key={spec.label} className="rounded-2xl border border-white/5 bg-white/5 p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accentneongreen/80">
+                        {spec.label}
+                      </p>
+                      <p className="mt-2 text-white">{spec.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Spreadsheets: both are fairly wide/short, so a simple 2-column grid works well */}
+              <div className="grid gap-6 md:grid-cols-2">
+                <FigureCard
+                  src="/images/arc/Rocket-Configs-Spreadsheet2-330x230.png"
+                  caption="Rocket configuration trade study used to tune apogee, mass, and timing."
+                />
+                <FigureCard
+                  src="/images/arc/Rocket-Configurations-Spreadsheet-330x230.png"
+                  caption="Launch configuration matrix tracking flights, weather, and scoring outcomes."
+                />
               </div>
             </div>
           </AnimatedSection>
         </Section>
 
+        {/* Vehicle architecture + hardware photos */}
         <Section id="vehicle" title="Vehicle Architecture" kicker="Airframe, Structure & Recovery">
           <AnimatedSection className="space-y-6">
             <p>
@@ -132,27 +162,28 @@ export default function ArcProjectPage() {
               flight time window and egg safety. This required careful balancing of mass, drag, and altitude prediction so that the rocket
               would neither overshoot 46 seconds nor descend too quickly and risk egg damage.
             </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
-              >
-                <FigureCard src="/images/arc-vehicle.svg" caption="Overall vehicle configuration with payload bay layout." />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, ease: 'easeOut', delay: 0.05 }}
-              >
-                <FigureCard src="/images/arc-tailcone.svg" caption="Tail cone and Delrin fin assembly with integrated motor mount." />
-              </motion.div>
-            </div>
+
+            {/* Hardware images – one ultra-wide, one more compact */}
+         <div className="grid gap-6 md:grid-cols-3">
+  <FigureCard
+    src="/images/arc/Assembled-Rocket-470x80.png"
+    caption="Assembled BT-80 competition rocket with payload bay and recovery system integrated."
+  />
+
+  <FigureCard
+    src="/images/arc/Engine-Bay-With-Motor.png"
+    caption="Engine bay with AeroTech F32-6T motor installed and fin-can interfaces visible."
+  />
+
+  <FigureCard
+    src="/images/arc/NoseCone-230x300.png"
+    caption="3D-printed nylon–carbon fiber nose cone with adjustable infill for center-of-gravity tuning."
+  />
+</div>
           </AnimatedSection>
         </Section>
 
+        {/* Testing & performance (text-only for now) */}
         <Section id="testing" title="Flight Testing & Performance" kicker="Simulations & Iteration">
           <AnimatedSection className="space-y-6">
             <p>
@@ -176,13 +207,14 @@ export default function ArcProjectPage() {
           </AnimatedSection>
         </Section>
 
+        {/* Engineering highlights */}
         <Section id="highlights" title="Engineering Highlights" kicker="3D-Printed Structures & Precision Tuning">
           <AnimatedSection>
             <div className="space-y-4 rounded-2xl border border-white/5 bg-white/5 p-6">
               <p className="text-primary-foreground/80">
                 Key engineering contributions I led on this project included:
               </p>
-              <ul className="mt-3 space-y-3 list-disc pl-5 text-primary-foreground/80">
+              <ul className="mt-3 list-disc space-y-3 pl-5 text-primary-foreground/80">
                 <li>
                   <strong className="text-white">Adjustable-infill nose cone for altitude control:</strong> I designed a nylon-carbon
                   fiber 3D-printed nose cone whose infill density could be adjusted to tune the rocket’s center of gravity and total mass.
@@ -209,6 +241,7 @@ export default function ArcProjectPage() {
           </AnimatedSection>
         </Section>
 
+        {/* Team & operations with team photo */}
         <Section id="team" title="Team & Operations" kicker="Leadership & Roles">
           <AnimatedSection className="space-y-6">
             <p>
@@ -222,9 +255,17 @@ export default function ArcProjectPage() {
               meaningfully to solving problems, whether we were adjusting nose weight, troubleshooting recovery, or planning a new test
               flight at short notice.
             </p>
+
+            <div className="pt-2">
+              <FigureCard
+                src="/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png"
+                caption="Our ARC team after being recognized as national finalists and the only team from Georgia at the 2023 competition."
+              />
+            </div>
           </AnimatedSection>
         </Section>
 
+        {/* Results */}
         <Section id="results" title="National Results & Impact" kicker="From ARC to NASA SLI">
           <AnimatedSection className="space-y-6">
             <p>
@@ -240,6 +281,7 @@ export default function ArcProjectPage() {
           </AnimatedSection>
         </Section>
 
+        {/* Appendix media */}
         <Section id="media" title="Media & Downloads" kicker="Appendix">
           <AnimatedSection>
             <div className="grid gap-6 md:grid-cols-3">
@@ -256,10 +298,18 @@ export default function ArcProjectPage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-accentneongreen/50 text-accentneongreen"
+              >
                 <Link href="#">Download ARC Flight Logs (PDF)</Link>
               </Button>
-              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-accentneongreen/50 text-accentneongreen"
+              >
                 <Link href="#">Download ARC Design Summary (PDF)</Link>
               </Button>
             </div>
