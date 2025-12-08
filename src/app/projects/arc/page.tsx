@@ -35,14 +35,17 @@ const MEDIA = [
   {
     src: '/images/arc/Flight-Logs-650x180.png',
     caption: 'ARC flight logs summarizing altitude, time, and flight-time performance.',
+    ratio: '650/180',
   },
   {
     src: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png',
     caption: 'Our ARC national finalist team during Capitol Hill recognition.',
+    ratio: '350/260',
   },
   {
     src: '/images/arc/Assembled-Rocket-470x80.png',
     caption: 'Final competition-ready BT-80 rocket before qualification flight.',
+    ratio: '470/80',
   },
 ];
 
@@ -127,15 +130,17 @@ export default function ArcProjectPage() {
                 </div>
               </div>
 
-              {/* Spreadsheets: both are fairly wide/short, so a simple 2-column grid works well */}
+              {/* Spreadsheets */}
               <div className="grid gap-6 md:grid-cols-2">
                 <FigureCard
                   src="/images/arc/Rocket-Configs-Spreadsheet2-330x230.png"
                   caption="Rocket configuration trade study used to tune apogee, mass, and timing."
+                  ratio="330/230"
                 />
                 <FigureCard
                   src="/images/arc/Rocket-Configurations-Spreadsheet-330x230.png"
                   caption="Launch configuration matrix tracking flights, weather, and scoring outcomes."
+                  ratio="330/230"
                 />
               </div>
             </div>
@@ -163,27 +168,32 @@ export default function ArcProjectPage() {
               would neither overshoot 46 seconds nor descend too quickly and risk egg damage.
             </p>
 
-            {/* Hardware images – one ultra-wide, one more compact */}
-         <div className="grid gap-6 md:grid-cols-3">
-  <FigureCard
-    src="/images/arc/Assembled-Rocket-470x80.png"
-    caption="Assembled BT-80 competition rocket with payload bay and recovery system integrated."
-  />
+            {/* Hardware images – ultra-wide rocket first, then details */}
+            <div className="grid gap-6 md:grid-cols-3">
+              <FigureCard
+                wide
+                ultraWide
+                ratio="470/80"
+                src="/images/arc/Assembled-Rocket-470x80.png"
+                caption="Assembled BT-80 competition rocket with payload bay and recovery system integrated."
+              />
 
-  <FigureCard
-    src="/images/arc/Engine-Bay-With-Motor.png"
-    caption="Engine bay with AeroTech F32-6T motor installed and fin-can interfaces visible."
-  />
+              <FigureCard
+                src="/images/arc/Engine-Bay-With-Motor.png"
+                caption="Engine bay with AeroTech F32-6T motor installed and fin-can interfaces visible."
+              />
 
-  <FigureCard
-    src="/images/arc/NoseCone-230x300.png"
-    caption="3D-printed nylon–carbon fiber nose cone with adjustable infill for center-of-gravity tuning."
-  />
-</div>
+              <FigureCard
+                tall
+                ratio="230/300"
+                src="/images/arc/NoseCone-230x300.png"
+                caption="3D-printed nylon–carbon fiber nose cone with adjustable infill for center-of-gravity tuning."
+              />
+            </div>
           </AnimatedSection>
         </Section>
 
-        {/* Testing & performance (text-only for now) */}
+        {/* Testing & performance */}
         <Section id="testing" title="Flight Testing & Performance" kicker="Simulations & Iteration">
           <AnimatedSection className="space-y-6">
             <p>
@@ -260,6 +270,7 @@ export default function ArcProjectPage() {
               <FigureCard
                 src="/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png"
                 caption="Our ARC team after being recognized as national finalists and the only team from Georgia at the 2023 competition."
+                ratio="350/260"
               />
             </div>
           </AnimatedSection>
@@ -293,7 +304,7 @@ export default function ArcProjectPage() {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
                 >
-                  <FigureCard src={item.src} caption={item.caption} />
+                  <FigureCard src={item.src} caption={item.caption} ratio={item.ratio} />
                 </motion.div>
               ))}
             </div>
