@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -7,7 +8,6 @@ import AnimatedHero from '@/components/animated/AnimatedHero';
 import { AnimatedSection } from '@/components/animated/AnimatedSection';
 import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
-import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
 
 const HERO_STATS = [
@@ -126,7 +126,18 @@ export default function UgaAirfoilResearchPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, ease: 'easeOut' }}
               >
-                <FigureCard src="/images/airfoil-cad.svg" caption="Sample airfoil CAD model in Fusion 360 with mounting interface." />
+                <div className="space-y-3">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/5 bg-surface">
+                    <Image
+                      src="/images/airfoil-cad.svg"
+                      alt="Sample airfoil CAD model in Fusion 360 with mounting interface."
+                      fill
+                      className="object-contain p-4"
+                      sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                    />
+                  </div>
+                  <p className="text-sm text-primary-foreground/70">Sample airfoil CAD model in Fusion 360 with mounting interface.</p>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.98 }}
@@ -134,7 +145,18 @@ export default function UgaAirfoilResearchPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, ease: 'easeOut', delay: 0.05 }}
               >
-                <FigureCard src="/images/gallery-flight-02.svg" caption="XFOIL lift/drag polar plots used to select candidate airfoils." />
+                <div className="space-y-3">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/5 bg-surface">
+                    <Image
+                      src="/images/gallery-flight-02.svg"
+                      alt="XFOIL lift/drag polar plots used to select candidate airfoils."
+                      fill
+                      className="object-contain p-4"
+                      sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                    />
+                  </div>
+                  <p className="text-sm text-primary-foreground/70">XFOIL lift/drag polar plots used to select candidate airfoils.</p>
+                </div>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -230,7 +252,18 @@ export default function UgaAirfoilResearchPage() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
                 >
-                  <FigureCard src={item.src} caption={item.caption} />
+                  <div className="space-y-3">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/5 bg-surface">
+                      <Image
+                        src={item.src}
+                        alt={item.caption}
+                        fill
+                        className="object-contain p-4"
+                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                    </div>
+                    <p className="text-sm text-primary-foreground/70">{item.caption}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>

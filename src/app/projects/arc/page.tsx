@@ -3,13 +3,39 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import NextImage from 'next/image';
 
 import AnimatedHero from '@/components/animated/AnimatedHero';
 import { AnimatedSection } from '@/components/animated/AnimatedSection';
 import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
-import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
+
+type MediaItem = {
+  src: string;
+  caption: string;
+  orientation?: 'portrait' | 'landscape';
+  ratio?: string;
+};
+
+function MediaCard({ src, caption, orientation = 'landscape', ratio }: MediaItem) {
+  const aspect = ratio ? `aspect-[${ratio}]` : orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video';
+
+  return (
+    <div className="space-y-3">
+      <div className={`relative w-full ${aspect} overflow-hidden rounded-xl border border-white/10`}>
+        <NextImage
+          src={src}
+          alt={caption}
+          fill
+          className="object-contain p-4"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+      <div className="text-sm text-primary-foreground/70">{caption}</div>
+    </div>
+  );
+}
 
 const HERO_STATS = [
   { label: 'Target Apogee', value: '820 ft (ARC 2023 ruleset)' },
@@ -30,10 +56,17 @@ const MISSION_SPECS = [
   { label: 'Overall Length', value: '60 in' },
 ];
 
-const MEDIA = [
-  { src: '/images/arc-vehicle.svg', caption: 'Overall vehicle configuration and egg payload bay.' },
-  { src: '/images/arc-tailcone.svg', caption: 'Tail cone and Delrin fin assembly with integrated motor mount.' },
-  { src: '/images/arc-field.svg', caption: 'Field operations during qualification flights.' },
+const DESIGN_MEDIA: MediaItem[] = [
+  { src: '/images/arc/Assembled-Rocket-470x80.png', caption: 'Overall vehicle configuration with payload bay layout.', ratio: '470/80' },
+  { src: '/images/arc/NoseCone-230x300.png', caption: 'Adjustable ballast nose cone tuned for altitude and timing.', orientation: 'portrait' },
+  { src: '/images/arc/Engine-Bay-With-Motor.png', caption: 'Tail cone and Delrin fin assembly with integrated motor mount.' },
+];
+
+const MEDIA: MediaItem[] = [
+  { src: '/images/arc/Rocket-Configurations-Spreadsheet-330x230.png', caption: 'Rocket configuration spreadsheet tracking ballast, mass, and stability margins.' },
+  { src: '/images/arc/Rocket-Configs-Spreadsheet2-330x230.png', caption: 'Alternative configuration set showing mass properties for each flight build.' },
+  { src: '/images/arc/Flight-Logs-650x180.png', caption: 'Flight logs with apogee, weather, and timing for each qualification attempt.', ratio: '650/180' },
+  { src: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png', caption: 'Team photo on Capitol Hill after the national finals.' },
 ];
 
 export default function ArcProjectPage() {
@@ -132,23 +165,18 @@ export default function ArcProjectPage() {
               flight time window and egg safety. This required careful balancing of mass, drag, and altitude prediction so that the rocket
               would neither overshoot 46 seconds nor descend too quickly and risk egg damage.
             </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
-              >
-                <FigureCard src="/images/arc-vehicle.svg" caption="Overall vehicle configuration with payload bay layout." />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, ease: 'easeOut', delay: 0.05 }}
-              >
-                <FigureCard src="/images/arc-tailcone.svg" caption="Tail cone and Delrin fin assembly with integrated motor mount." />
-              </motion.div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {DESIGN_MEDIA.map((item, index) => (
+                <motion.div
+                  key={item.src}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
+                >
+                  <MediaCard src={item.src} caption={item.caption} orientation={item.orientation} ratio={item.ratio} />
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
         </Section>
@@ -251,7 +279,7 @@ export default function ArcProjectPage() {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
                 >
-                  <FigureCard src={item.src} caption={item.caption} />
+                  <MediaCard src={item.src} caption={item.caption} orientation={item.orientation} ratio={item.ratio} />
                 </motion.div>
               ))}
             </div>
