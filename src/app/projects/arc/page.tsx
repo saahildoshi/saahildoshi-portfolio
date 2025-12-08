@@ -3,13 +3,39 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import NextImage from 'next/image';
 
 import AnimatedHero from '@/components/animated/AnimatedHero';
-import AnimatedSection from '@/components/animated/AnimatedSection';
+import { AnimatedSection } from '@/components/animated/AnimatedSection';
 import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
-import { FigureCard } from '@/components/layout/FigureCard';
 import { Button } from '@/components/ui/button';
+
+type MediaItem = {
+  src: string;
+  caption: string;
+  orientation?: 'portrait' | 'landscape';
+  ratio?: string;
+};
+
+function MediaCard({ src, caption, orientation = 'landscape', ratio }: MediaItem) {
+  const aspect = ratio ? `aspect-[${ratio}]` : orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video';
+
+  return (
+    <div className="space-y-3">
+      <div className={`relative w-full ${aspect} overflow-hidden rounded-xl border border-white/10`}>
+        <NextImage
+          src={src}
+          alt={caption}
+          fill
+          className="object-contain p-4"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+      <div className="text-sm text-primary-foreground/70">{caption}</div>
+    </div>
+  );
+}
 
 const HERO_STATS = [
   { label: 'Target Apogee', value: '820 ft (ARC 2023 ruleset)' },
@@ -30,22 +56,17 @@ const MISSION_SPECS = [
   { label: 'Overall Length', value: '60 in' },
 ];
 
-const MEDIA = [
-  {
-    src: '/images/arc/Flight-Logs-650x180.png',
-    caption: 'ARC flight logs summarizing altitude, time, and flight-time performance.',
-    ratio: '650/180',
-  },
-  {
-    src: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png',
-    caption: 'Our ARC national finalist team during Capitol Hill recognition.',
-    ratio: '350/260',
-  },
-  {
-    src: '/images/arc/Assembled-Rocket-470x80.png',
-    caption: 'Final competition-ready BT-80 rocket before qualification flight.',
-    ratio: '470/80',
-  },
+const DESIGN_MEDIA: MediaItem[] = [
+  { src: '/images/arc/Assembled-Rocket-470x80.png', caption: 'Overall vehicle configuration with payload bay layout.', ratio: '470/80' },
+  { src: '/images/arc/NoseCone-230x300.png', caption: 'Adjustable ballast nose cone tuned for altitude and timing.', orientation: 'portrait' },
+  { src: '/images/arc/Engine-Bay-With-Motor.png', caption: 'Tail cone and Delrin fin assembly with integrated motor mount.' },
+];
+
+const MEDIA: MediaItem[] = [
+  { src: '/images/arc/Rocket-Configurations-Spreadsheet-330x230.png', caption: 'Rocket configuration spreadsheet tracking ballast, mass, and stability margins.' },
+  { src: '/images/arc/Rocket-Configs-Spreadsheet2-330x230.png', caption: 'Alternative configuration set showing mass properties for each flight build.' },
+  { src: '/images/arc/Flight-Logs-650x180.png', caption: 'Flight logs with apogee, weather, and timing for each qualification attempt.', ratio: '650/180' },
+  { src: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png', caption: 'Team photo on Capitol Hill after the national finals.' },
 ];
 
 export default function ArcProjectPage() {
@@ -56,191 +77,119 @@ export default function ArcProjectPage() {
         badge="American Rocketry Challenge · National Finalist"
         title="American Rocketry Challenge — National Finalist Co-Captain"
         subtitle="Mid-power competition rocket engineered for an 820 ft target apogee, 43–46 second flight time, and a 605 g mass limit, flown with a fragile egg payload."
-        actions={
+        actions={(
           <div className="flex flex-wrap items-center gap-3">
-            <Button size="lg" asChild className="rounded-full">
+            <Button asChild size="lg" className="rounded-full">
               <Link href="/projects" className="inline-flex items-center gap-2">
-                View All Projects <ArrowUpRight className="h-4 w-4" />
+                View All Projects
+                <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Button>
           </div>
-        }
+        )}
       />
 
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
-        {/* Hero Stats */}
         <AnimatedSection>
           <div className="grid gap-6 md:grid-cols-3">
-            {HERO_STATS.map((stat) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.45, ease: 'easeOut' }}
-              >
-                <StatCard label={stat.label} value={stat.value} />
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-
-        {/* Overview */}
-        <Section id="overview" title="Executive Summary" kicker="American Rocketry Challenge">
-          <AnimatedSection className="space-y-6">
-            <p>
-              In the 2023 American Rocketry Challenge (ARC), I served as Co-Captain of a team that designed, simulated, and flew a
-              mid-power competition rocket to meet strict altitude and timing constraints. The mission required the rocket to reach an
-              apogee of 820 feet, carry a fragile egg payload, remain within a 43–46 second total flight time window, and stay under a
-              650 gram mass limit.
-            </p>
-            <p>
-              I led OpenRocket simulations, CAD development in Fusion 360, reconstruction cycles, and configuration tuning that helped
-              the team place 24th nationally out of ~1,000 teams with a qualifying score of 9. This result directly contributed to our
-              later invitation to the NASA Student Launch Initiative.
-            </p>
-          </AnimatedSection>
-        </Section>
-
-        {/* Spec Table + Spreadsheets */}
-        <Section id="specs" title="Mission Specifications & Constraints" kicker="ARC 2023 Ruleset">
-          <AnimatedSection>
-            <div className="space-y-8">
-              <div className="grid gap-10 lg:grid-cols-[1.2fr,1fr]">
-                <p>
-                  ARC imposes strict altitude, flight-time, and mass constraints. Every design choice reflected a trade-off between
-                  aerodynamic performance, structural mass, and payload safety.
-                </p>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {MISSION_SPECS.map((spec) => (
-                    <div key={spec.label} className="rounded-2xl border border-white/5 bg-white/5 p-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accentneongreen/80">{spec.label}</p>
-                      <p className="mt-2 text-white">{spec.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-6 md:grid-cols-2">
-                <FigureCard
-                  src="/images/arc/Rocket-Configs-Spreadsheet2-330x230.png"
-                  caption="Rocket configuration trade study used to tune apogee, mass, and timing."
-                  ratio="330/230"
-                />
-                <FigureCard
-                  src="/images/arc/Rocket-Configurations-Spreadsheet-330x230.png"
-                  caption="Launch configuration matrix tracking flights, weather, and scoring outcomes."
-                  ratio="330/230"
-                />
+@@ -110,67 +143,62 @@ export default function ArcProjectPage() {
+                ))}
               </div>
             </div>
           </AnimatedSection>
         </Section>
 
-        {/* Vehicle Architecture */}
         <Section id="vehicle" title="Vehicle Architecture" kicker="Airframe, Structure & Recovery">
           <AnimatedSection className="space-y-6">
             <p>
-              The rocket consisted of three structural sections: a nylon–carbon fiber 3D-printed nose cone, a BT-80 spiral-wound kraft
-              paper airframe, and a 3D-printed nylon–carbon fiber tail cone integrating the fin can and motor mount. Delrin fins bolted
-              directly into the tail cone for repeatable alignment.
+              The competition rocket was a 60-inch vehicle built on a BT-80 diameter spiral-wound kraft paper airframe, chosen for its
+              balance of stiffness, mass, and availability. The structural layout consisted of three primary elements: a 3D-printed
+              nylon-carbon fiber nose cone, a BT-80 main airframe housing the egg payload and recovery system, and a 3D-printed nylon-carbon
+              fiber tail cone that integrated the motor mount and fin interfaces.
             </p>
-
+            <p>
+              The fins were machined from Delrin and mounted directly into the 3D-printed tail cone using screws, creating a rigid fin-can
+              assembly that simplified alignment and improved structural repeatability across rebuilds. Internally, the rocket used a Kevlar
+              shock cord anchored to the motor mount, a 24-inch parachute sized for the mass and drag characteristics of the configuration,
+              and a foam-enclosed egg bay to protect the payload during boost, deployment, and landing.
+            </p>
+            <p>
+              Because ARC prohibits dual-deployment systems, the descent profile and parachute sizing had to be tuned to satisfy both the
+              flight time window and egg safety. This required careful balancing of mass, drag, and altitude prediction so that the rocket
+              would neither overshoot 46 seconds nor descend too quickly and risk egg damage.
+            </p>
             <div className="grid gap-6 md:grid-cols-3">
-              <FigureCard
-                src="/images/arc/Assembled-Rocket-470x80.png"
-                caption="Assembled BT-80 competition rocket with payload bay and recovery system integrated."
-                ultraWide
-                ratio="470/80"
-              />
-
-              <FigureCard
-                src="/images/arc/Engine-Bay-With-Motor.png"
-                caption="Engine bay with AeroTech F32-6T motor installed and fin-can interfaces visible."
-              />
-
-              <FigureCard
-                src="/images/arc/NoseCone-230x300.png"
-                caption="3D-printed nylon–carbon fiber nose cone with adjustable infill for CG tuning."
-                portrait
-                ratio="230/300"
-              />
+              {DESIGN_MEDIA.map((item, index) => (
+                <motion.div
+                  key={item.src}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
+                >
+                  <MediaCard src={item.src} caption={item.caption} orientation={item.orientation} ratio={item.ratio} />
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
         </Section>
 
-        {/* Testing */}
         <Section id="testing" title="Flight Testing & Performance" kicker="Simulations & Iteration">
           <AnimatedSection className="space-y-6">
             <p>
-              Approximately fifteen test flights were conducted to refine configurations and correlate OpenRocket predictions with real
-              flight data. Environmental factors such as wind drift required multiple rebuilds of identical airframes.
+              Throughout the season, I used OpenRocket to model the rocket’s performance with the AeroTech F32-6T motor, focusing on apogee
+              prediction, stability margin, and time-to-apogee and landing. By adjusting nose cone ballast, fin geometry, and mass
+              distribution, we were able to keep the predicted altitude close to the 820-foot target while maintaining a robust stability
+              margin.
             </p>
             <p>
-              Our final qualifying score of 9 was among the lowest in the nation, reflecting precise altitude and time control and
-              reliable recovery performance.
+              In practice, the team flew approximately fifteen test flights to refine the configuration and verify that simulated
+              performance matched real-world behavior. Our launch field was relatively small for the mission profile, which meant that winds
+              and drift posed recurring issues. On multiple occasions, the rocket landed in or near trees, and at one point we had to fully
+              rebuild the vehicle after it became stuck. Each rebuild preserved the same aerodynamic layout but improved minor details in
+              manufacturing and integration.
+            </p>
+            <p>
+              The final qualifying flight yielded a score of 9—one of the lowest scores in the nation—indicating extremely small deviations
+              from the target altitude and time constraints. This combination of simulation-driven design and disciplined testing was
+              critical to achieving consistent, predictable performance under variable field conditions.
             </p>
           </AnimatedSection>
-        </Section>
-
-        {/* Highlights */}
-        <Section id="highlights" title="Engineering Highlights" kicker="3D-Printed Structures & Precision Tuning">
-          <AnimatedSection>
-            <div className="space-y-4 rounded-2xl border border-white/5 bg-white/5 p-6">
-              <ul className="list-disc space-y-3 pl-5 text-primary-foreground/80">
-                <li>
-                  <strong className="text-white">Adjustable-infill nose cone:</strong> CG tuning by modifying internal infill.
-                </li>
-                <li>
-                  <strong className="text-white">Carbon-reinforced tail cone:</strong> Integrated motor mount and Delrin fin interfaces.
-                </li>
-                <li>
-                  <strong className="text-white">Simulation–test correlation:</strong> Used AltimeterTwo logs to improve aero and drag predictions.
-                </li>
-                <li>
-                  <strong className="text-white">Egg payload protection:</strong> Foam isolation + parachute sizing to meet time constraints.
-                </li>
-              </ul>
-            </div>
-          </AnimatedSection>
-        </Section>
-
-        {/* Team */}
-        <Section id="team" title="Team & Operations" kicker="Leadership & Roles">
-          <AnimatedSection>
-            <FigureCard
-              src="/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png"
-              caption="Our ARC team after being recognized as national finalists and the only team from Georgia at the 2023 competition."
-              ratio="350/260"
-            />
-          </AnimatedSection>
-        </Section>
-
-        {/* Results */}
-        <Section id="results" title="National Results & Impact" kicker="From ARC to NASA SLI">
+@@ -229,43 +257,43 @@ export default function ArcProjectPage() {
           <AnimatedSection className="space-y-6">
             <p>
-              Placing 24th nationally enabled our direct invitation to NASA SLI, where many of the engineering practices refined during ARC
-              carried over into higher-power launch vehicle development.
+              Our final competition performance placed us 24th out of approximately 1,000 teams nationwide, making us the only team from
+              Georgia to advance to the national finals. Our qualifying score of 9 reflected the precision of our altitude and time control,
+              as well as the reliability of the vehicle and recovery system.
+            </p>
+            <p>
+              This result directly contributed to our selection for the NASA Student Launch Initiative, marking the first time a team from
+              Oconee County was invited to participate. The engineering practices we refined in ARC—simulation-driven design, 3D-printed
+              structural components, and disciplined test campaigns—carried forward into our 4,300-foot NASA SLI vehicle and payload.
             </p>
           </AnimatedSection>
         </Section>
 
-        {/* Appendix */}
         <Section id="media" title="Media & Downloads" kicker="Appendix">
           <AnimatedSection>
             <div className="grid gap-6 md:grid-cols-3">
-              {MEDIA.map((item) => (
-                <FigureCard key={item.src} {...item} />
+              {MEDIA.map((item, index) => (
+                <motion.div
+                  key={item.src}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
+                >
+                  <MediaCard src={item.src} caption={item.caption} orientation={item.orientation} ratio={item.ratio} />
+                </motion.div>
               ))}
             </div>
-
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen" asChild>
+              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
                 <Link href="#">Download ARC Flight Logs (PDF)</Link>
               </Button>
-              <Button variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen" asChild>
+              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
                 <Link href="#">Download ARC Design Summary (PDF)</Link>
               </Button>
             </div>
