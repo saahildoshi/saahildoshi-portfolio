@@ -77,7 +77,7 @@ export default function ArcProjectPage() {
         badge="American Rocketry Challenge · National Finalist"
         title="American Rocketry Challenge — National Finalist Co-Captain"
         subtitle="Mid-power competition rocket engineered for an 820 ft target apogee, 43–46 second flight time, and a 605 g mass limit, flown with a fragile egg payload."
-        actions={(
+        actions={
           <div className="flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="rounded-full">
               <Link href="/projects" className="inline-flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function ArcProjectPage() {
               </Link>
             </Button>
           </div>
-        )}
+        }
       />
 
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
