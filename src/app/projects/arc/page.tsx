@@ -22,15 +22,19 @@ type MediaItem = {
 };
 
 function MediaCard({ src, caption, orientation = 'landscape', ratio }: MediaItem) {
-  const aspect = ratio
-    ? `aspect-[${ratio}]`
-    : orientation === 'portrait'
-    ? 'aspect-[3/4]'
-    : 'aspect-video';
+  const getAspectStyle = () => {
+    if (ratio) {
+      const [w, h] = ratio.split('/');
+      return { aspectRatio: `${w} / ${h}` };
+    }
+    return undefined;
+  };
+
+  const aspectClass = !ratio && (orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video');
 
   return (
     <div className="space-y-3">
-      <div className={`relative w-full ${aspect} overflow-hidden rounded-xl border border-white/10`}>
+      <div className={`relative w-full ${aspectClass} overflow-hidden rounded-xl border border-white/10`} style={getAspectStyle()}>
         <NextImage
           src={src}
           alt={caption}
@@ -117,15 +121,6 @@ export default function ArcProjectPage() {
         badge="American Rocketry Challenge · National Finalist"
         title="American Rocketry Challenge — National Finalist Co-Captain"
         subtitle="Mid-power competition rocket engineered for an 820 ft apogee, 43–46 second flight time window, and 605 g mass limit while carrying a fragile egg payload."
-        actions={
-          <div className="flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="rounded-full">
-              <Link href="/projects" className="inline-flex items-center gap-2">
-                View All Projects <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        }
       />
 
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">
@@ -166,7 +161,7 @@ export default function ArcProjectPage() {
         <Section id="specs" title="Mission Specifications & Constraints" kicker="ARC 2023 Ruleset">
           <AnimatedSection>
             <p className="mb-8">
-              ARC’s strict scoring window forces careful balancing of altitude, mass, drag, and descent rate. Each constraint directly shapes
+              ARC's strict scoring window forces careful balancing of altitude, mass, drag, and descent rate. Each constraint directly shapes
               the aerodynamic and structural design of the vehicle.
             </p>
 
@@ -192,18 +187,44 @@ export default function ArcProjectPage() {
               43–46 second descent requirement while protecting the egg payload.
             </p>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              {DESIGN_MEDIA.map((item, i) => (
-                <motion.div
-                  key={item.src}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.05 }}
-                >
-                  <MediaCard {...item} />
-                </motion.div>
-              ))}
+            {/* Full-width assembled rocket */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="space-y-3"
+            >
+              <div className="relative w-full aspect-[470/80] overflow-hidden rounded-xl border border-white/10">
+                <NextImage
+                  src="/images/arc/Assembled-Rocket-470x80.png"
+                  alt="Assembled BT-80 competition rocket"
+                  fill
+                  className="object-contain p-4"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="text-sm text-primary-foreground/70">Assembled BT-80 competition rocket with egg payload and recovery system.</div>
+            </motion.div>
+
+            {/* Nose cone and tail cone in 2-column grid */}
+            <div className="grid gap-6 md:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.05 }}
+              >
+                <MediaCard src="/images/arc/NoseCone-230x300.png" orientation="portrait" caption="3D-printed nylon–carbon fiber nose cone with adjustable ballast." />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.1 }}
+              >
+                <MediaCard src="/images/arc/Engine-Bay-With-Motor.png" caption="Tail cone, Delrin fin interfaces, and AeroTech F32-6T motor installed." />
+              </motion.div>
             </div>
           </AnimatedSection>
         </Section>
@@ -234,9 +255,30 @@ export default function ArcProjectPage() {
 
         {/* MEDIA */}
         <Section id="media" title="Media & Downloads" kicker="Appendix">
-          <AnimatedSection>
+          <AnimatedSection className="space-y-6">
+            {/* Full-width flight logs */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="space-y-3"
+            >
+              <div className="relative w-full aspect-[650/180] overflow-hidden rounded-xl border border-white/10">
+                <NextImage
+                  src="/images/arc/Flight-Logs-650x180.png"
+                  alt="ARC flight logs"
+                  fill
+                  className="object-contain p-4"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="text-sm text-primary-foreground/70">ARC flight logs showing altitude, weather, and flight-time results.</div>
+            </motion.div>
+
+            {/* Other media in 3-column grid */}
             <div className="grid gap-6 md:grid-cols-3">
-              {MEDIA.map((item, i) => (
+              {MEDIA.slice(1).map((item, i) => (
                 <motion.div
                   key={item.src}
                   initial={{ opacity: 0, scale: 0.98 }}
