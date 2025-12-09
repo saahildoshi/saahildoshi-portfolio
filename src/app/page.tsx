@@ -56,7 +56,7 @@ const PROJECTS: ProjectCard[] = [
     href: '/projects/eras2',
     title: 'ERAS2 — Governor\'s Honors Program',
     subtitle: 'GHP Mechanical & Aerospace capstone plane integrating an ionic-wind propulsion system through stacked electrohydrodynamic units.',
-    image: '/images/projects/eras.svg',
+    image: '/images/projects/eras2.svg',
   },
 ];
 
