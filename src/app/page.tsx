@@ -56,7 +56,7 @@ const PROJECTS: ProjectCard[] = [
     href: '/projects/eras2',
     title: 'ERAS2 — Governor\'s Honors Program',
     subtitle: 'GHP Mechanical & Aerospace capstone plane integrating an ionic-wind propulsion system through stacked electrohydrodynamic units.',
-    image: '/images/projects/l1.svg',
+    image: '/images/projects/eras.svg',
   },
 ];
 
@@ -73,7 +73,7 @@ const STRENGTHS: Strength[] = [
   },
   {
     title: 'High-Power Rocketry',
-    description: 'Tripoli L1 certified with experience across carbon-fiber construction and thrust structures.',
+    description: 'Attempting to earn NAR High-Power Level 1 Certification',
     icon: Rocket,
   },
   {
@@ -83,7 +83,7 @@ const STRENGTHS: Strength[] = [
   },
   {
     title: 'Composites & Fabrication',
-    description: 'Roll-wrapped CF layups, Delrin fin fabrication, and precision machining for structural fidelity.',
+    description: 'Fiberglass, Delrin fin fabrication, and precision machining for structural fidelity.',
     icon: Radio,
   },
   {
@@ -110,7 +110,7 @@ const TIMELINE: TimelineItem[] = [
     year: '2024',
     title: 'NASA Student Launch Initiative — Project RANCH',
     detail:
-      'Payload Team Lead & Outreach Coordinator; 4300-ft high-power vehicle with redundant avionics, carbon-fiber airframes, and a flight-validated payload experiment.',
+      'Payload Team Lead & Outreach Coordinator; 4300-ft high-power vehicle with redundant avionics, fiberglass airframes, and a flight-validated payload experiment.',
   },
   {
     year: '2024',
