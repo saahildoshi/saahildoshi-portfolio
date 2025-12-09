@@ -50,7 +50,7 @@ const PROJECTS: Project[] = [
     summary:
       'Four-week residential program in Mechanical & Aerospace Engineering with calculus-based physics, thermodynamics with Cantera, FFT in Python, multivariable calculus, and a multi-week applied engineering project.',
     timeline: 'Summer 2024',
-    image: '/images/project-ghp.svg',
+    image: '/images/ghp/ghp-lesson.svg',
   },
   {
     title: 'Civil Air Patrol — Cadet Captain & Squadron Commander',
@@ -58,14 +58,14 @@ const PROJECTS: Project[] = [
     summary:
       'Cadet Captain leading ~30 cadets and 15 senior members through weekly aerospace education, leadership training, and special events at Ben Epps Airport.',
     timeline: 'Ongoing',
-    image: '/images/projects/arc.svg',
+    image: '/images/cap/CAP.svg',
   },
   {
     title: 'Level 1 Certification',
     href: '/projects/level1',
-    summary: 'BEAMS Project',
-    timeline: '2019–2022',
-    image: '/images/project-level1.svg',
+    summary: 'High-power research rocket for NAR Level 1 certification featuring a modular, cross-compatible airframe and a biological payload of 132 germinated bean seeds to study high-G ascent effects.',
+    timeline: 'Ongoing',
+    image: '/images/level1/level1.svg',
   },
 ];
 
