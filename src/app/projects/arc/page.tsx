@@ -52,7 +52,7 @@ function MediaCard({ src, caption, orientation = 'landscape', ratio }: MediaItem
 // ARC DATA
 // ----------------------------------
 const HERO_STATS = [
-  { label: 'Target Apogee', value: '820 ft (ARC 2023 ruleset)' },
+  { label: 'Target Apogee', value: '820 ft (ARC 2024 ruleset)' },
   { label: 'Flight Time Window', value: '43–46 seconds' },
   { label: 'Flight Mass', value: '605 g with egg payload' },
 ];
@@ -145,7 +145,7 @@ export default function ArcProjectPage() {
         <Section id="overview" title="Executive Summary" kicker="American Rocketry Challenge">
           <AnimatedSection className="space-y-6">
             <p>
-              As Co-Captain of the 2023 ARC team, I led design, simulation, and field operations for a mid-power rocket engineered to hit a
+              As Co-Captain of the 2024 ARC team, I led design, simulation, and field operations for a mid-power rocket engineered to hit a
               precise 820-foot apogee and 43–46 second total flight time while carrying a fragile egg payload. Our final mass of 605 grams
               provided a tight margin for structural strength and recovery hardware.
             </p>
@@ -158,7 +158,7 @@ export default function ArcProjectPage() {
         </Section>
 
         {/* MISSION SPECS */}
-        <Section id="specs" title="Mission Specifications & Constraints" kicker="ARC 2023 Ruleset">
+        <Section id="specs" title="Mission Specifications & Constraints" kicker="ARC 2024 Ruleset">
           <AnimatedSection>
             <p className="mb-8">
               ARC's strict scoring window forces careful balancing of altitude, mass, drag, and descent rate. Each constraint directly shapes
