@@ -25,7 +25,7 @@ const cardItem = {
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
-  const email = 'saahil.doshi@email.com';
+  const email = 'sdo92122@hotmail.com';
 
   const handleCopy = async () => {
     try {
@@ -71,7 +71,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.28em] text-accentneongreen/80">Email</p>
-                <p className="mt-1 text-white">saahil.doshi [AT] email.com</p>
+                <p className="mt-1 text-white">sdo92122@hotmail.com</p>
               </div>
             </div>
             <p className="mt-4 text-primary-foreground/70">Direct email is the fastest way to reach me.</p>
@@ -111,7 +111,7 @@ export default function ContactPage() {
               variant="outline"
               className="mt-5 w-full justify-center border-accentneongreen/50 text-accentneongreen hover:bg-accentneongreen/10"
             >
-              <Link href="https://www.linkedin.com/in/saahil-doshi" target="_blank" rel="noreferrer">
+              <Link href="https://www.linkedin.com/in/saahil-doshi-a2564a332/i" target="_blank" rel="noreferrer">
                 Open LinkedIn
               </Link>
             </Button>
@@ -138,7 +138,7 @@ export default function ContactPage() {
               variant="outline"
               className="mt-5 w-full justify-center border-accentneongreen/50 text-accentneongreen hover:bg-accentneongreen/10"
             >
-              <Link href="https://github.com/BobJeff333/saahildoshi-portfolio" target="_blank" rel="noreferrer">
+              <Link href="https://github.com/saahildoshi/saahildoshi-portfolio" target="_blank" rel="noreferrer">
                 View GitHub
               </Link>
             </Button>
@@ -164,7 +164,7 @@ export default function ContactPage() {
             asChild
             className="rounded-full bg-accentneongreen px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary hover:bg-accentneongreen/90"
           >
-            <a href="mailto:saahil.doshi@email.com">Email Me</a>
+            <a href="mailto:sdo92122@hotmail.com">Email Me</a>
           </Button>
         </div>
       </motion.div>
