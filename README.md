@@ -96,18 +96,6 @@ Features:
 - OpenRocket and mass-tracking simulations  
 - Designed as both a research platform and Level 1 certification vehicle  
 
----
-
-## **FIRST Robotics – Control Systems**  
-Programmer on a region-winning FRC team.
-
-- Velocity and position PID control tuning  
-- Autonomous routines  
-- Mechanism subsystem logic  
-- Sensor integration and debugging (hardware-in-loop)
-
----
-
 ## **Civil Air Patrol – Cadet Captain & Squadron Commander**  
 Leader of a unit with ~30 cadets and 15 senior members.
 
