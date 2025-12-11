@@ -23,7 +23,7 @@ const stats = [
 
 const specificationRows = [
   { parameter: 'Propulsion', value: 'AeroTech K1100T reload, K-class final selection' },
-  { parameter: 'Airframe', value: 'Roll-wrapped carbon-fiber body tubes; fiberglass couplers (final change)' },
+  { parameter: 'Airframe', value: 'Roll-wrapped fiberglass body tubes; fiberglass couplers (final change)' },
   { parameter: 'Fins', value: 'Delrin fins on a bolted, removable fin can with aluminum thrust structure' },
   { parameter: 'Recovery', value: '18" drogue at apogee; 48" main at ~650 ft AGL; shear pins and dual deployment' },
   { parameter: 'Avionics', value: 'Dual RRC3+ altimeters, independent power and charges, Featherweight GPS telemetry' },
@@ -184,7 +184,7 @@ export default function NasaSliPage() {
               </span>
               <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">NASA Student Launch Initiative — Project RANCH</h1>
               <p className="text-lg leading-relaxed text-primary-foreground/80">
-                92-inch carbon-fiber launch vehicle targeting a 4,200–4,300 ft apogee with redundant dual-deployment recovery, K-class propulsion, and ACORN data-return payload.
+                92-inch fiberglass launch vehicle targeting a 4,200–4,300 ft apogee with redundant dual-deployment recovery, K-class propulsion, and ACORN data-return payload.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
@@ -224,7 +224,7 @@ export default function NasaSliPage() {
             ))}
           </div>
           <p>
-            Project RANCH is the Oconee County Rocketry Association’s NASA SLI vehicle: a 92-inch, 4-inch-diameter carbon-fiber launch system with fiberglass couplers, Delrin fins on a removable fin can, and a K-class AeroTech motor. The vehicle maintains stability between 1.6 and 2.0 calibers throughout burn, employs dual RRC3+ altimeters with independent power and charges, and uses an 18-inch drogue with a 48-inch main deployed near 650 feet AGL.
+            Project RANCH is the Oconee County Rocketry Association’s NASA SLI vehicle: a 92-inch, 4-inch-diameter fiberglass launch system with fiberglass couplers, Delrin fins on a removable fin can, and a K-class AeroTech motor. The vehicle maintains stability between 1.6 and 2.0 calibers throughout burn, employs dual RRC3+ altimeters with independent power and charges, and uses an 18-inch drogue with a 48-inch main deployed near 650 feet AGL.
           </p>
           <p>
             After two full-scale test flights validated ascent stability, charge sizing, and recovery sequencing, the final launch in Huntsville reached approximately 4,300 feet—within the 4,200–4,300 foot target band—returning flight data via Featherweight GPS and the ACORN payload. Outreach objectives were fulfilled through STEM lessons and community events aligned with the NASA SLI outreach rubric.
@@ -235,7 +235,7 @@ export default function NasaSliPage() {
       <AnimatedSection>
         <Section id="specifications" title="Specifications" kicker="CDR / FRR Data">
           <p>
-            Final vehicle specifications reflect CDR, FRR, and LRR flysheet values, emphasizing a carbon-fiber primary structure, fiberglass couplers, and Delrin fin can architecture sized for the selected K1100T motor.
+            Final vehicle specifications reflect CDR, FRR, and LRR flysheet values, emphasizing a fiberglass primary structure, fiberglass couplers, and Delrin fin can architecture sized for the selected K1100T motor.
           </p>
           <div className="overflow-hidden rounded-2xl border border-white/5">
             <table className="min-w-full divide-y divide-white/10 text-left text-sm text-primary-foreground/80">
@@ -265,7 +265,7 @@ export default function NasaSliPage() {
       <AnimatedSection>
         <Section id="architecture" title="Launch Vehicle Architecture" kicker="Structures">
           <p>
-            The primary airframe uses roll-wrapped carbon fiber for strength-to-weight efficiency, paired with fiberglass couplers to simplify bonding and absorb landing loads. Delrin fins bolt into a removable fin can with an aluminum thrust structure around a 54 mm motor mount, allowing maintenance without disturbing avionics. The elliptical nose cone houses ballast and a camera mount while keeping a smooth profile for drag management.
+            The primary airframe uses fiberglass for strength-to-weight efficiency, paired with matching fiberglass couplers to simplify bonding and absorb landing loads. Delrin fins bolt into a removable fin can with an aluminum thrust structure around a 54 mm motor mount, allowing maintenance without disturbing avionics. The elliptical nose cone houses ballast and a camera mount while keeping a smooth profile for drag management.
           </p>
           <p>
             Mechanical interfaces emphasize serviceability: shear pins secure each section, vent holes and O-rings manage internal pressure, and threaded inserts at the couplers allow repeated assembly. The final layout supports rapid field integration and protects avionics during high-energy deployment events.
