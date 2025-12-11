@@ -20,9 +20,6 @@ All major projects are dynamically rendered with responsive layouts, animated se
 /public/images → All project images, figures, CAD renders, test graphs
 /styles → Global and theme CSS
 
-yaml
-Copy code
-
 ---
 
 # 🛰️ Featured Projects
@@ -154,13 +151,9 @@ git clone https://github.com/your-username/saahildoshi-portfolio
 cd saahildoshi-portfolio
 Install dependencies:
 
-bash
-Copy code
 npm install
 Run the development server:
 
-bash
-Copy code
 npm run dev
 Open the site:
 http://localhost:3000
@@ -168,8 +161,6 @@ http://localhost:3000
 📸 Media Structure
 Images live under:
 
-swift
-Copy code
 /public/images/{project-name}/*
 Project pages expect consistent filenames and portrait/landscape orientation for responsive rendering.
 
