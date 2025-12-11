@@ -152,6 +152,8 @@ Images live under:
 /public/images/{project-name}/*
 Project pages expect consistent filenames and portrait/landscape orientation for responsive rendering.
 
+```
+
 🤝 Contributing
 This is a personal portfolio, but suggestions are welcome:
 
