@@ -29,9 +29,9 @@ export default function LevelOneFleetPage() {
     </h1>
 
     <p className="mt-4 max-w-3xl text-lg text-primary-foreground/80">
-      A fully 3D-printed high-power rocket designed for my NAR Level 1 certification 
-      and the BEAMS biological experiment.  
-      The vehicle carries a 132-sample botanical payload to ~3000 feet to study 
+      A fully 3D-printed high-power rocket designed for my NAR Level 1 certification
+      and the BEAMS biological experiment.
+      The vehicle carries a 132-sample botanical payload to ~3000 feet to study
       plant germination under high-G ascent stresses.
     </p>
 
@@ -60,9 +60,9 @@ export default function LevelOneFleetPage() {
         </div>
 
         <p>
-          The BEAMS mission (Botanical Experiment on Aeronautical Mechanical Stress) investigates how early-stage plant 
-          germination responds to the mechanical environment of high-power flight. The rocket carries eleven modular seed bays, 
-          each containing twelve germinated samples, hermetically sealed and mechanically secured for ascent. After flight, 
+          The BEAMS mission (Botanical Experiment on Aeronautical Mechanical Stress) investigates how early-stage plant
+          germination responds to the mechanical environment of high-power flight. The rocket carries eleven modular seed bays,
+          each containing twelve germinated samples, hermetically sealed and mechanically secured for ascent. After flight,
           samples will be analyzed for stress-response indicators and developmental differences.
         </p>
       </Section>
@@ -70,15 +70,15 @@ export default function LevelOneFleetPage() {
       {/* Design Section */}
       <Section id="design" title="Vehicle Architecture" kicker="Design">
         <p>
-          The rocket is fully 3D printed, using threaded interfaces to enable rapid assembly and modular part replacement. 
-          All lower airframe sections share a 2.598 inch outer diameter, while the payload bay expands to 3.598 inches to 
-          accommodate the seed trays. The avionics bay uses the team’s standardized AV-bay platform, ensuring compatibility with 
+          The rocket is fully 3D printed, using threaded interfaces to enable rapid assembly and modular part replacement.
+          All lower airframe sections share a 2.598 inch outer diameter, while the payload bay expands to 3.598 inches to
+          accommodate the seed trays. The avionics bay uses the team’s standardized AV-bay platform, ensuring compatibility with
           future Level 1 designs.
         </p>
 
         <p>
-          The payload system consists of eleven stacked bays, each sliding into four internal rails and locked in place by a 
-          threaded rod, washers, and a plexiglass cover. The entire structure is sealed with O-rings and end-caps to maintain 
+          The payload system consists of eleven stacked bays, each sliding into four internal rails and locked in place by a
+          threaded rod, washers, and a plexiglass cover. The entire structure is sealed with O-rings and end-caps to maintain
           containment throughout ascent, descent, and landing.
         </p>
 
@@ -91,8 +91,8 @@ export default function LevelOneFleetPage() {
       {/* Simulation Results */}
       <Section id="simulations" title="Launch Simulations" kicker="Analysis">
         <p>
-          OpenRocket simulations were conducted using final mass estimates, drag profiles, and chute sizing. 
-          The projected apogee is approximately 3000 ft on an H-class motor, with drift predictions ranging from 
+          OpenRocket simulations were conducted using final mass estimates, drag profiles, and chute sizing.
+          The projected apogee is approximately 3000 ft on an H-class motor, with drift predictions ranging from
           2 ft in calm winds to ~1500 ft in 20 mph winds.
         </p>
 
@@ -113,13 +113,13 @@ export default function LevelOneFleetPage() {
       {/* Role Section */}
       <Section id="role" title="My Role" kicker="Contributions">
         <p>
-          I designed the BEAMS rocket from the ground up, authored the technical documentation, and developed the modular payload 
-          system capable of carrying 132 biological samples. I modeled the airframe, nose cone, seed trays, and transitions in 
+          I designed the BEAMS rocket from the ground up, authored the technical documentation, and developed the modular payload
+          system capable of carrying 132 biological samples. I modeled the airframe, nose cone, seed trays, and transitions in
           Fusion 360, ran the OpenRocket simulations, and integrated the design into our team’s standardized AV-bay framework.
         </p>
 
         <p>
-          This rocket will also serve as my NAR Level 1 certification vehicle, where I am responsible for CAD, fabrication, 
+          This rocket will also serve as my NAR Level 1 certification vehicle, where I am responsible for CAD, fabrication,
           avionics wiring, recovery system sizing, and launch-day operations.
         </p>
       </Section>
