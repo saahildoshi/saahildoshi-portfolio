@@ -132,7 +132,7 @@ export default function UgaAirfoilResearchPage() {
   return (
     <div className="min-h-screen bg-primary text-primary-foreground">
       <AnimatedHero
-        image="/images/airfoil-hero.svg"
+        image="/images/uga-airfoil/Airfoil-Hero.svg"
         badge="UGA Airfoil Research · Summer Internship & Science Fair"
         title="Bio-Inspired and AI-Designed Airfoils — UGA Research & Science Fair"
         subtitle="Under the mentorship of Dr. Ramana Pidaparti at the University of Georgia, I conducted an 8-week research project comparing the aerodynamic performance of bio-inspired, generative AI-designed, and control airfoils using XFOIL simulations, Fusion 360 modeling, 3D printing, and wind tunnel testing."

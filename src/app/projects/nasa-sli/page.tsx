@@ -169,8 +169,8 @@ export default function NasaSliPage() {
       <section className="relative overflow-hidden">
         <div className="relative w-full aspect-video overflow-hidden rounded-none border-b border-white/10">
           <NextImage
-            src="/images/nasa-sli/Final-Dimensioned-Rocket.png"
-            alt="Final dimensioned NASA SLI vehicle"
+            src="/images/nasa-sli/SLI-Hero.png"
+            alt="SLI-Hero"
             fill
             className="object-contain p-4"
             sizes="100vw"

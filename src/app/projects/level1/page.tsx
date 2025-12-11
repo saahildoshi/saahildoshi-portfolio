@@ -9,36 +9,47 @@ export default function LevelOneFleetPage() {
   return (
     <div className="space-y-12 pb-24">
 
-      {/* Hero Section */}
-      <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/80 to-primary" />
-        <div className="relative mx-auto max-w-6xl px-6 py-24">
-          <span className="inline-flex items-center rounded-full border border-accentneongreen/30 bg-accentneongreen/10 px-4 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-accentneongreen">
-            Research Rocket
-          </span>
+     {/* Hero Section */}
+<section
+  className="relative isolate overflow-hidden bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/images/level1/Level1-Hero.svg')",
+  }}
+>
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-primary/80 to-primary" />
 
-          <h1 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
-            BEAMS Rocket — Level 1 Certification Vehicle
-          </h1>
+  <div className="relative mx-auto max-w-6xl px-6 py-24">
+    <span className="inline-flex items-center rounded-full border border-accentneongreen/30 bg-accentneongreen/10 px-4 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-accentneongreen">
+      Research Rocket
+    </span>
 
-          <p className="mt-4 max-w-3xl text-lg text-primary-foreground/80">
-            A fully 3D-printed high-power rocket designed for my NAR Level 1 certification and the BEAMS biological experiment.  
-            The vehicle carries a 132-sample botanical payload to ~3000 feet to study plant germination under high-G ascent stresses.
-          </p>
+    <h1 className="mt-6 text-4xl font-bold text-white sm:text-5xl">
+      BEAMS Rocket — Level 1 Certification Vehicle
+    </h1>
 
-          <div className="mt-8 flex gap-4">
-            <Button asChild>
-              <Link href="/projects">Back to Projects</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/contact">
-                Request Full Specs
-                <ArrowUpRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+    <p className="mt-4 max-w-3xl text-lg text-primary-foreground/80">
+      A fully 3D-printed high-power rocket designed for my NAR Level 1 certification 
+      and the BEAMS biological experiment.  
+      The vehicle carries a 132-sample botanical payload to ~3000 feet to study 
+      plant germination under high-G ascent stresses.
+    </p>
+
+    <div className="mt-8 flex gap-4">
+      <Button asChild>
+        <Link href="/projects">Back to Projects</Link>
+      </Button>
+
+      <Button asChild variant="outline">
+        <Link href="/contact">
+          Request Full Specs
+          <ArrowUpRight className="ml-2 h-4 w-4" />
+        </Link>
+      </Button>
+    </div>
+  </div>
+</section>
+
 
       {/* Overview */}
       <Section id="overview" title="Mission Overview" kicker="Overview">
