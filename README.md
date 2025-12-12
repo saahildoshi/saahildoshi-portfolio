@@ -11,7 +11,7 @@ saahildoshi-portfolio.vercel.app
 
 ## 📁 Repository Overview
 
-This project is built as a modular, component-driven portfolio using **Next.js 14 (App Router)**, **TypeScript**, **TailwindCSS**, **shadcn/ui**, and **Framer Motion**.  
+This project is built as a modular, component-driven portfolio using **Next.js 14 (App Router)**, **TypeScript**, **TailwindCSS**, and **shadcn/ui**.  
 All major projects are dynamically rendered with responsive layouts, animated sections, and structured media galleries.
 
 ### **Main Directories**
@@ -114,8 +114,7 @@ Leader of a unit with ~30 cadets and 15 senior members.
 - Next.js 14 — App Router  
 - TypeScript  
 - TailwindCSS  
-- shadcn/ui  
-- Framer Motion (scroll animations, smooth transitions)  
+- shadcn/ui
 
 ### **Content / Media**
 - Next/Image optimization  
@@ -145,6 +144,7 @@ Run the development server:
 npm run dev
 Open the site:
 http://localhost:3000
+```
 
 📸 Media Structure
 Images live under:
@@ -152,7 +152,6 @@ Images live under:
 /public/images/{project-name}/*
 Project pages expect consistent filenames and portrait/landscape orientation for responsive rendering.
 
-```
 
 🤝 Contributing
 This is a personal portfolio, but suggestions are welcome:
@@ -169,7 +168,7 @@ Open an issue or submit a PR.
 
 📜 License
 This repository is licensed under the MIT License.
-Feel free to reference the structure, but please do not reuse my personal content, research, or project images.
+Feel free to reference the structure, but please do not reuse my personal content, research, or project images without permission.
 
 ✉️ Contact
 Questions or collaboration requests?
