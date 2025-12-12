@@ -37,10 +37,6 @@ export default function LevelOneFleetPage() {
 
     <div className="mt-8 flex gap-4">
       <Button asChild>
-        <Link href="/projects">Back to Projects</Link>
-      </Button>
-
-      <Button asChild variant="outline">
         <Link href="/contact">
           Request Full Specs
           <ArrowUpRight className="ml-2 h-4 w-4" />

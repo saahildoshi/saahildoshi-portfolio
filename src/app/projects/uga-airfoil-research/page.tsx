@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 const IMAGE_BASE_PATH = '/images/uga-airfoil'; // ✅ Update this if your PNGs live in a different folder
 
 const HERO_STATS = [
-  { label: 'Duration', value: '7–8 weeks · 8 hours/day' },
+  { label: 'Duration', value: '8 weeks · 8 hours/day' },
   { label: 'Methods', value: 'XFOIL CFD · Fusion 360 · Wind tunnel' },
   { label: 'Outcome', value: 'Regional gold medal · State finalist' },
 ];
@@ -141,7 +141,6 @@ export default function UgaAirfoilResearchPage() {
             <Button asChild size="lg" className="rounded-full">
               <a href="#results" className="inline-flex items-center gap-2">
                 View Results
-                <ArrowUpRight className="h-4 w-4" />
               </a>
             </Button>
             <Button
@@ -150,8 +149,8 @@ export default function UgaAirfoilResearchPage() {
               variant="outline"
               className="rounded-full border-accentneongreen/50 text-accentneongreen"
             >
-              <a href="#" className="inline-flex items-center gap-2">
-                Download Report
+              <a href="/Wing-Performance-Characteristics-Science-Fair.png" className="inline-flex items-center gap-2">
+                View Science Fair Poster
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </Button>
@@ -615,8 +614,8 @@ export default function UgaAirfoilResearchPage() {
         variant="outline"
         className="rounded-full border-accentneongreen/50 text-accentneongreen"
       >
-        <a href="#" className="inline-flex items-center gap-2">
-          Download Science Fair Poster (PDF)
+        <a href="/Wing-Performance-Characteristics-Science-Fair.png" className="inline-flex items-center gap-2">
+          View Science Fair Poster (PNG)
           <ArrowUpRight className="h-4 w-4" />
         </a>
       </Button>

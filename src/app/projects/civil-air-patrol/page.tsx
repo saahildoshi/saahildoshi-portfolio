@@ -23,9 +23,9 @@ const OPERATIONS_STATS = [
 ];
 
 const MEDIA_ITEMS = [
-  { src: '/images/gallery-flight-01.svg', caption: 'Cadet corps formation at Ben Epps Airport (placeholder image).' },
-  { src: '/images/gallery-flight-02.svg', caption: 'Classroom aerospace lesson (placeholder image).' },
-  { src: '/images/gallery-flight-03.svg', caption: 'Field leadership and team-building activity (placeholder image).' },
+  { src: '', caption: 'Squadron formation at Ben Epps Airport.' },
+  { src: '', caption: 'Classroom aerospace lesson.' },
+  { src: '', caption: 'Field leadership and team-building activity.' },
 ];
 
 export default function CivilAirPatrolPage() {
@@ -276,14 +276,6 @@ export default function CivilAirPatrolPage() {
                   <FigureCard src={item.src} caption={item.caption} />
                 </motion.div>
               ))}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild>
-                <a href="#">Download Program Summary (PDF)</a>
-              </Button>
-              <Button asChild variant="outline">
-                <a href="#">Download Portfolio Excerpt (PDF)</a>
-              </Button>
             </div>
           </AnimatedSection>
         </Section>

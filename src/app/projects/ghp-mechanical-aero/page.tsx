@@ -74,8 +74,8 @@ export default function GhpmAeroPage() {
           This curriculum exposed me to a style of learning where theory, computation, and physical intuition had to work together, and where the math was no longer isolated from its engineering applications.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <FigureCard src="/images/gallery-flight-01.svg" caption="Notebook from calculus-based physics and thermodynamics sessions." />
-          <FigureCard src="/images/gallery-flight-02.svg" caption="Python FFT visualization exercises and lab notes." />
+          <FigureCard src="" caption="Notebook from calculus-based physics and thermodynamics sessions." />
+          <FigureCard src="" caption="Python FFT visualization exercises and lab notes." />
         </div>
       </Section>
 
@@ -181,18 +181,12 @@ export default function GhpmAeroPage() {
 
       <Section id="media" title="Media and Supporting Materials" kicker="Media">
         <div className="grid gap-6 md:grid-cols-2">
-          <FigureCard src="/images/gallery-flight-01.svg" caption="GHP classroom session — mechanical & aerospace engineering." />
-          <FigureCard src="/images/gallery-flight-02.svg" caption="Python FFT analysis of music samples and lab exercises." />
-          <FigureCard src="/images/gallery-flight-03.svg" caption="Thermodynamics and Cantera notes compiled for study sessions." />
-          <FigureCard src="/images/gallery-flight-01.svg" caption="Portfolio materials prepared for the state-level interview." />
+          <FigureCard src="" caption="GHP classroom session — mechanical & aerospace engineering." />
+          <FigureCard src="" caption="Python FFT analysis of music samples and lab exercises." />
+          <FigureCard src="" caption="Thermodynamics and Cantera notes compiled for study sessions." />
+          <FigureCard src="" caption="Portfolio materials prepared for the state-level interview." />
         </div>
         <div className="flex flex-wrap gap-4">
-          <Button asChild variant="outline" size="sm" className="rounded-full border-accentneongreen/50 text-accentneongreen">
-            <Link href="#">Download GHP Portfolio Excerpt (PDF)</Link>
-          </Button>
-          <Button asChild variant="outline" size="sm" className="rounded-full border-accentneongreen/50 text-accentneongreen">
-            <Link href="#">Download Program Summary (PDF)</Link>
-          </Button>
         </div>
         <div>
           <Button asChild variant="outline" size="sm" className="rounded-full border-accentneongreen/50 text-accentneongreen">

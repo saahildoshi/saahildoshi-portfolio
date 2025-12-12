@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import AnimatedHero from '@/components/animated/AnimatedHero';
 import { AnimatedSection } from '@/components/animated/AnimatedSection';
+import { ArrowUpRight } from 'lucide-react';
 import { Section } from '@/components/layout/Section';
 import { StatCard } from '@/components/layout/StatCard';
 import { FigureCard } from '@/components/layout/FigureCard';
@@ -35,9 +36,9 @@ const DESIGN_ITERATIONS = [
 ];
 
 const MEDIA = [
-  { src: '/images/eras2-engine.svg', caption: 'Modular ionic engine units with acrylic brackets and sheet-metal electrodes.' },
-  { src: '/images/eras2-airframe.svg', caption: 'WASP-derived airfoil with rectangular V3 wing and engine hardpoints.' },
-  { src: '/images/gallery-flight-03.svg', caption: 'Test stand and instrumentation concepts for thrust and velocity logging.' },
+  { src: '', caption: 'Modular ionic engine units with acrylic brackets and sheet-metal electrodes.' },
+  { src: '', caption: 'WASP-derived airfoil with rectangular V3 wing and engine hardpoints.' },
+  { src: '', caption: 'Test stand and instrumentation concepts for thrust and velocity logging.' },
 ];
 
 export default function Eras2ProjectPage() {
@@ -49,14 +50,17 @@ export default function Eras2ProjectPage() {
         title="ERAS2 — Electrohydrodynamic Remote Aircraft System"
         subtitle="A GHP capstone project to design, build, and test an ionic-wind–powered aircraft, combining electrohydrodynamic propulsion with a lightweight, student-designed airframe."
         actions={(
-          <div className="flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="rounded-full">
-              <Link href="/projects">Back to Projects</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
-              <Link href="/projects/ghp-mechanical-aero">About GHP</Link>
-            </Button>
-          </div>
+       <div className="flex flex-wrap items-center gap-3">
+  <Button asChild size="lg" className="rounded-full">
+    <Link
+      href="/projects/ghp-mechanical-aero"
+      className="inline-flex items-center gap-2"
+    >
+      About GHP
+      <ArrowUpRight className="h-4 w-4" />
+    </Link>
+  </Button>
+</div>
         )}
       />
       <div className="mx-auto max-w-6xl space-y-16 px-6 py-16">

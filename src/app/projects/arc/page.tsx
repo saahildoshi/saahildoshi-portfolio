@@ -290,15 +290,6 @@ export default function ArcProjectPage() {
                 </motion.div>
               ))}
             </div>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
-                <Link href="#">Download ARC Flight Logs (PDF)</Link>
-              </Button>
-              <Button asChild variant="outline" className="rounded-full border-accentneongreen/50 text-accentneongreen">
-                <Link href="#">Download ARC Design Summary (PDF)</Link>
-              </Button>
-            </div>
           </AnimatedSection>
         </Section>
       </div>
