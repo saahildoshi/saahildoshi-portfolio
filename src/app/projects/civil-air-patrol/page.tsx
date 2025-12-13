@@ -5,9 +5,13 @@ import {
   ArrowUpRight,
   CalendarDays,
   GraduationCap,
+  Mountain,
+  Ribbon,
   Shield,
   Target,
+  TowerControl,
   Users,
+  Wind,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -31,14 +35,23 @@ const HERO_STATS = [
 const OPERATIONS_STATS = [
   { label: 'Weekly Meeting Duration', value: '3 hours every Tuesday' },
   { label: 'Lesson Areas', value: 'Aerospace · Leadership · Character' },
-  { label: 'Cadets Mentored', value: '30+ over 3 years' },
+  { label: 'Cadets Mentored', value: '50+ over 3 years' },
 ];
 
 const QUICK_HIGHLIGHTS = [
-  { icon: Users, text: 'Lead and mentor a 30-cadet corps with a structured chain of command.' },
-  { icon: CalendarDays, text: 'Plan and execute weekly training with measurable objectives.' },
-  { icon: Target, text: 'Build cadet confidence through feedback, boards, and standards.' },
-  { icon: Shield, text: 'Maintain professionalism, safety, and CAP-aligned expectations.' },
+  {
+    icon: Users,
+    text: 'Lead a 30-cadet corps, overseeing a structured chain of command.',
+  },
+  {
+    icon: CalendarDays,
+    text: 'Design and execute weekly training curricula with measurable outcomes.',
+  },
+  {
+    icon: Target,
+    text: 'Foster cadet growth through structured feedback and promotion boards.',
+  },
+  { icon: Shield, text: 'Uphold rigorous standards for professionalism, safety, and CAP protocol.' },
 ];
 
 const ROLE_CARDS = [
@@ -80,6 +93,7 @@ const INITIATIVES = [
     description:
       'Led the wreath-laying ceremony and Color Guard at Winterville Cemetery, reinforcing service and professionalism.',
     meta: ['Ceremony leadership', 'Coordination', 'Public-facing standards'],
+    icon: Ribbon,
   },
   {
     title: 'Indoor Skydiving (iFLY)',
@@ -87,6 +101,7 @@ const INITIATIVES = [
     description:
       'Organized an indoor skydiving trip to connect airflow concepts to body position and stability.',
     meta: ['Logistics', 'Safety planning', 'STEM connection'],
+    icon: Wind,
   },
   {
     title: 'Airport Control Tower Tour',
@@ -94,6 +109,7 @@ const INITIATIVES = [
     description:
       'Coordinated an ATC tower tour so cadets could see real-world airspace coordination.',
     meta: ['External partners', 'Scheduling', 'Preparation'],
+    icon: TowerControl,
   },
   {
     title: 'Mountain Hike & Ruck March',
@@ -101,36 +117,38 @@ const INITIATIVES = [
     description:
       'Led a hike and ruck march to build physical fitness, discipline, and teamwork.',
     meta: ['Planning', 'Cadet readiness', 'Team leadership'],
+    icon: Mountain,
   },
 ];
 
 const TIMELINE = [
   {
     label: 'Milestone Exams',
-    title: 'Wright Brothers · Billy Mitchell · Amelia Earhart',
+    title: 'Key Milestone Awards (Wright Brothers, Mitchell, Earhart)',
     detail:
-      'Closed-book milestone exams covering aerospace, leadership, character development, and fitness.',
+      'Passed comprehensive, closed-book milestone exams covering aerospace, leadership, character, and fitness.',
     icon: GraduationCap,
-  },
-  {
-    label: 'Fitness & Standards',
-    title: 'Cadet Physical Fitness Standards',
-    detail: 'Maintained CAP physical fitness standards through regular training.',
-    icon: Target,
   },
   {
     label: 'Advanced Training',
     title: 'Regional Cadet Leadership School (RCLS)',
     detail:
-      'Maxwell Air Force Base (Dec 27 – Jan 3): advanced leadership and management training.',
+      'Completed a week-long leadership development course at Maxwell Air Force Base, focusing on advanced management and instructional techniques.',
+    icon: Target,
+  },
+  {
+    label: 'Fitness & Standards',
+    title: 'Physical Fitness Excellence',
+    detail:
+      'Consistently met and exceeded Cadet Physical Fitness Program standards through disciplined personal training.',
     icon: Target,
   },
 ];
 
 const MEDIA_ITEMS = [
-  { src: '', caption: 'Squadron formation at Ben Epps Airport.' },
-  { src: '', caption: 'Classroom aerospace lesson.' },
-  { src: '', caption: 'Field leadership and team-building activity.' },
+  { src: '', caption: 'Leading a squadron formation at Ben Epps Airport.' },
+  { src: '', caption: 'Conducting a classroom lesson on aerospace principles.' },
+  { src: '', caption: 'Briefing cadets during a field leadership exercise.' },
 ];
 
 // -------------------- UI HELPERS --------------------
@@ -235,7 +253,7 @@ export default function CivilAirPatrolPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
                     At a glance
                   </p>
-                  <h2 className="text-xl font-semibold">Leadership impact, made scannable</h2>
+                  <h2 className="text-xl font-semibold">Leadership Impact</h2>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <Chip href="#overview">Overview</Chip>
@@ -253,7 +271,7 @@ export default function CivilAirPatrolPage() {
                   return (
                     <Reveal key={item.text} delay={idx * 0.05}>
                       <div className="flex gap-3 rounded-2xl border border-white/5 bg-black/20 p-4">
-                        <div className="rounded-xl border border-accentneongreen/20 bg-accentneongreen/10 p-2 text-accentneongreen">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accentneongreen/20 bg-accentneongreen/10 p-2 text-accentneongreen">
                           <Icon className="h-5 w-5" />
                         </div>
                         <p className="text-sm text-primary-foreground/80">{item.text}</p>
@@ -275,42 +293,41 @@ export default function CivilAirPatrolPage() {
               <div className="grid gap-6 lg:grid-cols-[1.2fr,1fr]">
                 <div className="space-y-4">
                   <p>
-                    My Civil Air Patrol experience is centered on serving in leadership roles within
-                    a local squadron at Ben Epps Airport in Athens, Georgia. Our unit combines cadet
-                    members and senior (adult) members to deliver a full cadet program that includes
-                    aerospace education, leadership training, character development, and physical
-                    fitness.
+                    At the heart of my Civil Air Patrol journey is my leadership service within our
+                    local squadron at Ben Epps Airport. Here, I guide a dynamic unit of cadets and
+                    senior members through a comprehensive program spanning aerospace education,
+                    leadership, character development, and physical fitness.
                   </p>
                   <p className="text-primary-foreground/80">
-                    As cadets progress, they move from simply attending meetings to helping plan,
-                    teach, and command activities for others. In my role as Cadet Captain and Cadet
-                    Commander, I operate at the highest cadet leadership level in the squadron chain
-                    of command—translating senior member guidance into concrete weekly plans,
-                    training schedules, and standards for cadets to follow.
+                    Progression in CAP means evolving from a participant to a leader. As Cadet
+                    Captain and Commander, I stand at the top of the cadet chain of command,
+                    responsible for translating high-level guidance from senior members into
+                    actionable weekly plans, rigorous training schedules, and the professional
+                    standards every cadet is expected to meet.
                   </p>
                 </div>
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Meeting rhythm
+                    Meeting Rhythm
                   </p>
-                  <h3 className="mt-2 text-base font-semibold">Tuesday night structure</h3>
+                  <h3 className="mt-2 text-base font-semibold">A Structured Tuesday Night</h3>
                   <ol className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                     <li className="flex gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-accentneongreen/70" />
-                      <span>Staff sync → objectives, roles, accountability.</span>
+                      <span>Staff Sync → Objectives, roles, and accountability.</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-accentneongreen/70" />
-                      <span>Instruction blocks → aerospace + leadership + character.</span>
+                      <span>Instruction Blocks → Aerospace, leadership, and character.</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-accentneongreen/70" />
-                      <span>Drill / hands-on → standards under time pressure.</span>
+                      <span>Drill & Hands-On → Applying standards under pressure.</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-accentneongreen/70" />
-                      <span>Feedback loop → boards, coaching, next-week goals.</span>
+                      <span>Feedback Loop → Boards, coaching, and setting future goals.</span>
                     </li>
                   </ol>
                 </GlassCard>
@@ -320,22 +337,24 @@ export default function CivilAirPatrolPage() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                      What I’m responsible for
+                      My Responsibilities
                     </p>
                     <ul className="space-y-2 text-sm text-primary-foreground/80">
-                      <li>Turning squadron goals into weekly meeting plans and training schedules.</li>
-                      <li>Setting standards: discipline, uniforms, customs/courtesies, professionalism.</li>
-                      <li>Mentoring cadets through promotions and leadership progression.</li>
+                      <li>Translate squadron goals into weekly training schedules.</li>
+                      <li>
+                        Uphold standards for discipline, uniforms, and customs & courtesies.
+                      </li>
+                      <li>Mentor cadets through promotions and leadership progression.</li>
                     </ul>
                   </div>
                   <div className="space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                      How I lead
+                      My Leadership Philosophy
                     </p>
                     <ul className="space-y-2 text-sm text-primary-foreground/80">
-                      <li>Clear expectations → measurable objectives → consistent follow-up.</li>
-                      <li>Firm standards paired with constructive feedback and support.</li>
-                      <li>Cadet empowerment: delegation, ownership, and coaching.</li>
+                      <li>Lead with clear expectations and consistent follow-up.</li>
+                      <li>Balance firm standards with constructive feedback and support.</li>
+                      <li>Empower cadets through delegation, ownership, and coaching.</li>
                     </ul>
                   </div>
                 </div>
@@ -353,29 +372,28 @@ export default function CivilAirPatrolPage() {
               <div className="grid gap-8 lg:grid-cols-[1.2fr,1fr]">
                 <div className="space-y-4">
                   <p>
-                    As Cadet Commander, I am responsible for the overall performance and
-                    development of the cadet corps. On a weekly basis, I translate squadron goals
-                    into specific plans for meetings, assign duties to flight staff and element
-                    leaders, and monitor how effectively training is delivered.
+                    As Cadet Commander, I am ultimately responsible for the performance and
+                    development of the entire cadet corps. My weekly duties involve translating
+                    squadron goals into detailed meeting plans, delegating tasks to flight staff,
+                    and continuously monitoring the effectiveness of our training delivery.
                   </p>
                   <p className="text-primary-foreground/80">
-                    Previously, I served as Cadet Deputy Commander for Operations and Cadet Deputy
-                    Commander for Support, as well as Alpha Flight Sergeant. These roles taught me
-                    how to manage both the operational and support sides of a cadet squadron—
-                    balancing scheduling, logistics, and training with mentoring, discipline, and
-                    morale.
+                    My prior roles as Deputy Commander for Operations, Deputy for Support, and Alpha
+                    Flight Sergeant provided a holistic understanding of squadron management. I
+                    learned to balance the intricate demands of scheduling and logistics with the
+                    crucial human elements of mentorship, discipline, and morale.
                   </p>
                   <p className="text-primary-foreground/80">
-                    In all of these positions, I have been responsible not just for calling
-                    commands, but for developing people: setting expectations, providing feedback,
-                    and building an environment where cadets can grow in confidence, discipline, and
-                    aerospace knowledge.
+                    Across all of these positions, my focus has been on developing people, not just
+                    issuing commands. I cultivate an environment of growth by setting clear
+                    expectations, providing consistent feedback, and empowering cadets to build
+                    confidence, discipline, and deep aerospace knowledge.
                   </p>
                 </div>
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Role stack
+                    Role Stack
                   </p>
                   <div className="mt-4 space-y-4">
                     {ROLE_CARDS.map((role) => (
@@ -387,7 +405,7 @@ export default function CivilAirPatrolPage() {
                         <ul className="mt-2 space-y-2 text-sm text-primary-foreground/80">
                           {role.bullets.map((b) => (
                             <li key={b} className="flex gap-3">
-                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accentneongreen/70" />
                               <span>{b}</span>
                             </li>
                           ))}
@@ -410,42 +428,74 @@ export default function CivilAirPatrolPage() {
               <div className="grid gap-8 lg:grid-cols-[1.2fr,1fr]">
                 <div className="space-y-4">
                   <p>
-                    Our squadron conducts three-hour meetings every Tuesday night, combining
-                    aerospace education, leadership training, character development, and physical
-                    fitness. As Cadet Commander, I am responsible for ensuring that each meeting has
-                    a clear plan, defined learning objectives, and a balance between classroom
-                    instruction and hands-on activities.
+                    Every Tuesday night, our squadron convenes for a three-hour intensive meeting
+                    covering aerospace, leadership, character, and fitness. As Commander, I ensure
+                    every session is meticulously planned with clear learning objectives and a
+                    healthy balance between classroom theory and hands-on application.
                   </p>
                   <p className="text-primary-foreground/80">
-                    I serve as both Leadership Officer and Aerospace Officer at the cadet level. In
-                    those roles, I design and deliver lesson plans that break down challenging
-                    topics—such as fluid dynamics, basic aerodynamics, and leadership theory—into
-                    accessible, interactive sessions.
+                    In my dual capacity as the cadet Leadership and Aerospace Officer, I specialize
+                    in designing and delivering curricula. I take complex subjects like fluid
+                    dynamics, aerodynamics, and leadership theory and transform them into
+                    accessible, interactive lessons that resonate with cadets.
                   </p>
                   <p className="text-primary-foreground/80">
-                    After major activities or promotion boards, I conduct feedback sessions with
-                    cadets to reinforce strengths, identify specific improvements, and help them
-                    reflect on progress.
+                    A cornerstone of our program is the post-activity feedback loop. Following major
+                    events or promotion boards, I lead sessions to reinforce strengths, pinpoint
+                    areas for improvement, and guide cadets in self-reflection and personal growth.
                   </p>
                 </div>
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Delivery style
+                    Delivery Style
                   </p>
-                  <h3 className="mt-2 text-base font-semibold">How lessons stay engaging</h3>
+                  <h3 className="mt-2 text-base font-semibold">From Theory to Action</h3>
+                  <p className="mt-3 text-sm text-primary-foreground/80">
+                    My instructional philosophy is built on the idea that engagement comes from
+                    doing, not just listening. I design lessons that move concepts from the textbook
+                    to the real world, turning abstract theory into tangible, hands-on experience.
+                  </p>
                   <ul className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                     <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Demonstrations and hands-on activities (not just lecture).</span>
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accentneongreen/70" />
+                      <span>
+                        <span className="font-semibold text-white">
+                          Interactive & Hands-On Learning:
+                        </span>{' '}
+                        Instead of just lecturing on aerodynamics, we build and launch model rockets.
+                        Leadership theory is taught through practical exercises where cadets must
+                        lead a team to solve a problem under pressure.
+                      </span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Small-group discussions to reinforce leadership judgment.</span>
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accentneongreen/70" />
+                      <span>
+                        <span className="font-semibold text-white">
+                          Collaborative Problem-Solving:
+                        </span>{' '}
+                        I use small-group discussions and ethical dilemmas to develop leadership
+                        judgment. Cadets debate scenarios, make decisions as a team, and defend
+                        their reasoning, building critical thinking skills.
+                      </span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Feedback sessions that translate into promotion readiness.</span>
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accentneongreen/70" />
+                      <span>
+                        <span className="font-semibold text-white">Feedback for Growth:</span>{' '}
+                        Whether through formal promotion boards or informal after-action reviews,
+                        every activity concludes with a structured feedback loop to provide clear,
+                        actionable guidance for improvement.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accentneongreen/70" />
+                      <span>
+                        <span className="font-semibold text-white">Peer-Led Instruction:</span> I
+                        empower senior cadets to teach and mentor junior cadets, reinforcing their
+                        own knowledge while building a culture of ownership and relatable
+                        instruction.
+                      </span>
                     </li>
                   </ul>
                 </GlassCard>
@@ -471,39 +521,50 @@ export default function CivilAirPatrolPage() {
               <div className="grid gap-8 lg:grid-cols-[1.1fr,1fr]">
                 <div className="space-y-4">
                   <p>
-                    One of my most demanding leadership experiences in Civil Air Patrol was serving
-                    as a Flight Sergeant on line staff at a week-long encampment, where I led a
-                    flight of approximately 20 cadets for six days in a high-tempo, military-style
-                    training environment.
+                    Serving as a Flight Sergeant during a week-long encampment was one of my most
+                    formative leadership challenges. For six intense days, I led a flight of 20
+                    cadets in a high-tempo, military-style environment, pushing my abilities to
+                    maintain standards and morale under pressure.
                   </p>
                   <p className="text-primary-foreground/80">
-                    Cadet encampments are core activities in the CAP program: typically 7–10 day
-                    events that place cadets in an intense, structured environment emphasizing
-                    aerospace classes, leadership development, drill and ceremonies, physical
-                    training, and character education.
+                    Encampment is a cornerstone of the CAP experience. These 7–10 day events immerse
+                    cadets in a demanding, structured environment focused on accelerated learning in
+                    aerospace, leadership, drill, physical training, and character.
                   </p>
                 </div>
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    High-tempo execution
+                    High-Tempo Execution
                   </p>
                   <div className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                     <div className="flex gap-3">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Accountability: wake-ups, formations, punctuality, cadence.</span>
+                      <span>
+                        <span className="font-semibold text-white">Accountability:</span> Wake-ups,
+                        formations, punctuality, and cadence calls.
+                      </span>
                     </div>
                     <div className="flex gap-3">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Standards: drill precision, customs/courtesies, uniform readiness.</span>
+                      <span>
+                        <span className="font-semibold text-white">Standards:</span> Drill
+                        precision, customs, courtesies, and uniform readiness.
+                      </span>
                     </div>
                     <div className="flex gap-3">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Mentorship: stress management, confidence-building, cohesion.</span>
+                      <span>
+                        <span className="font-semibold text-white">Mentorship:</span> Stress
+                        management, confidence-building, and team cohesion.
+                      </span>
                     </div>
                     <div className="flex gap-3">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accentneongreen/70" />
-                      <span>Coordination: adjust schedules, resolve issues, maintain safety.</span>
+                      <span>
+                        <span className="font-semibold text-white">Coordination:</span> Adjusting
+                        schedules, resolving conflicts, and maintaining safety.
+                      </span>
                     </div>
                   </div>
                 </GlassCard>
@@ -512,7 +573,7 @@ export default function CivilAirPatrolPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Hotel Flight Sergeant duties
+                    Hotel Flight Sergeant Duties
                   </p>
                   <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
                     <li>Waking the flight, managing accountability, and ensuring on-time execution.</li>
@@ -532,7 +593,7 @@ export default function CivilAirPatrolPage() {
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Mentorship impact
+                    Mentorship Impact
                   </p>
                   <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
                     <li>Helped new cadets manage homesickness and stress across a demanding week.</li>
@@ -552,47 +613,52 @@ export default function CivilAirPatrolPage() {
             <AnimatedSection className="space-y-8">
               <div className="space-y-4">
                 <p>
-                  Outside of routine meetings, I have planned and led special activities designed to
-                  deepen cadets’ exposure to aviation and leadership.
+                  Beyond our weekly routine, I spearheaded special activities to provide cadets with
+                  deeper, more tangible exposure to the worlds of aviation and leadership.
                 </p>
                 <p className="text-primary-foreground/80">
-                  These events required planning logistics, coordinating with external partners,
-                  ensuring safety and transportation plans, and preparing cadets with expectations
-                  and objectives in advance.
+                  Executing these initiatives involved comprehensive logistical planning,
+                  coordination with external partners, rigorous safety and transport protocols, and
+                  ensuring every cadet was prepared with clear objectives.
                 </p>
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                {INITIATIVES.map((item, idx) => (
-                  <Reveal key={item.title} delay={idx * 0.05}>
-                    <GlassCard className="p-6">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                            {item.subtitle}
-                          </p>
-                          <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                {INITIATIVES.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <Reveal key={item.title} delay={idx * 0.05}>
+                      <GlassCard className="p-6">
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
+                              {item.subtitle}
+                            </p>
+                            <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                          </div>
+                          <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accentneongreen/20 bg-accentneongreen/10 text-accentneongreen">
+                            <Icon className="h-5 w-5" />
+                          </div>
                         </div>
-                        <div className="h-10 w-10 rounded-2xl border border-accentneongreen/20 bg-accentneongreen/10" />
-                      </div>
 
-                      <p className="mt-3 text-sm text-primary-foreground/80">
-                        {item.description}
-                      </p>
+                        <p className="mt-3 text-sm text-primary-foreground/80">
+                          {item.description}
+                        </p>
 
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {item.meta.map((m) => (
-                          <span
-                            key={m}
-                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-primary-foreground/80"
-                          >
-                            {m}
-                          </span>
-                        ))}
-                      </div>
-                    </GlassCard>
-                  </Reveal>
-                ))}
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {item.meta.map((m) => (
+                            <span
+                              key={m}
+                              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-primary-foreground/80"
+                            >
+                              {m}
+                            </span>
+                          ))}
+                        </div>
+                      </GlassCard>
+                    </Reveal>
+                  );
+                })}
               </div>
             </AnimatedSection>
           </Section>
@@ -611,8 +677,8 @@ export default function CivilAirPatrolPage() {
                     <Reveal key={t.title} delay={idx * 0.05}>
                       <GlassCard className="p-6">
                         <div className="flex items-start gap-4">
-                          <div className="rounded-2xl border border-accentneongreen/20 bg-accentneongreen/10 p-3 text-accentneongreen">
-                            <Icon className="h-5 w-5" />
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-accentneongreen/20 bg-accentneongreen/10 p-3 text-accentneongreen">
+                            <Icon className="h-6 w-6" />
                           </div>
                           <div className="min-w-0">
                             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
@@ -631,8 +697,8 @@ export default function CivilAirPatrolPage() {
               <GlassCard className="p-6">
                 <p className="text-sm text-primary-foreground/80">
                   These achievements formalize what I practice day-to-day: leading people, managing
-                  schedules, communicating under pressure, and modeling professional standards
-                  expected of aerospace leaders.
+                  schedules, communicating under pressure, and modeling the professional standards
+                  expected of modern aerospace leaders.
                 </p>
               </GlassCard>
             </AnimatedSection>
@@ -647,39 +713,40 @@ export default function CivilAirPatrolPage() {
             <AnimatedSection className="space-y-8">
               <div className="grid gap-6 lg:grid-cols-[1.2fr,1fr]">
                 <div className="space-y-4">
-                  <p>
-                    Civil Air Patrol has been one of the most important influences on my development
-                    as an aspiring aerospace engineer and leader. Through my roles as Cadet
-                    Commander, Deputy Commander for Operations and Support, Flight Sergeant, and
-                    instructor, I have strengthened key leadership skills.
-                  </p>
-                  <p className="text-primary-foreground/80">
-                    These experiences complement my technical work in rocketry and aerospace
-                    research by training me to lead teams, communicate clearly, and teach
-                    others—skills that translate directly into engineering environments.
-                  </p>
-                </div>
+                                  <p>
+                                    My time in Civil Air Patrol has been foundational to my growth as an aspiring
+                                    aerospace engineer and leader. Serving as Cadet Commander, Deputy Commander,
+                                    Flight Sergeant, and instructor has been a practical education in strengthening
+                                    the key skills of effective leadership.
+                                  </p>
+                                  <p className="text-primary-foreground/80">
+                                    This hands-on leadership experience is the perfect complement to my technical
+                                    work in rocketry and research. It has trained me to lead teams, communicate with
+                                    clarity, and effectively teach others—competencies that are directly applicable
+                                    and highly valuable in any engineering environment.
+                                  </p>
+                                </div>
 
                 <GlassCard className="p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accentneongreen/80">
-                    Core strengths
+                    Core Strengths
                   </p>
                   <ul className="mt-4 space-y-3 text-sm text-primary-foreground/80">
                     <li>
-                      <span className="font-semibold text-white">Leadership and mentoring:</span>{' '}
-                      guiding younger cadets through promotions and daily expectations.
+                      <span className="font-semibold text-white">Leadership & Mentoring:</span>{' '}
+                      Guiding cadets through promotions and professional development.
                     </li>
                     <li>
-                      <span className="font-semibold text-white">Instructional design:</span>{' '}
-                      building lessons that turn abstract concepts into engaging practice.
+                      <span className="font-semibold text-white">Instructional Design:</span>{' '}
+                      Building lessons that turn abstract concepts into engaging practice.
                     </li>
                     <li>
-                      <span className="font-semibold text-white">Operational management:</span>{' '}
-                      planning meetings, coordinating events, maintaining accountability.
+                      <span className="font-semibold text-white">Operational Management:</span>{' '}
+                      Planning meetings, coordinating events, and maintaining accountability.
                     </li>
                     <li>
-                      <span className="font-semibold text-white">Professionalism and discipline:</span>{' '}
-                      upholding standards while supporting cadet growth.
+                      <span className="font-semibold text-white">Professionalism & Discipline:</span>{' '}
+                      Upholding standards while supporting cadet growth and morale.
                     </li>
                   </ul>
                 </GlassCard>
