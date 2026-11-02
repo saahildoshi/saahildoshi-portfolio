@@ -142,6 +142,20 @@ export default function NasaSliPage() {
         </div>
       </Section>
 
+      <Section id="outreach" title="The project also became a platform for hands-on aerospace education" kicker="STEM outreach · approximately 250 students">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr,0.85fr]">
+          <div className="space-y-5">
+            <p>
+              Through Project RANCH outreach, I helped teach hands-on rocketry activities to approximately 250 K-8 students. The challenge was to preserve the engineering substance while making the system approachable to students encountering launch vehicles for the first time.
+            </p>
+            <p>
+              Hardware such as the altimeter, recovery components, and payload packaging made abstract concepts visible. Questions about why the rocket beeps, how the parachute deploys, or what a sensor measures became short lessons in instrumentation, energy, stability, and systems integration.
+            </p>
+          </div>
+          <PullQuote>Technical outreach is strongest when students can handle the hardware, ask what each part does, and connect the answer to the full mission.</PullQuote>
+        </div>
+      </Section>
+
       <Section id="outcome" title="The final flight validated the system-level work" kicker="Huntsville">
         <div className="grid gap-10 lg:grid-cols-[0.8fr,1.2fr] lg:items-start">
           <div className="space-y-5">

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 const METHODS = [
   ['Flight analysis', 'OpenRocket stability, performance trade studies, motor selection, and flight reconstruction.'],
-  ['Aerodynamics', 'XFOIL viscous/inviscid analysis, experimental comparison, and wind-tunnel validation.'],
+  ['Analysis', 'XFOIL aerodynamics, ANSYS finite-element analysis, morphology metrics, experimental comparison, and wind-tunnel validation.'],
   ['Design & fabrication', 'Fusion 360, parametric assemblies, additive manufacturing, fiberglass structures, and integration fixtures.'],
   ['Avionics & data', 'Redundant deployment electronics, GPS telemetry, wiring architecture, and post-flight data analysis.'],
   ['Technical communication', 'NASA design reviews, engineering reports, research presentations, and STEM instruction.'],
@@ -14,12 +14,14 @@ const METHODS = [
 ];
 
 const MILESTONES = [
+  ['2026', 'Began a UGA Young Dawgs internship with Dr. Xianqiao Wang, developing a reproducible microstructure-generation and 2D ANSYS compression pipeline.'],
+  ['2026', 'Earned the General Carl A. Spaatz Award and promotion to Civil Air Patrol Cadet Colonel while serving as Squadron Commander.'],
   ['2026', 'BEAMS modular research rocket documented in an AIAA-published project; NAR Level 1 certification remains in progress.'],
   ['2025', 'Completed the Governor’s Honors Program and helped develop a functioning ERAS2 ionic engine producing 24 g total thrust.'],
   ['2025', 'Project RANCH completed NASA Student Launch with a measured final apogee of 4,274.8 ft.'],
   ['2024-2026', 'Conducted UGA airfoil research and presented the resulting work through science-fair and technical-review settings. Recognized at the AIAA Region II Conference as 1st Place in the High School Category.'],
   ['2024', 'Co-led an American Rocketry Challenge team to 24th place nationally.'],
-  ['Ongoing', 'Serve as a Civil Air Patrol Cadet Captain and Squadron Commander, leading approximately 30 cadets.'],
+  ['Ongoing', 'Serve as a Civil Air Patrol Cadet Colonel and Squadron Commander, leading approximately 30 cadets.'],
 ];
 
 export default function AboutPage() {
@@ -31,7 +33,7 @@ export default function AboutPage() {
             <p className="eyebrow">About · Class of 2027</p>
             <h1 className="mt-6 text-5xl font-medium leading-[0.98] tracking-[-0.055em] text-white sm:text-7xl">A student engineer committed to evidence, iteration, and useful systems.</h1>
             <p className="mt-7 text-lg leading-8 text-primary-foreground/68">
-              I am a senior at Oconee County High School pursuing aerospace engineering. My work spans flight-tested rockets, aerodynamic research, electrohydrodynamic propulsion, technical publication, and sustained youth leadership.
+              I am a senior at Oconee County High School pursuing aerospace engineering. My work spans flight-tested rockets, aerodynamic and computational mechanics research, electrohydrodynamic propulsion, technical publication, and sustained youth leadership.
             </p>
             <p className="mt-5 text-lg leading-8 text-primary-foreground/68">
               I am most interested in the point where analysis becomes hardware: defining constraints, evaluating a design, building the system, measuring its performance, and documenting what the result actually demonstrates.
@@ -79,7 +81,7 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow">Team responsibility</p>
             <h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-0.045em] text-white">Personal ownership within larger engineering programs.</h2>
-            <p className="mt-6 leading-7 text-primary-foreground/68">My portfolio distinguishes between team outcomes and my direct contribution. On Project RANCH, I served as Payload Team Lead. In ARC, I served as Co-Captain. In ERAS2, I worked on the engine subteam. In Civil Air Patrol, I hold direct command and instructional responsibility.</p>
+            <p className="mt-6 leading-7 text-primary-foreground/68">My portfolio distinguishes between team outcomes and my direct contribution. On Project RANCH, I served as Payload Team Lead. In ARC, I served as Co-Captain. In ERAS2, I worked on the engine subteam. In Young Dawgs, I build and validate the computational pipeline. In Civil Air Patrol, I hold direct command and instructional responsibility as a Cadet Colonel.</p>
             <p className="mt-5 leading-7 text-primary-foreground/68">That distinction matters: strong engineering is collaborative, but an accurate technical record should still make ownership, interfaces, and decisions clear.</p>
           </div>
         </div>
