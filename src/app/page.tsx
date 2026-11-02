@@ -10,7 +10,7 @@ const PROOF_POINTS = [
   { value: '4,274.8 ft', label: 'NASA SLI final apogee' },
   { value: '24th', label: 'ARC national placement' },
   { value: '24 g', label: 'ERAS2 measured thrust' },
-  { value: 'Payload Lead', label: 'Project RANCH role' },
+  { value: 'Spaatz', label: 'CAP cadet-program capstone' },
 ];
 
 const SELECTED_WORK: Array<{
@@ -23,8 +23,17 @@ const SELECTED_WORK: Array<{
   imageClassName?: string;
 }> = [
   {
-    href: '/projects/uga-airfoil-research',
+    href: '/projects/young-dawgs',
     index: '02',
+    title: 'AI Microstructure Mechanics',
+    discipline: 'Computational Mechanics · Research',
+    summary: 'A Python-to-ANSYS research pipeline connecting generated porous microstructures to verified morphology, meshing, and mechanical-response evidence.',
+    image: '/images/young-dawgs/ansys-stress.png',
+    imageClassName: 'object-cover transition duration-700 group-hover:scale-[1.025]',
+  },
+  {
+    href: '/projects/uga-airfoil-research',
+    index: '03',
     title: 'Bio-Inspired & AI Airfoil Research',
     discipline: 'Aerodynamics · Research',
     summary: 'An eight-week research program combining XFOIL analysis, parametric CAD, additive manufacturing, and physical wind-tunnel validation.',
@@ -32,19 +41,11 @@ const SELECTED_WORK: Array<{
   },
   {
     href: '/projects/arc',
-    index: '03',
+    index: '04',
     title: 'American Rocketry Challenge',
     discipline: 'Flight Dynamics · Optimization',
     summary: 'Competition vehicle iterated through simulation and flight testing to achieve a 24th-place national finish.',
     image: '/images/arc/Capitol-Hill-Rocket-Team-Picture-350x260.png',
-  },
-  {
-    href: '/projects/eras2',
-    index: '04',
-    title: 'ERAS2 Ionic-Wind Aircraft',
-    discipline: 'Experimental Propulsion · Systems',
-    summary: 'Four-week residential engineering program culminating in a functioning electrohydrodynamic engine producing 24 g of total thrust.',
-    image: '/images/eras2/Plane-In-Workshop.jpeg',
   },
 ];
 
@@ -58,8 +59,8 @@ const PRACTICES = [
   {
     number: '02',
     title: 'Simulation & aerodynamic analysis',
-    detail: 'Use OpenRocket, XFOIL, CAD, and test data to evaluate stability and aerodynamic performance.',
-    evidence: 'ARC · UGA Research',
+    detail: 'Use OpenRocket, XFOIL, ANSYS, CAD, and test data to evaluate flight, aerodynamic, and material response.',
+    evidence: 'ARC · UGA Research · Young Dawgs',
   },
   {
     number: '03',
@@ -86,7 +87,7 @@ export default function HomePage() {
               Engineering systems from analysis to flight.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-8 text-primary-foreground/70 sm:text-xl">
-              I&apos;m Saahil Doshi, a student engineer developing launch vehicles, experimental propulsion systems, and aerodynamic research through simulation, fabrication, and physical testing.
+              I&apos;m Saahil Doshi, a student engineer developing launch vehicles, experimental propulsion systems, aerodynamic research, and computational material models through simulation, fabrication, and physical testing.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -222,7 +223,7 @@ export default function HomePage() {
             <p className="eyebrow">Leadership · Civil Air Patrol</p>
             <h2 className="mt-5 text-4xl font-medium leading-tight tracking-[-0.045em] text-white sm:text-5xl">Engineering teams require more than technical competence.</h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-primary-foreground/68">
-              As a Cadet Captain and Squadron Commander, I lead approximately 30 cadets alongside 15 senior members, plan weekly training, mentor developing leaders, and teach aerospace concepts through applied activities.
+              As a Cadet Colonel and Squadron Commander, I lead approximately 30 cadets alongside 15 senior members, plan weekly training, mentor developing leaders, and teach aerospace concepts through applied activities. I earned the General Carl A. Spaatz Award, the cadet program&apos;s capstone honor.
             </p>
             <Link href="/projects/civil-air-patrol" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accentneongreen hover:text-white">
               Explore leadership record <ArrowUpRight className="h-4 w-4" />
@@ -233,7 +234,7 @@ export default function HomePage() {
               ['30', 'Cadets led'],
               ['15', 'Senior members'],
               ['3 hr', 'Weekly training block'],
-              ['Ongoing', 'Command responsibility'],
+              ['Spaatz', 'Cadet-program capstone'],
             ].map(([value, label], index) => (
               <div key={label} className={`min-h-40 p-6 sm:p-8 ${index % 2 === 1 ? 'border-l border-white/10' : ''} ${index > 1 ? 'border-t border-white/10' : ''}`}>
                 <p className="text-4xl font-medium tracking-[-0.05em] text-white sm:text-5xl">{value}</p>
