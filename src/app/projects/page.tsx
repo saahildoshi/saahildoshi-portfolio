@@ -88,7 +88,7 @@ const PROJECTS: Project[] = [
     discipline: 'Leadership',
     role: 'Cadet Colonel · Commander',
     result: 'Spaatz Award',
-    image: '/images/cap/Saahil-CAP-Cadet-Colonel.png',
+    image: '/images/cap/Saahil-CAP-Cadet-Colonel.jpeg',
     imageClassName: 'object-cover object-top transition duration-700 group-hover:scale-[1.02]',
     tier: 'additional',
   },

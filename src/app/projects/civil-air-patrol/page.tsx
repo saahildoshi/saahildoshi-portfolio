@@ -63,7 +63,7 @@ export default function CivilAirPatrolPage() {
       <Section id="spaatz" title="The Spaatz Award marks the cadet program's capstone" kicker="Cadet Colonel · 2026">
         <div className="grid gap-10 lg:grid-cols-[0.78fr,1.22fr] lg:items-start">
           <FigureCard
-            src="/images/cap/Saahil-CAP-Cadet-Colonel.png"
+            src="/images/cap/Saahil-CAP-Cadet-Colonel.jpeg"
             caption="Cadet Colonel Saahil Doshi after earning the General Carl A. Spaatz Award."
             portrait
             fit="cover"
@@ -96,11 +96,20 @@ export default function CivilAirPatrolPage() {
               The Ira C. Eaker Award completed Phase IV of the cadet program and made me eligible to request the Spaatz examination. The progression reflects sustained advancement through 21 promotions rather than a single event.
             </p>
           </div>
-          <FigureCard
-            src="/images/cap/Ira-Eaker-Award-Presentation.jpeg"
-            caption="Receiving the Ira C. Eaker Award with Civil Air Patrol senior leadership before completing the Spaatz milestone."
-            fit="cover"
-          />
+          <div className="grid gap-6 sm:grid-cols-2">
+            <FigureCard
+              src="/images/cap/CAP-Awards-Ceremony-Podium.jpeg"
+              caption="Speaking at the Civil Air Patrol Georgia Wing Conference."
+              portrait
+              fit="cover"
+              position="object-right"
+            />
+            <FigureCard
+              src="/images/cap/Ira-Eaker-Award-Presentation.jpeg"
+              caption="Receiving the Ira C. Eaker Award with Civil Air Patrol senior leadership before completing the Spaatz milestone."
+              fit="cover"
+            />
+          </div>
         </div>
       </Section>
 
